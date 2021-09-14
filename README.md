@@ -1,2 +1,8 @@
-# teach-me-how-to-google
-A workshop on how to troubleshoot code and Google for helpful answers
+# Teach Me How To Google 
+**Presenter:** Sam Csik   
+**Organization:** UCSB MEDS  
+**Date:** October 11, 2021  
+**Length:** tbd
+
+Presentation slides are available [here](). (slides coming soon)
+
