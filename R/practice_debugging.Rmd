@@ -1,0 +1,34 @@
+---
+title: "Google & Debugging Practice"
+author: "Sam Csik"
+date: "9/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load libraries (we'll be using the `penguins` dataset from the `palmerpenrguins` package)
+```{r}
+#################################
+# load packages
+#################################
+
+library(tidyverse)
+library(palmerpenguins)
+```
+
+# Problem 1.1: Starting simple -- think about list of easy things to check for
+```{r}
+adelie_only <- penguins %>% 
+  fiter(species = "adelie")
+
+adelie_only <- penguins %>% 
+  filter(species == "Adelie")
+```
+
+# Problem 1.2: Starting simple -- running line-by-line until you encounter the problem
+```{r}
+adelie_plot <- ggplot(adelie_only, aes(x = "Island"))
+```
