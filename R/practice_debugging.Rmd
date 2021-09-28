@@ -3,6 +3,8 @@ title: "Google & Debugging Practice"
 author: "Sam Csik"
 date: "9/15/2021"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}

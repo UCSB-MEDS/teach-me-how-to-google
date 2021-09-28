@@ -9,38 +9,97 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+
+
+class: inverse center middle
 
 # Teach Me How to Google
-## MEDS 2021-22
-### Sam Csik
-### October 11th, 2021
+### *What do to when your code stops working or you're still in the process of figuring out what code to even write (or both)*  
+MEDS 2021-22  
+
+Sam Csik  
+
+October 11, 2021
 
 ---
-
-
-
-
-
-
+  
 ## Some Intro stuff
 
+we all need help with our code -- whether it's figuring out if there's a function that does what we want or trying to troubleshoot a pesky error message. No one is exempt from this (show tweets)
+
+There are 2 types needing help:
+
+    1. You got an error and you need to know how to fix it
+    2. You are trying to figure out how to do something
+
 ---
-## Easy things to check
+## General approaches (non-error)
 
-spelling, commas, etc.
+need to know vocabulary
 
-&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Debugging can be frustrating for our first time &lt;a href="https://twitter.com/hashtag/RStats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#RStats&lt;/a&gt; students... but maybe it can lead to a spot on Debugging Bingo! DeBug-o? DeBingo? &lt;br&gt;&lt;br&gt;Here&amp;#39;s a copy if you want to include the common errors you see in your class!&lt;a href="https://t.co/mI3g2QfvR2"&gt;https://t.co/mI3g2QfvR2&lt;/a&gt; &lt;a href="https://t.co/kyOCO3jjzL"&gt;pic.twitter.com/kyOCO3jjzL&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dr. Ji Son (@cogscimom) &lt;a href="https://twitter.com/cogscimom/status/1354508785365078016?ref_src=twsrc%5Etfw"&gt;January 27, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+---
+## General apporaches (error message)
+
+    1.  check the easy things (have a check list)
+    2.  run line by line (if pipes)
+    3.  GOOGLE (error message, function name, etc.)
+        a. Check out function/package source code on GitHub (Jenny Bryan's tweet)
+        b. [r] in front of search phrase or package + search phrase
+        c. check dates on stack overflow responses
+
+---
+## Check off the easy things first
+
+.center[
+&lt;img src="media/debug_bingo.png" width="55%" /&gt;
+]
+
+.center[
+Source: This [tweet](https://twitter.com/cogscimom/status/1354508785365078016?ref_src=twsrc%5Etfw) by [@cogscimom](https://twitter.com/cogscimom).
+]
+
+???
+- this often goes hand-in-hand with isolating the problem
 
 ---
 ## Isolate the problem (line-by-line)
 
 ---
+class: inverse center middle
 
-## General "How to query Google"
+# Why is Googling so challengeing?
 
-insert schematics here
+---
+## Knowing *what* to search for is half the battle
 
+&lt;br&gt;
+
+.pull-left[
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;The early hard part is just knowing the vocabulary. True beginners would have no reason to know what a join is. They might describe it as “looking up values from another table” which may not produce helpful results. So reading through a text book or intro class can give vocab&lt;/p&gt;&amp;mdash; JD Long (@CMastication) &lt;a href="https://twitter.com/CMastication/status/1437827181476995072?ref_src=twsrc%5Etfw"&gt;September 14, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+]
+
+.pull-right[
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;That vocabulary then becomes the enabler for good searching. And I wish I had a better (faster) way to ramp up their vocab.&lt;/p&gt;&amp;mdash; JD Long (@CMastication) &lt;a href="https://twitter.com/CMastication/status/1437827413459755009?ref_src=twsrc%5Etfw"&gt;September 14, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+]
+
+---
+## Use **search operators** to get more specific results
+
+.pull-left[
+&lt;img src="media/how_to_nytimes.png" width="97%" /&gt;
+]
+
+.pull-right[
+&lt;img src="media/how_to_velocity.png" width="90%" /&gt;
+]
+
+.footnote[
+Source: ‘Infographic: Get More Out Of Google.’ HackCollege. HackCollege, 23 Nov. 2011. Web. 30 July 2015.
+]
 ---
 
 ## Ways to write good, eas(ier) to debug code
