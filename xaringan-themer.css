@@ -19,7 +19,7 @@
  *
  * ------------------------------------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Glacial+Indifference:300,300i&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Sanchez&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Fira+Mono&display=swap);
 
 
@@ -29,7 +29,7 @@
   --text-font-is-google: 1;
   --text-font-family-fallback: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial;
   --text-font-base: sans-serif;
-  --header-font-family: Sanchez;
+  --header-font-family: 'Nunito Sans';
   --header-font-is-google: 1;
   --header-font-family-fallback: Georgia, serif;
   --code-font-family: 'Fira Mono';
@@ -46,13 +46,13 @@
   --text-color: #272822;
   --header-color: #05859B;
   --background-color: #FFFFFF;
-  --link-color: #05859B;
+  --link-color: #9b0546;
   --text-bold-color: #05859B;
   --code-highlight-color: rgba(255,255,0,0.5);
   --inverse-text-color: #93C6C2;
   --inverse-background-color: #05859B;
   --inverse-header-color: #93C6C2;
-  --inverse-link-color: #05859B;
+  --inverse-link-color: #9b0546;
   --title-slide-background-color: #05859B;
   --title-slide-text-color: #93C6C2;
   --header-background-color: #05859B;

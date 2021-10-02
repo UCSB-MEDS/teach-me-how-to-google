@@ -1,18 +1,17 @@
 ---
 title: "Teach Me How to Google"
-subtitle: "MEDS 2021-22"
-author: "Sam Csik"
-date: "October 11th, 2021"
+subtitle: "<span style = 'font-size: 50%;'>*What do to when your code stops working (or you're just not sure where to even start)*</span>"
+author: "Sam Csik | Data Training Coordinator<br><span style = 'font-size: 65%;'>National Center for Ecological Analysis & Synthesis<br></span>"
+date: "<span style = 'font-size: 85%;'>Masters of Environmental Data Science | Fall 2021</span><br><span style = 'font-size: 65%;'>Slides & source code available on [GitHub](https://github.com/UCSB-MEDS/teach-me-how-to-google)</span>"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: ['xaringan-themer.css', 'my-css.css']
     seal: false
     nature:
-      slideNumberFormat: "%current%"
-      highlightStyle: github
+      countIncrementalSlides: false
+      titleSlideClass: ["left", "middle", "inverse"]
       highlightLines: true
-      ratio: 16:9
-      countIncrementalSlides: true
+      highlightStyle: solarized-dark
 ---
 
 ```{r setup, include=FALSE}
@@ -34,12 +33,14 @@ library(xaringanthemer)
 
 # set accent theme
 style_mono_accent(
-  header_font_google = google_font("Sanchez"), 
+  header_font_google = google_font("Nunito Sans"), # Sanchez
   text_font_google = google_font("Glacial Indifference", "300", "300i"),
   code_font_google = google_font("Fira Mono"),
   base_color = "#05859B",
-  white_color = "#93C6C2",
+  white_color = "#93C6C2", 
   background_color = "#FFFFFF",
+  link_color = "#9b0546",
+  text_bold_color = "#05859B",
   header_font_weight = 400,
   header_h1_font_size = "2.25rem",
   header_h2_font_size = "1.75rem",
@@ -48,48 +49,154 @@ style_mono_accent(
 )
 ```
 
-class: inverse center middle
 
-# Teach Me How to Google
-### *What do to when your code stops working or you're still in the process of figuring out what code to even write (or both)*  
+class: inverse, middle
 
-MEDS 2021-22  
+# Teach Me How to `r fontawesome::fa("google", fill = "#93C6C2", a11y = "sem")`oogle<br>
 
-Sam Csik  
+<br>
 
-October 11, 2021
+<span style = 'font-size: 130%;'>Sam Csik | Data Training Coordinator</span>  
+
+National Center for Ecological Analysis & Synthesis<br>
+
+<br>
+
+<span style = 'font-size: 130%;'>Masters of Environmental Data Science | Fall 2021</span>   
+
+Slides & source code available on [`r fontawesome::fa("github", fill = "#93C6C2", a11y = "sem")`](https://github.com/UCSB-MEDS/teach-me-how-to-google)
 
 ---
+
+### Welcome to data science, where questions are aplenty!
+
+.pull-left[
+
+`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` You will become increasingly more comfortable with **not immediately knowing** the answers to a plethora of coding problems. It's all part of the job.
+
+<br>
+
+`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` If it's not already, **Google** will become one of your best friends.
+
+<br>
+
+`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Googling is hard, and it is a skill that requries **practice.** But you **can** and **will** get better at it over time.
+
+]
+
+
+.pull-right[
+```{r, out.width = '120%', echo = FALSE, fig.alt = "A gif of Seth Meyers sitting at the desk of his show, Late Night, and saying 'I have a lot of questions.'"}
+knitr::include_graphics("media/questions.gif")
+```
+]
+.pull-right[
+.center[
+<span style = 'font-size: 85%;'>-Me, everytime I open RStudio</span>
+]
+]
+
+---
+ ### It doesn't mean you won't still feel like this at times:
+ 
+.center2[
+```{r, out.width = '100%', out.height = '100%', echo = FALSE, fig.alt = "A gif of Ron Swanson, from the comedy TV series, Parks and Recreation, getting angry at his computer then taking it outside to toss in a dumpster."}
+knitr::include_graphics("media/ron_swanson.gif")
+```
+.center[
+<span style = 'font-size: 85%;'>-Me still, about half the times I open RStudio</span>
+]
+]
+
+---
+### But the goal is to be a bit more at peace with that feeling...and have the confidence that you can find your way
+
+.center2[
+```{r, out.width = '100%', echo = FALSE, fig.alt = "A cartoon drawing of an x- and y-axis plot, where the x-axis represents 'time' and the y-axis represents 'how much I know about R'. A round cartoon creature is moving through time (i.e. to the right across the x-axis). At time point one, when this creature is first beginning to learn R, it knows very little and it's facial expression suggests that it feels very intimidated. Over time, it experiences some highs and some lows. At time point eight (which is the furthest point to the right along the x-axis) this creature again feels like it knows very little about R, but instead of seeming intimidated as it did at time point one, it appears to be excited, suggesting a new sense of confidence."}
+knitr::include_graphics("media/how_much_i_know.jpeg")
+```
+.center[
+<span style = 'font-size: 85%;'>Artwork by [@allison_horst]()
+]
+]
+
+---
+
+### I typically find myself turning to Google for one of two reasons:
+
+<br>
+
+  <span style = 'font-size: 120%;'>`r fontawesome::fa("exclamation-triangle", fill = "#05859B", a11y = "sem")`  I got an error and need help fixing it</span>
   
-## Some Intro stuff
+  <br>
+  
+  <span style = 'font-size: 120%;'>`r fontawesome::fa("question-circle", fill = "#05859B", a11y = "sem")` I know what I want my code to do, but I have no idea how to actually pull it off</span>
+  
+<br>
 
-we all need help with our code -- whether it's figuring out if there's a function that does what we want or trying to troubleshoot a pesky error message. No one is exempt from this (show tweets)
+--
+  
+  <span style = 'font-size: 120%;'>`r fontawesome::fa("flushed", fill = "#05859B", a11y = "sem")` Sometimes, it's both of these things happening at the same time</span>
+  
+---
 
-There are 2 types needing help:
+### Before jumping straight to Google: pause, exhale, take care of the simple things first
 
-    1. You got an error and you need to know how to fix it
-    2. You are trying to figure out how to do something
+<br>
+
+--
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("power-off", fill = "#05859B", a11y = "sem")`  Restart R</span>
+
+--
+
+<br>
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")`  Check the easy stuff</span>
+
+--
+
+<br>
+
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("exclamation-triangle", fill = "#05859B", a11y = "sem")`  Read that error message!</span>
+
+--
+
+<br>
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("file-alt", fill = "#05859B", a11y = "sem")`  Double-check the documentation</span>
+
+--
+
+<br>
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("earlybirds", fill = "#05859B", a11y = "sem")`  Talk about it out load</span>
 
 ---
-## General approaches (non-error)
-
-need to know vocabulary
 
 ---
-## General apporaches (error message)
 
-    1.  check the easy things (have a check list)
-    2.  run line by line (if pipes)
-    3.  GOOGLE (error message, function name, etc.)
-        a. Check out function/package source code on GitHub (Jenny Bryan's tweet)
-        b. [r] in front of search phrase or package + search phrase
-        c. check dates on stack overflow responses
+---
+## Restart R
+
+Sometimes this really does work. See Jenny Bryan's video:
+
+>"Restart R often, espcially when things get weird." 
+
+-Jenny Bryan, in her 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/)
+
+"We install and update packages from R, which is a little bit like working on your airplane engine while you're flying"
+
+paraphrased: Common reason why things get funky in a way that makes it difficult to debug and understand. The good thing is that you don't have to. Quit, restart!
 
 ---
 ## Check off the easy things first
 
+<br>
+
 .center[
-```{r echo = FALSE, out.width = '55%'}
+```{r echo = FALSE, out.width = '70%'}
 knitr::include_graphics("media/debug_bingo.png")
 ```
 ]
@@ -102,15 +209,37 @@ Source: This [tweet](https://twitter.com/cogscimom/status/1354508785365078016?re
 - this often goes hand-in-hand with isolating the problem
 
 ---
-## Isolate the problem (line-by-line)
+# Isolate the problem (line-by-line)
 
+
+---
+## OLD: General approaches (what's the first thing you do when you get an error message?)
+
+    1.  restart R 
+    2.  check the easy things (have a check list)
+        * spelling
+        * commas
+        * etc.
+    3.  run line by line to isolate problem (e.g. pipes, functions, for loops)
+    4.  double check documentation (make sure arguments are correct)
+    4.  rubber ducky decoding (talk about it out loud)
+    3.  GOOGLE (error message, function name, etc.)
+        a. Check out function/package source code on GitHub (Jenny Bryan's tweet) -- this could include looking at github issues & pull requests to check if there are known problems with a particular package
+        
+---
+# General apporaches (all)
+
+    1. [r] in front of search phrase or package + search phrase
+    2. check dates on stack overflow responses (Danielle's tweet)
+    3. read multiple search results. sometimes one explanation will make sense in a way that another explanation may not
+  
 ---
 class: inverse center middle
 
 # Why is Googling so challengeing?
 
 ---
-## Knowing *what* to search for is half the battle
+# Knowing *what* to search for is half the battle
 
 <br>
 
@@ -119,11 +248,11 @@ class: inverse center middle
 ]
 
 .pull-right[
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">That vocabulary then becomes the enabler for good searching. And I wish I had a better (faster) way to ramp up their vocab.</p>&mdash; JD Long (@CMastication) <a href="https://twitter.com/CMastication/status/1437827413459755009?ref_src=twsrc%5Etfw">September 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Maybe we need to just tell learners “read the book for both the concepts AND the vocabulary to ask questions” because I bet they don’t realize this at all.</p>&mdash; JD Long (@CMastication) <a href="https://twitter.com/CMastication/status/1437833818518528003?ref_src=twsrc%5Etfw">September 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 ]
 
 ---
-## Use **search operators** to get more specific results
+# Use **search operators** to get more specific results
 
 .pull-left[
 ```{r echo = FALSE, out.width = '97%'}
@@ -140,9 +269,18 @@ knitr::include_graphics("media/how_to_velocity.png")
 .footnote[
 Source: ‘Infographic: Get More Out Of Google.’ HackCollege. HackCollege, 23 Nov. 2011. Web. 30 July 2015.
 ]
+
+---
+##What to do when you can't find an answer online?
+
+Ask it!
+
+* Create a `reprex` and ost on Stack Overflow
+* Ask Twitter
+
 ---
 
-## Ways to write good, eas(ier) to debug code
+# Ways to write good, eas(ier) to debug code
 
 use explaining variables!
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Great post on why &quot;explaining variables&quot; and &quot;explaining functions or methods&quot; are better than code comments.<br><br>I found that my enthusiasm for writing/maintaining comments peaked many years ago and I&#39;m better off using other techniques to make the non-obvious (more) obvious. <a href="https://t.co/yIIOnd8qHz">https://t.co/yIIOnd8qHz</a></p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/1412140590842597385?ref_src=twsrc%5Etfw">July 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
