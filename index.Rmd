@@ -249,9 +249,13 @@ gentoo <- penguins %>%
 **Less helpful:**
 ```{r eval = TRUE, error = TRUE}
 # create data object, 'dat'
-dat <- data.frame(x = 101, y = 102)
+dat <- data.frame(x = 1, y = 2)
 dat
 ```
+
+.footnote[
+<span style = 'font-size: 80%;'>Example from Jenny Bryan's 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/)</span>
+]
 
 --
 
@@ -259,10 +263,6 @@ dat
 # extract column 'x' from your data object
 df$x
 ```
-
-.footnote[
-<span style = 'font-size: 80%;'>Example from Jenny Bryan's 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/)</span>
-]
 
 --
 
@@ -306,6 +306,10 @@ knitr::include_graphics("media/duck.jpeg")
 ]
 ]
 
+???
+
+I'll also note that I tend to combine this 'rubber ducky debugging' method with actually running my code line-by-line.
+
 ---
 ## Still haven't figured it out? Enter Google.
 
@@ -319,19 +323,21 @@ knitr::include_graphics("media/duck.jpeg")
 
 --
 
-<br>
-
 <span style = 'font-size: 120%;'>`r fontawesome::fa("github-square", fill = "#05859B", a11y = "sem")`  Explore package source code on GitHub</span>
  
-  - <span style = 'font-size: 100%;'>this may include looking at any issues or pull requests associated with that package to check if there are known problems</span>
+  - <span style = 'font-size: 100%;'>this may include looking at any issues or pull requests associated with that package to check if there are known problems (e.g. check out `dplyr` on [GitHub](https://github.com/tidyverse/dplyr))</span>
 
 --
-
-<br>
 
 <span style = 'font-size: 120%;'>`r fontawesome::fa("calendar", fill = "#05859B", a11y = "sem")`  Check the date of online solutions</span>
 
   - <span style = 'font-size: 100%;'>past solutions can become outdated quickly -- target recent posts and responses</span>
+  
+--
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("plus", fill = "#05859B", a11y = "sem")`  Read multiple search results</span>
+
+  - <span style = 'font-size: 100%;'>sometime one explanation will make sense in a way that another explanation will not</span>
   
 ???
 
@@ -352,23 +358,7 @@ class: inverse, middle, center
 ## `r fontawesome::fa("question-circle", fill = "#93C6C2", a11y = "sem")` I know what I want my code to do, but I have no idea how to actually pull it off
 
 ---
-
----
-# General apporaches (all)
-
-    1. [r] in front of search phrase or package + search phrase
-    2. check dates on stack overflow responses (Danielle's tweet)
-    3. read multiple search results. sometimes one explanation will make sense in a way that another explanation may not
-  
----
-class: inverse center middle
-
-# Why is Googling so challengeing?
-
----
-# Knowing *what* to search for is half the battle
-
-<br>
+## Knowing *what* to search for is half the battle
 
 .pull-left[
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The early hard part is just knowing the vocabulary. True beginners would have no reason to know what a join is. They might describe it as “looking up values from another table” which may not produce helpful results. So reading through a text book or intro class can give vocab</p>&mdash; JD Long (@CMastication) <a href="https://twitter.com/CMastication/status/1437827181476995072?ref_src=twsrc%5Etfw">September 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -379,7 +369,17 @@ class: inverse center middle
 ]
 
 ---
-# Use **search operators** to get more specific results
+## `r fontawesome::fa("list", fill = "#05859B", a11y = "sem")`  Perhaps a curated vocabulary list could help?
+
+  - Hadley Wickham lists functions that he believes constitute a good working vocabulary for R fluency in his book, [Advanced R (first edition)](http://adv-r.had.co.nz/Vocabulary.html). 
+
+  - I would love to expand on this, with a focus on data wrangling and visualization. Ping me with ideas! 
+  
+  - In the meantime, keeping a running vocab list for yourself might be massively helpful
+
+---
+
+### Use **search operators** to get more specific results
 
 .pull-left[
 ```{r echo = FALSE, out.width = '97%'}
@@ -398,7 +398,19 @@ Source: ‘Infographic: Get More Out Of Google.’ HackCollege. HackCollege, 23 
 ]
 
 ---
-##What to do when you can't find an answer online?
+### Do not be ashamed of *just* copying some code
+
+.pull-left[
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Jokes are only the beginning.<br><br>The Key is available now, and your programming will never be the same.<a href="https://t.co/KAjJ1DKenf">https://t.co/KAjJ1DKenf</a> <a href="https://t.co/gDiYvBPSqp">https://t.co/gDiYvBPSqp</a> <a href="https://t.co/bhrBJN8N1Y">pic.twitter.com/bhrBJN8N1Y</a></p>&mdash; Cassidy (@cassidoo) <a href="https://twitter.com/cassidoo/status/1442936000578154498?ref_src=twsrc%5Etfw">September 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+]
+
+.pull-right[
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It started as an April Fools prank, but the joke is officially over. The Key is now available for purchase worldwide from <a href="https://twitter.com/drop?ref_src=twsrc%5Etfw">@drop</a> with proceeds going to <a href="https://twitter.com/digundiv?ref_src=twsrc%5Etfw">@digundiv</a>. Check it out: <a href="https://t.co/rLQVdVn4ms">https://t.co/rLQVdVn4ms</a> <a href="https://t.co/rsO63pNd1B">pic.twitter.com/rsO63pNd1B</a></p>&mdash; Stack Overflow (@StackOverflow) <a href="https://twitter.com/StackOverflow/status/1442898486685364224?ref_src=twsrc%5Etfw">September 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+]
+
+
+---
+## What to do when you can't find an answer online?
 
 Ask it!
 
@@ -409,7 +421,9 @@ Ask it!
 
 # Ways to write good, eas(ier) to debug code
 
-use explaining variables!
+ - use explaining variables!
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Great post on why &quot;explaining variables&quot; and &quot;explaining functions or methods&quot; are better than code comments.<br><br>I found that my enthusiasm for writing/maintaining comments peaked many years ago and I&#39;m better off using other techniques to make the non-obvious (more) obvious. <a href="https://t.co/yIIOnd8qHz">https://t.co/yIIOnd8qHz</a></p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/1412140590842597385?ref_src=twsrc%5Etfw">July 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+- build in checks and with clear errors/warnings
 
 
