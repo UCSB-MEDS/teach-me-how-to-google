@@ -7,3 +7,8 @@
   transform: translate(-50%, -50%);
   width: 70%;
 }
+
+.remark-code {
+  font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace;
+  font-size: 60%;
+ }

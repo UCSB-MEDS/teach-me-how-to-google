@@ -11,7 +11,9 @@ output:
       countIncrementalSlides: false
       titleSlideClass: ["left", "middle", "inverse"]
       highlightLines: true
-      highlightStyle: solarized-dark
+      highlightStyle: github
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -72,7 +74,7 @@ Slides & source code available on [`r fontawesome::fa("github", fill = "#93C6C2"
 
 .pull-left[
 
-`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` You will become increasingly more comfortable with **not immediately knowing** the answers to a plethora of coding problems. It's all part of the job.
+`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` You will become increasingly more comfortable with **not immediately knowing** the answers to all your coding problems. It's all part of the job.
 
 <br>
 
@@ -109,7 +111,10 @@ knitr::include_graphics("media/ron_swanson.gif")
 ]
 
 ---
+
 ### But the goal is to be a bit more at peace with that feeling...and have the confidence that you can find your way
+
+<br>
 
 .center2[
 ```{r, out.width = '100%', echo = FALSE, fig.alt = "A cartoon drawing of an x- and y-axis plot, where the x-axis represents 'time' and the y-axis represents 'how much I know about R'. A round cartoon creature is moving through time (i.e. to the right across the x-axis). At time point one, when this creature is first beginning to learn R, it knows very little and it's facial expression suggests that it feels very intimidated. Over time, it experiences some highs and some lows. At time point eight (which is the furthest point to the right along the x-axis) this creature again feels like it knows very little about R, but instead of seeming intimidated as it did at time point one, it appears to be excited, suggesting a new sense of confidence."}
@@ -139,8 +144,13 @@ knitr::include_graphics("media/how_much_i_know.jpeg")
   <span style = 'font-size: 120%;'>`r fontawesome::fa("flushed", fill = "#05859B", a11y = "sem")` Sometimes, it's both of these things happening at the same time</span>
   
 ---
+class: inverse, middle, center
 
-### Before jumping straight to Google: pause, exhale, take care of the simple things first
+## `r fontawesome::fa("exclamation-triangle", fill = "#93C6C2", a11y = "sem")`  I got an error and need help fixing it
+
+---
+
+### Pause, exhale, narrow down your potential Google search
 
 <br>
 
@@ -171,29 +181,28 @@ knitr::include_graphics("media/how_much_i_know.jpeg")
 
 <br>
 
-<span style = 'font-size: 120%;'>`r fontawesome::fa("earlybirds", fill = "#05859B", a11y = "sem")`  Talk about it out load</span>
+<span style = 'font-size: 120%;'>`r fontawesome::fa("earlybirds", fill = "#05859B", a11y = "sem")`  Talk about it out loud</span>
 
 ---
 
----
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("power-off", fill = "#05859B", a11y = "sem")`  Restart R</span>
+
+.center2[
+>"Restart R often, espcially when things get weird...We install and update packages from R, which is a little bit like working on your airplane engine while you're flying."
+
+.right[
+<span style = 'font-size: 60%;'>-Jenny Bryan, in her 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/)</span>
+]
+]
+
+
+???
+
+Common reason why things get funky in a way that makes it difficult to debug and understand. The good thing is that you don't have to. Quit, restart!
 
 ---
-## Restart R
 
-Sometimes this really does work. See Jenny Bryan's video:
-
->"Restart R often, espcially when things get weird." 
-
--Jenny Bryan, in her 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/)
-
-"We install and update packages from R, which is a little bit like working on your airplane engine while you're flying"
-
-paraphrased: Common reason why things get funky in a way that makes it difficult to debug and understand. The good thing is that you don't have to. Quit, restart!
-
----
-## Check off the easy things first
-
-<br>
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")`  Check the easy stuff</span>
 
 .center[
 ```{r echo = FALSE, out.width = '70%'}
@@ -202,30 +211,148 @@ knitr::include_graphics("media/debug_bingo.png")
 ]
 
 .center[
-Source: This [tweet](https://twitter.com/cogscimom/status/1354508785365078016?ref_src=twsrc%5Etfw) by [@cogscimom](https://twitter.com/cogscimom).
+<span style = 'font-size: 75%;'>Source: This [tweet](https://twitter.com/cogscimom/status/1354508785365078016?ref_src=twsrc%5Etfw) by [@cogscimom](https://twitter.com/cogscimom).</span>
 ]
 
+---
+
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("exclamation-triangle", fill = "#05859B", a11y = "sem")`  Read that error message!</span>
+
+**Helpful:** 
+```{r, eval = TRUE, error = TRUE}
+library(tidyverse)
+library(palmerpenguins)
+
+# take a look at the data
+head(penguins, 3)
+```
+
+--
+
+```{r, eval = TRUE, error = TRUE}
+# what species are in this dataset?
+unique(penguins$species)
+```
+
+--
+
+```{r, eval = TRUE, error = TRUE, highlight.output = c(4)}
+# filter for just "Gentoo" penguins
+gentoo <- penguins %>% 
+  filter(species = "Gentoo")
+```
+
+---
+
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("exclamation-triangle", fill = "#05859B", a11y = "sem")`  Read that error message!</span>
+
+**Less helpful:**
+```{r eval = TRUE, error = TRUE}
+# create data object, 'dat'
+dat <- data.frame(x = 101, y = 102)
+dat
+```
+
+--
+
+```{r eval = TRUE, error = TRUE, highlight.output = c(1)}
+# extract column 'x' from your data object
+df$x
+```
+
+.footnote[
+<span style = 'font-size: 80%;'>Example from Jenny Bryan's 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/)</span>
+]
+
+--
+
+<span style = 'font-size: 65%;'>If you feel incredibly frustrated by this error, well, welcome to the club! Jenny Bryan writes:</span> 
+
+> <span style = 'font-size: 65%;'>Your first “object of type ‘closure’ is not subsettable” error message is a big milestone for an R user. Congratulations, if there was any lingering doubt, you now know that you are officially programming!</span>
+
+<span style = 'font-size: 65%;'>This error typically rears its ugly head when you attempt to subset a function (in other words, treat a function in a way that it is not meant to be treated). Here, we forgot that we called called our object `dat`, and not `df`. `df()` also happens to be a function that gives you the density of the 'F' distribution and we are attempting to subset a column (`x`) from it.</span>
+
+---
+
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("file-alt", fill = "#05859B", a11y = "sem")`  Double-check the documentation</span>
+
+**Goal:** convert species names in the `penguins` data set to all lowercase
+
+---
+
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("earlybirds", fill = "#05859B", a11y = "sem")`  Talk about it *out loud*</span>
+
+.pull-left[
+This is often referred to as **rubber duck debugging**, and it goes something like this:
+
+> <span style = 'font-size: 55%;'>*1. Beg, borrow, steal, buy, fabricate or otherwise obtain a rubber duck (bathtub variety).*</span> 
+
+> <span style = 'font-size: 55%;'>*2. Place rubber duck on desk and inform it you are just going to go over some code with it, if that’s all right.*</span>
+
+> <span style = 'font-size: 55%;'>*3. Explain to the duck what your code is supposed to do, and then go into detail and explain your code **line by line**.*</span> 
+
+> <span style = 'font-size: 55%;'>*4. At some point you will tell the duck what you are doing next and then realise that that is not in fact what you are actually doing. The duck will sit there serenely, happy in the knowledge that it has helped you on your way.*</span> 
+.right[
+<span style = 'font-size: 50%;'>- [rubberduckdebugging.com](https://rubberduckdebugging.com/) with original credit to Andy from lists.ethernal.org</span>
+]
+]
+
+.pull-right[
+```{r echo = FALSE, out.width = '100%'}
+knitr::include_graphics("media/duck.jpeg")
+```
+.center[
+<span style = 'font-size: 75%;'>Source: [Wikipedia](https://en.wikipedia.org/wiki/Rubber_duck_debugging)</span>
+]
+]
+
+---
+## Still haven't figured it out? Enter Google.
+
+<br>
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("google", fill = "#05859B", a11y = "sem")`  General Googling tips:</span>
+
+  - <span style = 'font-size: 100%;'>[r] + error message</span>
+  - <span style = 'font-size: 100%;'>error message + function or package name</span>
+  - <span style = 'font-size: 100%;'>sometimes even just the error message alone with suffice</span>
+
+--
+
+<br>
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("github-square", fill = "#05859B", a11y = "sem")`  Explore package source code on GitHub</span>
+ 
+  - <span style = 'font-size: 100%;'>this may include looking at any issues or pull requests associated with that package to check if there are known problems</span>
+
+--
+
+<br>
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("calendar", fill = "#05859B", a11y = "sem")`  Check the date of online solutions</span>
+
+  - <span style = 'font-size: 100%;'>past solutions can become outdated quickly -- target recent posts and responses</span>
+  
 ???
-- this often goes hand-in-hand with isolating the problem
+
+James Frew posted in the eds-223 channel on Monday, October 4, 2021: 
+
+**Re: Google-fu:**
+- Reminder: anytime you get an unusually cryptic error message, it doesn't hurt to just cut-n-paste a reasonably-specific chunk of the message into Google.
+
+- For example, one of you contacted me about an error message whose last line was: `function 'Rcpp_precious_remove' not provided by package 'Rcpp'`
+
+- That looked reasonably-specific (i.e., likely to retrieve something useful, and unlikely to retrieve cat memes), so I Googled it: https://www.google.com/search?q=function+%27Rcpp_precious_remove%27+not+provided+by+package+%27Rcpp%27
+
+- First hit was: https://stackoverflow.com/questions/68416435/rcpp-package-doesnt-include-rcpp-precious-remove which solved the problem.
 
 ---
-# Isolate the problem (line-by-line)
+class: inverse, middle, center
 
+## `r fontawesome::fa("question-circle", fill = "#93C6C2", a11y = "sem")` I know what I want my code to do, but I have no idea how to actually pull it off
 
 ---
-## OLD: General approaches (what's the first thing you do when you get an error message?)
 
-    1.  restart R 
-    2.  check the easy things (have a check list)
-        * spelling
-        * commas
-        * etc.
-    3.  run line by line to isolate problem (e.g. pipes, functions, for loops)
-    4.  double check documentation (make sure arguments are correct)
-    4.  rubber ducky decoding (talk about it out loud)
-    3.  GOOGLE (error message, function name, etc.)
-        a. Check out function/package source code on GitHub (Jenny Bryan's tweet) -- this could include looking at github issues & pull requests to check if there are known problems with a particular package
-        
 ---
 # General apporaches (all)
 
@@ -275,7 +402,7 @@ Source: ‘Infographic: Get More Out Of Google.’ HackCollege. HackCollege, 23 
 
 Ask it!
 
-* Create a `reprex` and ost on Stack Overflow
+* Create a `reprex` and post on Stack Overflow
 * Ask Twitter
 
 ---
