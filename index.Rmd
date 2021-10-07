@@ -214,6 +214,8 @@ Common reason why things get funky in a way that makes it difficult to debug and
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")`  Check the easy stuff</span>
 
+<br>
+
 .center[
 ```{r echo = FALSE, out.width = '70%'}
 knitr::include_graphics("media/debug_bingo.png")
@@ -428,7 +430,7 @@ class: inverse, middle, center
   
 `r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` In the meantime, keeping a running vocab list for yourself might be massively helpful
 
-`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Other great resources include:
+`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Other resources include:
 
   - [R Functions List (+ Examples) | All Basic Commands of the R Programming Language](https://statisticsglobe.com/r-functions-list/), by Statistics Globe
   
@@ -505,7 +507,7 @@ class: inverse, middle, center
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("code", fill = "#05859B", a11y = "sem")`  Plan your approach by writing pseudocode</span>
 
-<span style = 'font-size: 75%;'>[Pseudocode](https://en.wikipedia.org/wiki/Pseudocode) is a step-by-step written "outline" of your code that you can then transcribe into a programming language (in our case, likely R). It is written in plain language (e.g. English), but uses the structural conventions of a programming language..</span>
+<span style = 'font-size: 75%;'>[Pseudocode](https://en.wikipedia.org/wiki/Pseudocode) is a step-by-step written "outline" of your code that you can then transcribe into a programming language (in our case, likely R). It is written in plain language (e.g. English), but uses the structural conventions of a programming language.</span>
 
 ```{r echo = TRUE, eval = FALSE}
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -573,7 +575,7 @@ Code comments are great, but variable and function names that explain what they 
 > <span style = 'font-size: 80%;'>Because with code comments we end up with two parallel sources of truth - what the code is doing, and what the comment says. Over time these two sources of truth have a tendency to diverge.</span>
 
 .right[
-<span style = 'font-size: 60%;'>- Pete Hodgson, in his post, [Explaining Variables](https://blog.thepete.net/blog/2021/06/24/explaining-variable/)</span>
+<span style = 'font-size: 60%;'>- Pete Hodgson, in his post, [Explaining Variable](https://blog.thepete.net/blog/2021/06/24/explaining-variable/)</span>
 ]
 ]
 
@@ -705,4 +707,190 @@ Slides created via the R packages:
 
 [**xaringan**](https://github.com/yihui/xaringan)<br>
 [**gadenbuie/xaringanthemer**](https://github.com/gadenbuie/xaringanthemer)
+
+---
+
+class: inverse, middle, center
+
+## `r fontawesome::fa("laptop-code", fill = "#93C6C2", a11y = "sem")` Practice problems
+
+Copy and paste the following coding challenges into an R script or Rmd file. Problems may have more than one error or missing code (be mindful, you might not even get an error message) to identify and fix. Remember: running code line-by-line is one of the best ways to isolate errors!
+
+---
+## Problem 1
+
+**Goal:** Modify the following code such that it sorts any **blue** animals from the `animals` vector into the `blue_animals` vector.
+
+```{r, echo = TRUE, eval = FALSE}
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ vector of animals  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+animals <- c("blue tang", "red panda", "Blue jay",
+             "green sea turtle", "blue morpho butterfly", 
+             "Blue iguana", "Red squirrel")
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ initialize empty vector to store blue-colored animals  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+blue_animals <- c()
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ sort blue animals into their own list  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+for (i in 1:length(animals)){
+  
+  current_animal <- animals[i]
+  
+  if(isTRUE(str_detect(current_animal, "blue"))){
+    
+    message("The '", current_animal, "' is a blue animal")
+    
+    blue_animals <- current_animal
+    
+  }
+  
+}
+
+```
+
+---
+## Problem 1 (solution)
+
+**Goal:** Modify the following code such that it sorts any **blue** animals from the `animals` vector into the `blue_animals` vector.
+
+```{r echo = TRUE, eval = FALSE}
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ vector of animals  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+animals <- c("blue tang", "red panda", "Blue jay",
+             "green sea turtle", "blue morpho butterfly", 
+             "Blue iguana", "Red squirrel")
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ initialize empty vector to store blue-colored animals  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+blue_animals <- c()
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  ~ sort blue animals into their own list  ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+for (i in 1:length(animals)){
+  
+  current_animal <- animals[i]
+  
+{{ if(isTRUE(str_detect(current_animal, "(?i)blue"))){ }}
+    
+    message("The '", current_animal, "' is a blue animal")
+    
+  {{ blue_animals <- append(blue_animals, current_animal) }}
+    
+  }
+  
+}
+```
+
+---
+## Problem 2 (slide 1/2)
+
+**Goal:** Modify the following code (on slide 2/2) to recreate the plot below
+
+.center[
+```{r echo = FALSE, out.width = '75%'}
+knitr::include_graphics("media/penguin_plot.png")
+```
+]
+
+---
+## Problem 2 (slide 2/2)
+
+```{r echo = TRUE, eval = FALSE}
+
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(data = penguins, aes(x = species, y = body_mass_g), shape = sex) +
+  geom_point(alpha = 0.2, position = position_jitterdodge(dodge.width = 0.8)) + 
+
+  # means & standard devs
+  stat_summary(mapping = aes(color = species),
+               fun = "mean", geom = "point", size = 4,
+  stat_summary(mapping = aes(color = species),
+               fun = "mean", geom = "errorbar", size = 1, width = 0.2,
+               fun.max = function(x) mean(x) + sd(x),
+               fun.min = function(x) mean(x) - sd(x),
+
+  # change colors/shapes
+  scale_color_manual(values = c("#FF8C02", "#A93FF1", "#148F90"), name = "Species") + 
+  scale_shape_manual(values = c(15, 16), name = "Sex") + 
+  
+  # add nicer axis labels + title + caption
+  labs(x = "Penguin Species", 
+       y = "Body Mass (g)",
+       title = "Body mass of female vs. male adelie, chinstrap, and gentoo penguins",
+       subtitle = "Colored points represent mean body mass (± SD)",
+       caption = "Data Source: Dr. Kristen Gorman, LTER Palmer Station") +
+ 
+  theme_classic() + 
+  theme(
+        plot.title = element_rect(hjust = 0, size = 14),
+        axis.text = element_text(color = "black", size = 10),
+        axis.title = element_rect(color = "black", size = 14),
+        plot.caption = element_text(size = 7, hjust = 1, color = "gray", face = "italic"),
+        panel.border = element_rect(color = "black", size = 0.7, fill = NA))
+```
+
+---
+## Problem 2 (solution)
+
+```{r echo = TRUE, eval = FALSE}
+
+library(tidyverse)
+library(palmerpenguins)
+
+{{ggplot(data = na.omit(penguins), aes(x = species, y = body_mass_g, shape = sex)) +}}
+  geom_point(alpha = 0.2, position = position_jitterdodge(dodge.width = 0.8)) + 
+
+  # means & standard devs
+  stat_summary(mapping = aes(color = species),
+               fun = "mean", geom = "point", size = 4,
+              {{position = position_dodge(width = 0.8)) +}}
+  stat_summary(mapping = aes(color = species),
+               fun = "mean", geom = "errorbar", size = 1, width = 0.2,
+               fun.max = function(x) mean(x) + sd(x),
+               fun.min = function(x) mean(x) - sd(x),
+              {{position = position_dodge(width = 0.8)) +}}
+
+  # change colors/shapes
+  scale_color_manual(values = c("#FF8C02", "#A93FF1", "#148F90"), name = "Species") + 
+  scale_shape_manual(values = c(15, 16), name = "Sex") + 
+  
+  # add nicer axis labels + title + caption
+  labs(x = "Penguin Species", 
+       y = "Body Mass (g)",
+       title = "Body mass of female vs. male adelie, chinstrap, and gentoo penguins",
+       subtitle = "Colored points represent mean body mass (± SD)",
+       caption = "Data Source: Dr. Kristen Gorman, LTER Palmer Station") +
+ 
+  theme_classic() + 
+  theme(
+       {{plot.title = element_text(hjust = 0, size = 14),}}
+        axis.text = element_text(color = "black", size = 10),
+       {{axis.title = element_text(color = "black", size = 14),}}
+        plot.caption = element_text(size = 7, hjust = 1, color = "gray", face = "italic"),
+        panel.border = element_rect(color = "black", size = 0.7, fill = NA))
+```
+
+---
+## Problem 3 
+
+```{r}
+# install.packages("nycflights13")
+library(nycflights13)
+```
 
