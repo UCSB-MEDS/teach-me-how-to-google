@@ -80,7 +80,7 @@ Slides &amp; source code available on [<svg aria-label="GitHub" role="img" viewB
 .center2[
 &lt;img src="media/how_much_i_know.jpeg" title="A cartoon drawing of an x- and y-axis plot, where the x-axis represents 'time' and the y-axis represents 'how much I know about R'. A round cartoon creature is moving through time (i.e. to the right across the x-axis). At time point one, when this creature is first beginning to learn R, it knows very little and it's facial expression suggests that it feels very intimidated. Over time, it experiences some highs and some lows. At time point eight (which is the furthest point to the right along the x-axis) this creature again feels like it knows very little about R, but instead of seeming intimidated as it did at time point one, it appears to be excited, suggesting a new sense of confidence." alt="A cartoon drawing of an x- and y-axis plot, where the x-axis represents 'time' and the y-axis represents 'how much I know about R'. A round cartoon creature is moving through time (i.e. to the right across the x-axis). At time point one, when this creature is first beginning to learn R, it knows very little and it's facial expression suggests that it feels very intimidated. Over time, it experiences some highs and some lows. At time point eight (which is the furthest point to the right along the x-axis) this creature again feels like it knows very little about R, but instead of seeming intimidated as it did at time point one, it appears to be excited, suggesting a new sense of confidence." width="100%" /&gt;
 .center[
-&lt;span style = 'font-size: 85%;'&gt;Artwork by [@allison_horst]()
+&lt;span style = 'font-size: 85%;'&gt;Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)
 ]
 ]
 
@@ -146,13 +146,23 @@ class: inverse, middle, center
 
 ### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Power Off" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Power Off</title><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"/></svg>  Restart R&lt;/span&gt;
 
-.center2[
+.center[
 &gt;"Restart R often, espcially when things get weird...We install and update packages from R, which is a little bit like working on your airplane engine while you're flying."
 
 .right[
 &lt;span style = 'font-size: 60%;'&gt;-Jenny Bryan, in her 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/)&lt;/span&gt;
 ]
 ]
+
+&lt;br&gt;
+
+--
+
+.center[
+Similarly, going to sleep and trying again tomorrow is a legitimate (and often impactful) strategy -- think of it as restarting your own internal computer (i.e. your brain).
+]
+
+&lt;blockquote class="twitter-tweet tw-align-center"&gt;&lt;p lang="en" dir="ltr"&gt;I love waking up and jumping back into solving a bug and immediately solving it with a fresh mind. Sleep is my favorite coding tool.&lt;/p&gt;&amp;mdash; Kelly Vaughn (@kvlly) &lt;a href="https://twitter.com/kvlly/status/1385573317277532162?ref_src=twsrc%5Etfw"&gt;April 23, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 
 
 ???
@@ -224,11 +234,15 @@ gentoo &lt;- penguins %&gt;%
 ## ℹ Did you mean `species == "Gentoo"`?
 ```
 
+???
+
+Revisit A.Horst's lab materials from EDS 221: https://allisonhorst.github.io/EDS_221_programming-essentials/interactive_sessions/day_9_interactive.html#2_Basics_-_troubleshooting_practice__tips
+
 ---
 
 ### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Exclamation Triangle" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Exclamation Triangle</title><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg>  Read that error message!&lt;/span&gt;
 
-**Less helpful:**
+**Somewhat less helpful:**
 
 ```r
 # create data object, 'dat'
@@ -265,11 +279,17 @@ df$x
 
 &lt;span style = 'font-size: 65%;'&gt;This error typically rears its ugly head when you attempt to subset a function (in other words, treat a function in a way that it is not meant to be treated). Here, we forgot that we called called our object `dat`, and not `df`. `df()` also happens to be a function that gives you the density of the 'F' distribution and we are attempting to subset a column (`x`) from it.&lt;/span&gt;
 
+???
+
+Revisit A.Horst's lab materials from EDS 221: https://allisonhorst.github.io/EDS_221_programming-essentials/interactive_sessions/day_9_interactive.html#2_Basics_-_troubleshooting_practice__tips
+
 ---
 
 ### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Alternate File" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Alternate File</title><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/></svg>  Double-check the documentation&lt;/span&gt;
 
 **Goal:** convert species names in the `penguins` data set to all lowercase
+
+
 
 ---
 
@@ -297,34 +317,43 @@ This is often referred to as **rubber duck debugging**, and it goes something li
 ]
 ]
 
+???
+
+I'll also note that I tend to combine this 'rubber ducky debugging' method with actually running my code line-by-line.
+
 ---
-## Still haven't figured it out? Enter Google.
+### Still haven't figured it out? Enter Google.
 
-&lt;br&gt;
+&lt;span style = 'font-size: 100%;'&gt;<svg aria-label="Google Logo" role="img" viewBox="0 0 488 512" style="height:1em;width:0.95em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Google Logo</title><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>  General Googling tips:&lt;/span&gt;
 
-&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Google Logo" role="img" viewBox="0 0 488 512" style="height:1em;width:0.95em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Google Logo</title><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>  General Googling tips:&lt;/span&gt;
-
-  - &lt;span style = 'font-size: 100%;'&gt;[r] + error message&lt;/span&gt;
-  - &lt;span style = 'font-size: 100%;'&gt;error message + function or package name&lt;/span&gt;
-  - &lt;span style = 'font-size: 100%;'&gt;sometimes even just the error message alone with suffice&lt;/span&gt;
+  - &lt;span style = 'font-size: 75%;'&gt;[r] + error message&lt;/span&gt;
+  - &lt;span style = 'font-size: 75%;'&gt;error message + function or package name&lt;/span&gt;
+  - &lt;span style = 'font-size: 75%;'&gt;sometimes even just the error message alone with suffice&lt;/span&gt;
 
 --
 
-&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="GitHub Square" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>GitHub Square</title><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>  Explore package source code on GitHub&lt;/span&gt;
+&lt;span style = 'font-size: 100%;'&gt;<svg aria-label="GitHub Square" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>GitHub Square</title><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>  Explore package source code on GitHub&lt;/span&gt;
  
-  - &lt;span style = 'font-size: 100%;'&gt;this may include looking at any issues or pull requests associated with that package to check if there are known problems (e.g. check out `dplyr` on [GitHub](https://github.com/tidyverse/dplyr))&lt;/span&gt;
+  - &lt;span style = 'font-size: 75%;'&gt;this may include looking at any issues or pull requests associated with that package to check if there are known problems (e.g. check out `xaringan` on [GitHub](https://github.com/yihui/xaringan))&lt;/span&gt;
+  - &lt;span style = 'font-size: 75%;'&gt;check to see if there are wikis available for a particular repository (e.g. I was able to figure out how to wrap code output on `xaringan` slides thanks to one of their [wikis](https://github.com/yihui/xaringan/wiki/Word-wrapping-of-code-output))&lt;/span&gt;
 
 --
 
-&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Calendar" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Calendar</title><path d="M12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm436-44v-36c0-26.5-21.5-48-48-48h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v36c0 6.6 5.4 12 12 12h424c6.6 0 12-5.4 12-12z"/></svg>  Check the date of online solutions&lt;/span&gt;
+&lt;span style = 'font-size: 100%;'&gt;<svg aria-label="Calendar" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Calendar</title><path d="M12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm436-44v-36c0-26.5-21.5-48-48-48h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v36c0 6.6 5.4 12 12 12h424c6.6 0 12-5.4 12-12z"/></svg>  Check the date of online solutions&lt;/span&gt;
 
-  - &lt;span style = 'font-size: 100%;'&gt;past solutions can become outdated quickly -- target recent posts and responses&lt;/span&gt;
+  - &lt;span style = 'font-size: 75%;'&gt;past solutions can become outdated quickly -- target recent posts and responses&lt;/span&gt;
   
 --
 
-&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="plus" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>plus</title><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/></svg>  Read multiple search results&lt;/span&gt;
+&lt;span style = 'font-size: 100%;'&gt;<svg aria-label="plus" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>plus</title><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/></svg>  Read multiple search results&lt;/span&gt;
 
-  - &lt;span style = 'font-size: 100%;'&gt;sometime one explanation will make sense in a way that another explanation will not&lt;/span&gt;
+  - &lt;span style = 'font-size: 75%;'&gt;sometime one explanation will make sense in a way that another explanation will not&lt;/span&gt;
+  
+--
+
+&lt;span style = 'font-size: 100%;'&gt;<svg aria-label="User Secret" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>User Secret</title><path d="M383.9 308.3l23.9-62.6c4-10.5-3.7-21.7-15-21.7h-58.5c11-18.9 17.8-40.6 17.8-64v-.3c39.2-7.8 64-19.1 64-31.7 0-13.3-27.3-25.1-70.1-33-9.2-32.8-27-65.8-40.6-82.8-9.5-11.9-25.9-15.6-39.5-8.8l-27.6 13.8c-9 4.5-19.6 4.5-28.6 0L182.1 3.4c-13.6-6.8-30-3.1-39.5 8.8-13.5 17-31.4 50-40.6 82.8-42.7 7.9-70 19.7-70 33 0 12.6 24.8 23.9 64 31.7v.3c0 23.4 6.8 45.1 17.8 64H56.3c-11.5 0-19.2 11.7-14.7 22.3l25.8 60.2C27.3 329.8 0 372.7 0 422.4v44.8C0 491.9 20.1 512 44.8 512h358.4c24.7 0 44.8-20.1 44.8-44.8v-44.8c0-48.4-25.8-90.4-64.1-114.1zM176 480l-41.6-192 49.6 32 24 40-32 120zm96 0l-32-120 24-40 49.6-32L272 480zm41.7-298.5c-3.9 11.9-7 24.6-16.5 33.4-10.1 9.3-48 22.4-64-25-2.8-8.4-15.4-8.4-18.3 0-17 50.2-56 32.4-64 25-9.5-8.8-12.7-21.5-16.5-33.4-.8-2.5-6.3-5.7-6.3-5.8v-10.8c28.3 3.6 61 5.8 96 5.8s67.7-2.1 96-5.8v10.8c-.1.1-5.6 3.2-6.4 5.8z"/></svg>  Isolate the relevant part(s) of an answer&lt;/span&gt;
+
+  - &lt;span style = 'font-size: 75%;'&gt;not every part of an online response will be relevant to *your* problem -- take care when copying/pasting entire "solutions"&lt;/span&gt;
   
 ???
 
@@ -338,6 +367,22 @@ James Frew posted in the eds-223 channel on Monday, October 4, 2021:
 - That looked reasonably-specific (i.e., likely to retrieve something useful, and unlikely to retrieve cat memes), so I Googled it: https://www.google.com/search?q=function+%27Rcpp_precious_remove%27+not+provided+by+package+%27Rcpp%27
 
 - First hit was: https://stackoverflow.com/questions/68416435/rcpp-package-doesnt-include-rcpp-precious-remove which solved the problem.
+
+---
+
+## Still stumped? Ask the community!
+
+
+&lt;span style = 'font-size: 75%;'&gt;Create a `reprex` i.e. a **minimal reproducible example**. Strip away the cruft and present only what is required to reproduce your issue. Most of the time, this will help *you* solve your own problem. And if you still can't figure it out, you've helped the community help you.&lt;/span&gt;
+
+&lt;span style = 'font-size: 75%;'&gt;Check out [FAQ: How to do a minimal reproducible example (reprex) for beginners](https://community.rstudio.com/t/faq-how-to-do-a-minimal-reproducible-example-reprex-for-beginners/23061) and [Reprex do's and don'ts](https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html) to get started on creating your first `reprex`.&lt;/span&gt;
+
+.center[
+&lt;img src="media/reprex.jpeg" width="65%" /&gt;
+.center[
+&lt;span style = 'font-size: 75%;'&gt;Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)&lt;/span&gt;
+]
+]
 
 ---
 class: inverse, middle, center
@@ -356,17 +401,21 @@ class: inverse, middle, center
 ]
 
 ---
-## <svg aria-label="List" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>List</title><path d="M80 368H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 64v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16zm0 160H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm416 176H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"/></svg>  Perhaps a curated vocabulary list could help?
+## A curated **vocabulary list** of R terminology may help
 
-  - Hadley Wickham lists functions that he believes constitute a good working vocabulary for R fluency in his book, [Advanced R (first edition)](http://adv-r.had.co.nz/Vocabulary.html). 
+<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>  Hadley Wickham lists functions that he believes constitute a good working vocabulary for R fluency in his book, [Advanced R (first edition)](http://adv-r.had.co.nz/Vocabulary.html).
 
-  - I would love to expand on this, with a focus on data wrangling and visualization. Ping me with ideas! 
+<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg> I would love to expand on this, with a focus on data wrangling and visualization. Ping me with ideas!
   
-  - In the meantime, keeping a running vocab list for yourself might be massively helpful
+<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg> In the meantime, keeping a running vocab list for yourself might be massively helpful
 
+<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg> Other great resources include:
+
+  - [R Functions List (+ Examples) | All Basic Commands of the R Programming Language](https://statisticsglobe.com/r-functions-list/), by Statistics Globe
+  
 ---
 
-### Use **search operators** to get more specific results
+## Use **search operators** to get more specific results
 
 .pull-left[
 &lt;img src="media/how_to_nytimes.png" width="97%" /&gt;
@@ -376,12 +425,19 @@ class: inverse, middle, center
 &lt;img src="media/how_to_velocity.png" width="90%" /&gt;
 ]
 
-.footnote[
-Source: ‘Infographic: Get More Out Of Google.’ HackCollege. HackCollege, 23 Nov. 2011. Web. 30 July 2015.
+.center[
+&lt;span style = 'font-size: 65%;'&gt;Source: ‘Infographic: Get More Out Of Google.’ HackCollege. HackCollege, 23 Nov. 2011. Web. 30 July 2015.&lt;/span&gt;
 ]
 
+**For example, compare the following two Google queries:**
+
+  **1.** &lt;span style = 'font-family: "Fira Mono";'&gt;r dplyr join&lt;/span&gt;: [see results here](https://www.google.com/search?q=r+dplyr+join&amp;oq=R+dplyr+join&amp;aqs=chrome.0.0i512l6j69i60.2431j0j7&amp;sourceid=chrome&amp;ie=UTF-8)
+  
+  **2.** &lt;span style = 'font-family: "Fira Mono";'&gt;site:stackoverflow.com R "dplyr join"&lt;/span&gt;: [see results here](https://www.google.com/search?q=site%3Astackoverflow.com+R+%22dplyr+join%22&amp;oq=site%3Astackoverflow.com+R+%22dplyr+join%22&amp;aqs=chrome..69i57j69i58.71866j0j7&amp;sourceid=chrome&amp;ie=UTF-8)
+
 ---
-### Do not be ashamed of *just* copying some code
+
+### It's also okay just to **copy code**
 
 .pull-left[
 &lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Jokes are only the beginning.&lt;br&gt;&lt;br&gt;The Key is available now, and your programming will never be the same.&lt;a href="https://t.co/KAjJ1DKenf"&gt;https://t.co/KAjJ1DKenf&lt;/a&gt; &lt;a href="https://t.co/gDiYvBPSqp"&gt;https://t.co/gDiYvBPSqp&lt;/a&gt; &lt;a href="https://t.co/bhrBJN8N1Y"&gt;pic.twitter.com/bhrBJN8N1Y&lt;/a&gt;&lt;/p&gt;&amp;mdash; Cassidy (@cassidoo) &lt;a href="https://twitter.com/cassidoo/status/1442936000578154498?ref_src=twsrc%5Etfw"&gt;September 28, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
@@ -391,24 +447,167 @@ Source: ‘Infographic: Get More Out Of Google.’ HackCollege. HackCollege, 23 
 &lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;It started as an April Fools prank, but the joke is officially over. The Key is now available for purchase worldwide from &lt;a href="https://twitter.com/drop?ref_src=twsrc%5Etfw"&gt;@drop&lt;/a&gt; with proceeds going to &lt;a href="https://twitter.com/digundiv?ref_src=twsrc%5Etfw"&gt;@digundiv&lt;/a&gt;. Check it out: &lt;a href="https://t.co/rLQVdVn4ms"&gt;https://t.co/rLQVdVn4ms&lt;/a&gt; &lt;a href="https://t.co/rsO63pNd1B"&gt;pic.twitter.com/rsO63pNd1B&lt;/a&gt;&lt;/p&gt;&amp;mdash; Stack Overflow (@StackOverflow) &lt;a href="https://twitter.com/StackOverflow/status/1442898486685364224?ref_src=twsrc%5Etfw"&gt;September 28, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 ]
 
+???
 
----
-## What to do when you can't find an answer online?
-
-Ask it!
-
-* Create a `reprex` and post on Stack Overflow
-* Ask Twitter
+Once you find a search result, it’s ok in the beginning to copy and paste without fully understanding what the code does. Over time, as you get better at coding, the code that other people post will make more sense.
 
 ---
 
-# Ways to write good, eas(ier) to debug code
+class: inverse, middle, center
 
- - use explaining variables!
-&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Great post on why &amp;quot;explaining variables&amp;quot; and &amp;quot;explaining functions or methods&amp;quot; are better than code comments.&lt;br&gt;&lt;br&gt;I found that my enthusiasm for writing/maintaining comments peaked many years ago and I&amp;#39;m better off using other techniques to make the non-obvious (more) obvious. &lt;a href="https://t.co/yIIOnd8qHz"&gt;https://t.co/yIIOnd8qHz&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jenny Bryan (@JennyBryan) &lt;a href="https://twitter.com/JennyBryan/status/1412140590842597385?ref_src=twsrc%5Etfw"&gt;July 5, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+## <svg aria-label="Bug" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#93C6C2;overflow:visible;position:relative;"><title>Bug</title><path d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z"/></svg> Take proactive measures to make *your* code easier to debug
 
-- build in checks and with clear errors/warnings
+---
 
+## Help future you *and* others by writing thoughtful code
+--
+
+&lt;br&gt;
+
+&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Code" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Code</title><path d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>  Plan your approach by writing pseudocode&lt;/span&gt;
+
+--
+
+&lt;br&gt;
+
+&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Brain" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Brain</title><path d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z"/></svg>  Use explaining variables&lt;/span&gt;
+
+--
+
+&lt;br&gt;
+
+&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Check" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>  Build in checks&lt;/span&gt;
+
+---
+
+### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Code" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Code</title><path d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>  Plan your approach by writing pseudocode&lt;/span&gt;
+
+&lt;span style = 'font-size: 75%;'&gt;[Pseudocode](https://en.wikipedia.org/wiki/Pseudocode) is a step-by-step written "outline" of your code that you can then transcribe into a programming language (in our case, likely R). It is written in plain language (e.g. English), but uses the structural conventions of a programming language..&lt;/span&gt;
+
+
+```r
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                  pseudocode                              ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+new_df &lt;- original_data %&gt;% 
+  filter for gentoo penguins %&gt;% 
+  calculate bill length to depth ratio and add as new column 
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                 actual code                              ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+penguins_new &lt;- penguins %&gt;% 
+  filter(species == "Gentoo") %&gt;% 
+  mutate(bill_LD_ratio = bill_length_mm/bill_depth_mm) 
+```
+
+
+
+???
+
+While pseudocode is often used for planning out more complex algorithms, practicing with simpler examples may help you to avoid making mistakes -- pseudocode forces you acknowledge what each line of your script is meant to do, before you even write any code.
+
+---
+
+### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Brain" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Brain</title><path d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z"/></svg>  Use explaining variables&lt;/span&gt;
+
+Code comments are great, but variable and function names that explain what they are/do are even better. 
+
+.center[
+&gt; &lt;span style = 'font-size: 80%;'&gt;Because with code comments we end up with two parallel sources of truth - what the code is doing, and what the comment says. Over time these two sources of truth have a tendency to diverge.&lt;/span&gt;
+
+.right[
+&lt;span style = 'font-size: 60%;'&gt;- Pete Hodgson, in his post, [Explaining Variables](https://blog.thepete.net/blog/2021/06/24/explaining-variable/)&lt;/span&gt;
+]
+]
+
+&lt;blockquote class="twitter-tweet tw-align-center"&gt;&lt;p lang="en" dir="ltr"&gt;A common suggestion I give during code review is to add an Explaining Variable. I couldn&amp;#39;t find a good explanation of the pattern to link to, so I wrote one 🙃&lt;a href="https://t.co/WRigu74gpu"&gt;https://t.co/WRigu74gpu&lt;/a&gt;&lt;/p&gt;&amp;mdash; Pete Hodgson (@ph1) &lt;a href="https://twitter.com/ph1/status/1412125686974717971?ref_src=twsrc%5Etfw"&gt;July 5, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+
+
+
+
+---
+
+### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Check" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>  Build in checks&lt;/span&gt;
+
+&lt;span style = 'font-size: 70%;'&gt;The function below converts a temperature between Celsius and Fahrenheit, and vice versa. It takes three arguments:&lt;/span&gt;
+
+  - &lt;span style = 'font-size: 70%;'&gt;`from`: a string, either "fahrenheit" or "celsius"&lt;/span&gt; 
+  - &lt;span style = 'font-size: 70%;'&gt;`to`: a string, either "fahrenheit" or "celsius"&lt;/span&gt;
+  - &lt;span style = 'font-size: 70%;'&gt;`temp`: a double, the temperature value to convert&lt;/span&gt;
+  
+&lt;span style = 'font-size: 70%;'&gt;It is important to note that with the way this function is currently written, the `from` and `to` arguments only take the string values, "fahrenheit" or "celsius." What happens if the user accidentally misspells those values? We can make that easier to troubleshoot by building in an informative error message.&lt;/span&gt;
+
+
+```r
+convert_temp &lt;- function(from, to, temp) {
+  
+  # if `from` is "celsius" and `to` is "fahrenheit"
+  if(from == "celsius" &amp; to == "fahrenheit") {
+    converted_temp &lt;- temp*1.8 + 32
+    
+    # if `from` is "fahrenheit" and `to` is "celsius"
+    } else if(from == "fahrenheit" &amp; to == "celsius") {
+    converted_temp &lt;- (temp - 32)/1.8
+   
+    # if inputs that don't match either of the first two conditionals are supplied, give warning and return NA 
+*  } else { 
+*      stop("The inputs provided (from = '", from, "' &amp; to = '", to,"') are not as expected. Double check spelling.") 
+*      return(NA) 
+    }
+  
+  # return the converted value
+  return(converted_temp)
+}
+```
+
+---
+
+### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Check" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>  Build in checks&lt;/span&gt;
+
+
+
+Let's convert 90°F to °C:
+
+
+```r
+# try it out
+convert_temp(from = "farenheit", to = "celsius", temp = 90)
+```
+
+```
+## Error in convert_temp(from = "farenheit", to = "celsius", temp = 90): The inputs provided (from = 'farenheit' &amp; to = 'celsius') are not as expected. Double check spelling.
+```
+
+--
+
+Bummer, our code broke. But informative error message to the rescue! Seems like we may have a spelling error for the input values provided to either the `from` and/or `to` arguments. Let's fix and try again:
+
+--
+
+
+```r
+# oops, misspelled "fahrenheit" - try again
+convert_temp(from = "fahrenheit", to = "celsius", temp = 90)
+```
+
+```
+## [1] 32.22222
+```
+
+---
+class: center, middle
+
+## <svg aria-label="Google Logo" role="img" viewBox="0 0 488 512" style="height:1em;width:0.95em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Google Logo</title><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>et <svg aria-label="Google Logo" role="img" viewBox="0 0 488 512" style="height:1em;width:0.95em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Google Logo</title><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>oogling 
+&lt;img src="media/google.gif" width="60%" /&gt;
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
+[**gadenbuie/xaringanthemer**](https://github.com/gadenbuie/xaringanthemer)
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
