@@ -248,7 +248,7 @@ unique(penguins$species)
 
 --
 
-```{r, eval = TRUE, error = TRUE, highlight.output = c(4)}
+```{r, eval = TRUE, error = TRUE, highlight.output = 3:4}
 # filter for just "Gentoo" penguins
 gentoo <- penguins %>% 
   filter(species = "Gentoo")
@@ -387,6 +387,22 @@ James Frew posted in the eds-223 channel on Monday, October 4, 2021:
 
 - First hit was: https://stackoverflow.com/questions/68416435/rcpp-package-doesnt-include-rcpp-precious-remove which solved the problem.
 
+
+---
+## `r fontawesome::fa("stack-overflow", fill = "#05859B", a11y = "sem")` Refine your search on Stack Overflow
+
+<span style = 'font-size: 90%;'>You're probably going to end up on Stack Overflow *often*. Increase your chances of finding a helpful answer by visiting their [How do I search?](https://stackoverflow.com/help/searching) page, which details all search operators.</span> 
+
+<span style = 'font-size: 90%;'>You will also find a handy "cheat sheet" that suggests some of the more common search operators when you click into the search bar:</span>
+
+<br>
+
+.center[
+```{r echo = FALSE, out.width = '65%'}
+knitr::include_graphics("media/stackoverflow.png")
+```
+]
+
 ---
 
 ## Still stumped? Ask the community!
@@ -426,9 +442,9 @@ class: inverse, middle, center
 
 `r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  Hadley Wickham lists functions that he believes constitute a good working vocabulary for R fluency in his book, [Advanced R (first edition)](http://adv-r.had.co.nz/Vocabulary.html).
 
-`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` I would love to expand on this, with a focus on data wrangling and visualization. Ping me with ideas!
+  - I would love to expand on this, with a focus on data wrangling and visualization. Ping me with ideas!
   
-`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` In the meantime, keeping a running vocab list for yourself might be massively helpful
+  - In the meantime, keeping a running vocab list for yourself might be massively helpful
 
 `r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Other resources include:
 
@@ -677,7 +693,7 @@ convert_temp <- function(from, to, temp) {
 }
 ```
 
-Let's convert 90°F to °C:
+<span style = 'font-size: 90%;'>Let's convert 90°F to °C:</span>
 
 ```{r, eval = TRUE, echo = TRUE, error = TRUE}
 # try it out
@@ -686,7 +702,7 @@ convert_temp(from = "farenheit", to = "celsius", temp = 90)
 
 --
 
-Bummer, our code broke. But informative error message to the rescue! Seems like we may have a spelling error for the input values provided to either the `from` and/or `to` arguments. Let's fix and try again:
+<span style = 'font-size: 90%;'>Bummer, our code broke. But informative error message to the rescue! Seems like we may have a spelling error for the input values provided to either the `from` and/or `to` arguments. Let's fix and try again:</span>
 
 --
 
@@ -716,8 +732,42 @@ class: inverse, middle, center
 
 Copy and paste the following coding challenges into an R script or Rmd file. Problems may have more than one error or missing code (be mindful, you might not even get an error message) to identify and fix. Remember: running code line-by-line is one of the best ways to isolate errors!
 
+
 ---
 ## Problem 1
+
+**Goal:** You have two data sets, `a` and `b`. Each contain the same attributes (i.e. columns) -- `month`, `season`, and `daylight_savings`. Identify which records (i.e. rows of data) in data table `a` are not contained in data table `b`.
+
+```{r, echo = TRUE, eval = FALSE}
+a <- data.frame(month = c("October", "November", "December", "January", "February"),
+                season = c("Fall", "Fall", "Winter", "Winter", "Winter"),
+                daylight_savings = c("yes", "partly", "no", "no", "no"))
+
+b <- data.frame(month = c("October", "December", "February"),
+                season = c("Fall", "Winter", "Winter"),
+                daylight_savings = c("yes", "no", "no"))
+```
+
+---
+## Problem 1 (solution)
+
+**Goal:** You have two data sets, `a` and `b`. Each contain the same attributes (i.e. columns) -- `month`, `season`, and `daylight_savings`. Identify which records (i.e. rows of data) in data table `a` are not contained in data table `b`.
+
+```{r, echo = TRUE, eval = TRUE}
+a <- data.frame(month = c("October", "November", "December", "January", "February"),
+                season = c("Fall", "Fall", "Winter", "Winter", "Winter"),
+                daylight_savings = c("yes", "partly", "no", "no", "no"))
+
+b <- data.frame(month = c("October", "December", "February"),
+                season = c("Fall", "Winter", "Winter"),
+                daylight_savings = c("yes", "no", "no"))
+
+{{difference <- anti_join(a, b)}}
+difference
+```
+
+---
+## Problem 2
 
 **Goal:** Modify the following code such that it sorts any **blue** animals from the `animals` vector into the `blue_animals` vector.
 
@@ -757,7 +807,8 @@ for (i in 1:length(animals)){
 ```
 
 ---
-## Problem 1 (solution)
+
+## Problem 2 (solution)
 
 **Goal:** Modify the following code such that it sorts any **blue** animals from the `animals` vector into the `blue_animals` vector.
 
@@ -796,7 +847,7 @@ for (i in 1:length(animals)){
 ```
 
 ---
-## Problem 2 (slide 1/2)
+## Problem 3 (slide 1/2)
 
 **Goal:** Modify the following code (on slide 2/2) to recreate the plot below
 
@@ -807,7 +858,7 @@ knitr::include_graphics("media/penguin_plot.png")
 ]
 
 ---
-## Problem 2 (slide 2/2)
+## Problem 3 (slide 2/2)
 
 ```{r echo = TRUE, eval = FALSE}
 
@@ -846,7 +897,7 @@ ggplot(data = penguins, aes(x = species, y = body_mass_g), shape = sex) +
 ```
 
 ---
-## Problem 2 (solution)
+## Problem 3 (solution)
 
 ```{r echo = TRUE, eval = FALSE}
 
@@ -885,12 +936,3 @@ library(palmerpenguins)
         plot.caption = element_text(size = 7, hjust = 1, color = "gray", face = "italic"),
         panel.border = element_rect(color = "black", size = 0.7, fill = NA))
 ```
-
----
-## Problem 3 
-
-```{r}
-# install.packages("nycflights13")
-library(nycflights13)
-```
-
