@@ -319,19 +319,11 @@ Check out some of these additional resources for common R error messages and str
 
   <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Usage:** shows the various arguments to need to specify. Some are necessary, some are optional. Default values are shown here.</span>
   
---
-  
   <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Arguments:** briefly describes what each argument is/takes as a value</span> 
-
---
 
   <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Value:** describes the output of a function</span> 
 
---
-
   <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **See Also:** related functions</span> 
-
---
 
   <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Examples:** code snippets to show you how a function is used in practice</span>
 
