@@ -270,7 +270,7 @@ dat
 ```
 
 .footnote[
-<span style = 'font-size: 80%;'>Example from Jenny Bryan's 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/)</span>
+<span style = 'font-size: 80%;'>Example from Jenny Bryan's 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/).
 ]
 
 --
@@ -286,12 +286,25 @@ df$x
 
 > <span style = 'font-size: 65%;'>Your first “object of type ‘closure’ is not subsettable” error message is a big milestone for an R user. Congratulations, if there was any lingering doubt, you now know that you are officially programming!</span>
 
-<span style = 'font-size: 65%;'>This error typically rears its ugly head when you attempt to subset a function (in other words, treat a function in a way that it is not meant to be treated). Here, we forgot that we called called our object `dat`, and not `df`. `df()` also happens to be a function that gives you the density of the 'F' distribution and we are attempting to subset a column (`x`) from it.</span>
+<span style = 'font-size: 65%;'>This error often arises when you attempt to subset a function (i.e. treat a function in a way that it is shouldn't be). Here, we forgot that we called called our object `dat`, and not `df`. `df()` also happens to be a function that gives you the density of the 'F' distribution and we are attempting to subset a column (`x`) from it.</span>
 
 ???
 
 Revisit A.Horst's lab materials from EDS 221: https://allisonhorst.github.io/EDS_221_programming-essentials/interactive_sessions/day_9_interactive.html#2_Basics_-_troubleshooting_practice__tips
 
+---
+
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("exclamation-triangle", fill = "#05859B", a11y = "sem")`  Read that error message!</span>
+
+Check out some of these additional resources for common R error messages and strategies for fixing them:
+
+  * [Common R Error Messages](https://www.programmingr.com/r-error-messages/), on [ProgrammingR](https://www.programmingr.com/)
+    
+  * [Common R Programming Errors Faced by Beginners](https://www.r-bloggers.com/2016/06/common-r-programming-errors-faced-by-beginners/), on [R-bloggers](https://www.r-bloggers.com/)
+    
+  * [R Error Message Cheat Sheet](http://varianceexplained.org/courses/errors/), by David Robinson on his blog, [Variance Explained](http://varianceexplained.org/)
+    
+  * [How to: Interpret Common Errors in R](https://warin.ca/posts/rcourse-howto-interpretcommonerrors/), by [Thierry Warin](https://warin.ca/)
 ---
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("file-alt", fill = "#05859B", a11y = "sem")`  Double-check the documentation</span>
