@@ -570,9 +570,9 @@ convert_temp &lt;- function(from, to, temp) {
     converted_temp &lt;- (temp - 32)/1.8
    
     # if inputs that don't match either of the first two conditionals are supplied, give warning and return NA 
-*  } else { 
-*      stop("The inputs provided (from = '", from, "' &amp; to = '", to,"') are not as expected. Double check spelling.") 
-*      return(NA) 
+  } else { 
+      stop("The inputs provided (from = '", from, "' &amp; to = '", to,"') are not as expected. Double check spelling.") 
+      return(NA) 
     }
   
   # return the converted value
