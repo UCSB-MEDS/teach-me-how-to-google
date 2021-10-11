@@ -296,18 +296,36 @@ Revisit A.Horst's lab materials from EDS 221: https://allisonhorst.github.io/EDS
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("file-alt", fill = "#05859B", a11y = "sem")`  Double-check the documentation</span>
 
-**Goal:** convert species names in the `penguins` data set to all lowercase
+<span style = 'font-size: 75%;'>While documentation can sometimes be tricky to read, it provides critical info for understanding how to use a package or function.</span>
 
-```{r eval = FALSE, echo = FALSE}
+<span style = 'font-size: 75%;'>Access the documentation for any loaded package or function by either typing `?function_name` or `help(function_name)` in your console. If you search for a package that is not currently loaded, R will prompt you to type `??function_name`.</span>
 
-unique(penguins$species)
+--
 
-penguins2 <- penguins %>% 
-  str_to_lower(species)
-  mutate(spp2 = str_to_lower(species))
+<span style = 'font-size: 75%;'>Some important components:</span>
 
-```
+  <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Usage:** shows the various arguments to need to specify. Some are necessary, some are optional. Default values are shown here.</span>
+  
+--
+  
+  <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Arguments:** briefly describes what each argument is/takes as a value</span> 
 
+--
+
+  <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Value:** describes the output of a function</span> 
+
+--
+
+  <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **See Also:** related functions</span> 
+
+--
+
+  <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Examples:** code snippets to show you how a function is used in practice</span>
+
+--
+
+<span style = 'font-size: 75%;'>Some packages will also have **vignettes**, which provide more detailed descriptions of how functions within a package should be used. Googling `package_name vignette` will usually get you there (e.g. check out the [dplyr vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)).</span>
+    
 ---
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("earlybirds", fill = "#05859B", a11y = "sem")`  Talk about it *out loud*</span>
@@ -684,9 +702,9 @@ convert_temp <- function(from, to, temp) {
    
     # if inputs that don't match either of the first two conditionals are supplied, give warning and return NA 
    } else { 
-      stop("The inputs provided (from = '", from, "' & to = '", to,"') are not as expected. Double check spelling.") 
-      #return(NA) 
-    }
+      stop("The inputs provided (from = '", from, "' & to = '", to,"') are not as expected. Double check spelling.") #
+      return(NA) 
+    } 
   
   # return the converted value
   return(converted_temp)
