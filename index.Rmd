@@ -546,7 +546,7 @@ class: inverse, middle, center
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("code", fill = "#05859B", a11y = "sem")`  Plan your approach by writing pseudocode</span>
 
-<span style = 'font-size: 75%;'>[Pseudocode](https://en.wikipedia.org/wiki/Pseudocode) is a step-by-step written "outline" of your code that you can then transcribe into a programming language (in our case, likely R). It is written in plain language (e.g. English), but uses the structural conventions of a programming language.</span>
+<span style = 'font-size: 90%;'>[Pseudocode](https://en.wikipedia.org/wiki/Pseudocode) is a step-by-step written "outline" of your code that you can then transcribe into a programming language (in our case, likely R). It is written in plain language (e.g. English), but uses the structural conventions of a programming language.</span>
 
 ```{r echo = TRUE, eval = FALSE}
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -565,39 +565,6 @@ penguins_new <- penguins %>%
   filter(species == "Gentoo") %>% 
   mutate(bill_LD_ratio = bill_length_mm/bill_depth_mm) 
 
-```
-
-```{r echo = FALSE, eval = FALSE}
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                  pseudocode                              ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-for(each species of penguin in penguins){
-  get species name
-  filter out NAs
-  calculate the mean bill length for that species
-  print species name and mean bill length
-}
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                 actual code                              ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# unique_spp_names <- unique(penguins$species)
-# 
-# for(i in 1:length(unique_spp_names)){
-#   
-#   spp <- as.character(unique_spp_names[[1]])
-#   
-#   mean_bill_length <- penguins %>% 
-#     filter(species == spp, na.rm = TRUE) %>% 
-#     mean(bill_length_mm)
-#   
-#   print(mean_bill_length)
-#   
-#   #print(spp, "penguins have a mean bill length of:", mean_bill_length, "mm")
-#   
-# }
 ```
 
 ???
@@ -619,42 +586,6 @@ Code comments are great, but variable and function names that explain what they 
 ]
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">A common suggestion I give during code review is to add an Explaining Variable. I couldn&#39;t find a good explanation of the pattern to link to, so I wrote one 🙃<a href="https://t.co/WRigu74gpu">https://t.co/WRigu74gpu</a></p>&mdash; Pete Hodgson (@ph1) <a href="https://twitter.com/ph1/status/1412125686974717971?ref_src=twsrc%5Etfw">July 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-```{r echo = FALSE, eval = FALSE}
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                        Without Explaining Variables                      ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-determineShippingSpeed <- function(shippingRoute, shippingMethod){
-  
-  # if the shipping route is very short, or if it's by air
-  if(shippingRoute < 20 || shippingMethod == "Air")
-    print("Same Day Shipping") else{
-      print("Other")
-    }
-}
-
-  
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                          With Explaining Variables                       ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-determineShippingSpeed <- function(shippingRoute, shippingMethod){
-  
-  routeIsVeryShort <- shippingRoute < 20
-  isByAir <- "Air"
-  shippingMethod <- isByAir
-  
-  # if the shipping route is very short, or if it's by air
-  if(shippingRoute == routeIsVeryShort || shippingMethod == isByAir)
-    print("Same Day Shipping") else{
-      print("Other")
-    }
-}
-
-```
-
 
 ---
 
