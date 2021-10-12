@@ -401,7 +401,6 @@ I'll also note that I tend to combine this 'rubber ducky debugging' method with 
 
 James Frew posted in the eds-223 channel on Monday, October 4, 2021: 
 
-**Re: Google-fu:**
 - Reminder: anytime you get an unusually cryptic error message, it doesn't hurt to just cut-n-paste a reasonably-specific chunk of the message into Google.
 
 - For example, one of you contacted me about an error message whose last line was: `function 'Rcpp_precious_remove' not provided by package 'Rcpp'`
@@ -686,8 +685,7 @@ class: inverse, middle, center
 
 ## `r fontawesome::fa("laptop-code", fill = "#93C6C2", a11y = "sem")` Practice problems
 
-Copy and paste the following coding challenges into an R script or Rmd file. Problems may have more than one error or missing code (be mindful, you might not even get an error message) to identify and fix. Remember: running code line-by-line is one of the best ways to isolate errors!
-
+Copy and paste the following coding challenges into an R script or Rmd file. Problems may have more than one error or missing code (be mindful, you might not even get an error message) to identify and fix. More than one solution may exist for each problem -- I'd love to hear about the different ways people approach these, so please be prepared to share the steps (Googling, looking at documentation, reading error messages, etc.) you took with the class! Remember: running code line-by-line is one of the best ways to isolate errors. 
 
 ---
 ## Problem 1
@@ -705,7 +703,7 @@ b <- data.frame(month = c("October", "December", "February"),
 ```
 
 ---
-## Problem 1 (solution)
+## Problem 1 (a solution)
 
 **Goal:** You have two data sets, `a` and `b`. Each contain the same attributes (i.e. columns) -- `month`, `season`, and `daylight_savings`. Identify which records (i.e. rows of data) in data table `a` are not contained in data table `b`.
 
@@ -764,7 +762,7 @@ for (i in 1:length(animals)){
 
 ---
 
-## Problem 2 (solution)
+## Problem 2 (a solution)
 
 **Goal:** Modify the following code such that it sorts any **blue** animals from the `animals` vector into the `blue_animals` vector.
 
@@ -826,11 +824,11 @@ ggplot(data = penguins, aes(x = species, y = body_mass_g), shape = sex) +
 
   # means & standard devs
   stat_summary(mapping = aes(color = species),
-               fun = "mean", geom = "point", size = 4,
+               fun = "mean", geom = "point", size = 4) +
   stat_summary(mapping = aes(color = species),
                fun = "mean", geom = "errorbar", size = 1, width = 0.2,
                fun.max = function(x) mean(x) + sd(x),
-               fun.min = function(x) mean(x) - sd(x),
+               fun.min = function(x) mean(x) - sd(x)) +
 
   # change colors/shapes
   scale_color_manual(values = c("#FF8C02", "#A93FF1", "#148F90"), name = "Species") + 
@@ -853,7 +851,7 @@ ggplot(data = penguins, aes(x = species, y = body_mass_g), shape = sex) +
 ```
 
 ---
-## Problem 3 (solution)
+## Problem 3 (a solution)
 
 ```{r echo = TRUE, eval = FALSE}
 
