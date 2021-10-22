@@ -677,7 +677,7 @@ Slides created via the R packages:
 [**xaringan**](https://github.com/yihui/xaringan)<br>
 [**gadenbuie/xaringanthemer**](https://github.com/gadenbuie/xaringanthemer)
 
-<span style = 'font-size: 75%;'>*If you see mistakes or want to suggest changes, please create an [issue](https://github.com/UCSB-MEDS/teach-me-how-to-google) on the source repository.*</span>
+<span style = 'font-size: 75%;'>*If you see mistakes or want to suggest changes, please create an [issue](https://github.com/UCSB-MEDS/teach-me-how-to-google/issues) on the source repository.*</span>
 
 ---
 
