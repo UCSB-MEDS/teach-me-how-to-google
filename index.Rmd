@@ -188,7 +188,7 @@ class: inverse, middle, center
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("power-off", fill = "#05859B", a11y = "sem")`  Restart R</span>
 
 .center[
->"Restart R often, espcially when things get weird...We install and update packages from R, which is a little bit like working on your airplane engine while you're flying."
+>"Restart R often, especially when things get weird...We install and update packages from R, which is a little bit like working on your airplane engine while you're flying."
 
 .right[
 <span style = 'font-size: 60%;'>-Jenny Bryan, in her 2020 RSTUDIO::CONF keynote, [Object of type ‘closure’ is not subsettable](https://www.rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/)</span>
