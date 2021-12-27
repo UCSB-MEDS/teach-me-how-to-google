@@ -685,10 +685,50 @@ class: inverse, middle, center
 
 ## `r fontawesome::fa("laptop-code", fill = "#93C6C2", a11y = "sem")` Practice problems
 
-Copy and paste the following coding challenges into an R script or Rmd file. Problems may have more than one error or missing code (be mindful, you might not even get an error message) to identify and fix. More than one solution may exist for each problem -- I'd love to hear about the different ways people approach these, so please be prepared to share the steps (Googling, looking at documentation, reading error messages, etc.) you took with the class! Remember: running code line-by-line is one of the best ways to isolate errors. 
+Copy and paste the following coding challenges into an R script or Rmd file. Problems may have more than one error or missing code (be mindful, you might not even get an error message) to identify and fix.  
+
+More than one solution may exist for each problem -- I'd love to hear about the different ways people approach these, so please be prepared to share the steps (Googling, looking at documentation, reading error messages, etc.) you took with the class!  
+
+*Remember:* running code line-by-line is one of the best ways to isolate errors. 
 
 ---
 ## Problem 1
+
+**Goal:** Determine why the running following code returns an error.
+
+```{r, echo = TRUE, error = TRUE}
+library(palmerpenguins)
+
+gentoo_penguins <- penguins %>% 
+  filter(species == "Gentoo")
+```
+
+---
+## Problem 1 (a solution)
+
+**Goal:** Determine why the running following code returns an error.
+
+```{r, echo = TRUE, eval = TRUE, warning = TRUE, error = TRUE}
+library(tidyverse) #<< 
+# or import the {dplyr} or {magrittr} pkgs (both part of the tidyverse)
+library(palmerpenguins)
+
+gentoo_penguins <- penguins %>%
+  filter(species == "Gentoo")
+```
+
+---
+## Problem 2
+
+**Goal:** 
+
+---
+## Problem 2 (a solution)
+
+**Goal:** 
+
+---
+## Problem 3
 
 **Goal:** You have two data sets, `a` and `b`. Each contain the same attributes (i.e. columns) -- `month`, `season`, and `daylight_savings`. Identify which records (i.e. rows of data) in data table `a` are not contained in data table `b`.
 
@@ -703,7 +743,7 @@ b <- data.frame(month = c("October", "December", "February"),
 ```
 
 ---
-## Problem 1 (a solution)
+## Problem 3 (a solution)
 
 **Goal:** You have two data sets, `a` and `b`. Each contain the same attributes (i.e. columns) -- `month`, `season`, and `daylight_savings`. Identify which records (i.e. rows of data) in data table `a` are not contained in data table `b`.
 
@@ -716,87 +756,7 @@ b <- data.frame(month = c("October", "December", "February"),
                 season = c("Fall", "Winter", "Winter"),
                 daylight_savings = c("yes", "no", "no"))
 
-{{difference <- anti_join(a, b)}}
+difference <- anti_join(a, b) #<<
 difference
-```
-
----
-## Problem 2
-
-**Goal:** Modify the following code such that it sorts any **blue** animals from the `animals` vector into the `blue_animals` vector.
-
-```{r, echo = TRUE, eval = FALSE}
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ vector of animals  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-animals <- c("blue tang", "red panda", "Blue jay",
-             "green sea turtle", "blue morpho butterfly", 
-             "Blue iguana", "Red squirrel")
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ initialize empty vector to store blue-colored animals  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-blue_animals <- c()
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ sort blue animals into their own list  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-for (i in 1:length(animals)){
-  
-  current_animal <- animals[i]
-  
-  if(isTRUE(str_detect(current_animal, "blue"))){
-    
-    message("The '", current_animal, "' is a blue animal")
-    
-    blue_animals <- current_animal
-    
-  }
-  
-}
-
-```
-
----
-
-## Problem 2 (a solution)
-
-**Goal:** Modify the following code such that it sorts any **blue** animals from the `animals` vector into the `blue_animals` vector.
-
-```{r echo = TRUE, eval = FALSE}
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ vector of animals  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-animals <- c("blue tang", "red panda", "Blue jay",
-             "green sea turtle", "blue morpho butterfly", 
-             "Blue iguana", "Red squirrel")
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ initialize empty vector to store blue-colored animals  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-blue_animals <- c()
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##  ~ sort blue animals into their own list  ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-for (i in 1:length(animals)){
-  
-  current_animal <- animals[i]
-  
-{{ if(isTRUE(str_detect(current_animal, "(?i)blue"))){ }}
-    
-    message("The '", current_animal, "' is a blue animal")
-    
-  {{ blue_animals <- append(blue_animals, current_animal) }}
-    
-  }
-  
-}
 ```
 
