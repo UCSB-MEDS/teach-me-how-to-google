@@ -665,6 +665,22 @@ convert_temp(from = "fahrenheit", to = "celsius", temp = 90)
 ```
 
 ---
+### Google is now forever a part of your coding life...
+
+.center[
+<span style = 'font-size: 80%;'>...but with practice, you'll find better solutions faster. Keep at it!</span>
+]
+
+.center[
+```{r echo = FALSE, out.width = '42%', out.height = '42%'}
+knitr::include_graphics("media/rake.png")
+```
+.center[
+<span style = 'font-size: 75%;'>- Twitter, source unknown</span>
+]
+]
+
+---
 class: center, middle
 
 ## `r fontawesome::fa("google", fill = "#05859B", a11y = "sem")`et `r fontawesome::fa("google", fill = "#05859B", a11y = "sem")`oogling 
