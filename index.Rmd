@@ -2,7 +2,7 @@
 title: "Teach Me How to Google"
 subtitle: "<span style = 'font-size: 50%;'>*What do to when your code stops working (or you're just not sure where to even start)*</span>"
 author: "Sam Csik | Data Training Coordinator<br><span style = 'font-size: 65%;'>National Center for Ecological Analysis & Synthesis<br></span>"
-date: "<span style = 'font-size: 85%;'>Masters of Environmental Data Science | Fall 2021</span><br><span style = 'font-size: 65%;'>Slides & source code available on [GitHub](https://github.com/UCSB-MEDS/teach-me-how-to-google)</span>"
+date: "<span style = 'font-size: 85%;'>Master of Environmental Data Science | Fall 2021</span><br><span style = 'font-size: 65%;'>Slides & source code available on [GitHub](https://github.com/UCSB-MEDS/teach-me-how-to-google)</span>"
 output:
   xaringan::moon_reader:
     css: ['xaringan-themer.css', 'my-css.css']
@@ -64,7 +64,7 @@ National Center for Ecological Analysis & Synthesis<br>
 
 <br>
 
-<span style = 'font-size: 130%;'>Masters of Environmental Data Science | Fall 2021</span>   
+<span style = 'font-size: 130%;'>Master of Environmental Data Science | Fall 2021</span>   
 
 Slides & source code available on [`r fontawesome::fa("github", fill = "#93C6C2", a11y = "sem")`](https://github.com/UCSB-MEDS/teach-me-how-to-google)
 
