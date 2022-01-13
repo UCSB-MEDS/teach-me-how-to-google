@@ -672,7 +672,7 @@ convert_temp(from = "fahrenheit", to = "celsius", temp = 90)
 ]
 
 .center[
-```{r echo = FALSE, out.width = '42%', out.height = '42%'}
+```{r echo = FALSE, out.width = '42%', out.height = '42%', fig.alt = "A meme with two stacked panels. The top panel depicts a stick figure taking one step forward only to step directly on a rake, which flips up to smack the stick figure in the face. The bottom panel depics a man 'skateboarding' down a set of outdoor stairs on a rake, performing tricks along the way. When he reaches the bottom of the stairs, he accidentally steps on the rake, which flips up to smack him in the face."}
 knitr::include_graphics("media/rake.png")
 ```
 .center[
