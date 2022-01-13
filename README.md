@@ -8,3 +8,4 @@ Googling for code help is something that all data scientists (at all career stag
 
 Presentation slides are available [here](https://ucsb-meds.github.io/teach-me-how-to-google/#1).
 
+This talk has been slightly adapted and presented to a number of different groups. Those versions can be accessed [here](https://samanthacsik.github.io/teach-me-how-to-google/), along with the [source code](https://github.com/samanthacsik/teach-me-how-to-google).
