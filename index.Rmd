@@ -389,7 +389,7 @@ I'll also note that I tend to combine this 'rubber ducky debugging' method with 
 
 <span style = 'font-size: 100%;'>`r fontawesome::fa("plus", fill = "#05859B", a11y = "sem")`  Read multiple search results</span>
 
-  - <span style = 'font-size: 75%;'>sometime one explanation will make sense in a way that another explanation will not</span>
+  - <span style = 'font-size: 75%;'>sometimes one explanation will make sense in a way that another explanation will not</span>
   
 --
 
