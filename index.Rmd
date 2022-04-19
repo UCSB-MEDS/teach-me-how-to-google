@@ -29,6 +29,37 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "UCSB-MEDS/teach-me-how-to-google") %>%
+  meta_social(
+    title = "Teach Me How to Google",
+    description = paste(
+      "a workshop on how to troubleshoot code and Google for helpful answers"
+    ),
+    url = "https://ucsb-meds.github.io/teach-me-how-to-google/#1",
+    image = "https://ucsb-meds.github.io/teach-me-how-to-google/#1/social-card.png",
+    image_alt = paste(
+      "Title of slide reads 'Welcome to data science, where questions are aplenty' followed by three bullets:",
+      "First bullet: 'You will become increasingly more comfortable with not immediately knowing the answers to all your coding problems. It's all part of the job.'",
+      "Second bullet: 'If it's not already, Google will become one of your best friends.'",
+      "Third bullet: 'Googling is hard, and it is a skill that requries practice. But you can and will get better at it over time.'",
+      "On the right hand side of the slide is a gif of Seth Meyers, form the Late Night, saying 'I have a lot of questions'"
+    ),
+    og_type = "website",
+    og_author = "Samantha Csik",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@SamanthaCsik",
+    twitter_site = "@SamanthaCsik"
+  )
+```
+
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
 ```{r xaringan-themer, include = FALSE, warning = FALSE}
 # load package
 library(xaringanthemer)
