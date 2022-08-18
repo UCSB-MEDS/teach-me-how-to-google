@@ -333,7 +333,7 @@ Check out some of these additional resources for common R error messages and str
 
 --
 
-<span style = 'font-size: 75%;'>Some packages will also have **vignettes**, which provide more detailed descriptions of how functions within a package should be used. Googling `package_name vignette` will usually get you there (e.g. check out the [dplyr vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)).</span>
+<span style = 'font-size: 70%;'>Some packages will also have **vignettes**, which provide more detailed descriptions and examples of how functions within a package should be used. Googling `package_name vignette` will usually get you there (e.g. check out the [dplyr vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)). Alternatively, package documentation on [CRAN](https://cran.r-project.org/) will typically include any vignettes that are associated with that package (e.g. find all dplyr vignettes [here](https://cran.r-project.org/web/packages/dplyr/index.html)).</span>
     
 ---
 
@@ -428,6 +428,10 @@ James Frew posted in the eds-223 channel on Monday, October 4, 2021:
 knitr::include_graphics("media/stackoverflow.png")
 ```
 ]
+
+???
+
+Good example SO query: [r] “dplyr filter” answers:3
 
 ---
 
@@ -578,7 +582,7 @@ While pseudocode is often used for planning out more complex algorithms, practic
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("brain", fill = "#05859B", a11y = "sem")`  Use explaining variables</span>
 
-Code comments are great, but variable and function names that explain what they are/do are even better. 
+Code comments are great, but variable and function names that explain what they are/do are also important. 
 
 .center[
 > <span style = 'font-size: 80%;'>Because with code comments we end up with two parallel sources of truth - what the code is doing, and what the comment says. Over time these two sources of truth have a tendency to diverge.</span>
