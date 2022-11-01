@@ -236,17 +236,17 @@ knitr::include_graphics("media/debug_bingo.png")
 
 **Helpful:** 
 ```{r, eval = TRUE, error = TRUE}
-library(tidyverse)
-library(palmerpenguins)
+library(tidyverse) # a collection of data wrangling & visualization packages
+library(palmerpenguins) # contains the 'penguins' data set
 
-# take a look at the data
+# print out the first three rows of the penguins data frame
 head(penguins, 3)
 ```
 
 --
 
 ```{r, eval = TRUE, error = TRUE}
-# what species are in this dataset?
+# what unique values are in the species column of the penguins data frame?
 unique(penguins$species)
 ```
 
@@ -309,6 +309,16 @@ Check out some of these additional resources for common R error messages and str
   * [R Error Message Cheat Sheet](http://varianceexplained.org/courses/errors/), by David Robinson on his blog, [Variance Explained](http://varianceexplained.org/)
     
   * [How to: Interpret Common Errors in R](https://warin.ca/posts/rcourse-howto-interpretcommonerrors/), by [Thierry Warin](https://warin.ca/)
+  
+.center[
+```{r echo = FALSE, out.width = '55%', fig.alt="A friendly monster has slipped on a banana peel, and says 'I know it was you, code. It breaks my heart.' Meanwhile, a little character labeled 'CODE' looks on indignantly, pointing to evil characters labeled 'mismanaged files,' 'navigating your computer', and 'typing' hiding behind a bush holding a bunch of bananas. The point being: often folks blame code for data science problems that are often caused by other underlying issues."}
+knitr::include_graphics("media/blame_code.png")
+```
+.center[
+<span style = 'font-size: 75%;'>Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)</span>
+]
+]
+
 ---
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("file-alt", fill = "#05859B", a11y = "sem")`  Double-check the documentation</span>
@@ -429,9 +439,11 @@ knitr::include_graphics("media/stackoverflow.png")
 ```
 ]
 
-???
+<br>
 
-Good example SO query: [r] “dplyr filter” answers:3
+.center[
+Check out the difference between searching for [[r] “dplyr filter” answers:3](https://stackoverflow.com/search?q=%5Br%5D+%22dplyr+filter%22+answers%3A3) versus [r filter](https://stackoverflow.com/search?q=r+filter).
+]
 
 ---
 
@@ -468,17 +480,20 @@ class: inverse, middle, center
 ]
 
 ---
-## A curated **vocabulary list** of R terminology may help
+## A curated **vocab list** of R terminology may help
 
-`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  Hadley Wickham lists functions that he believes constitute a good working vocabulary for R fluency in his book, [Advanced R (first edition)](http://adv-r.had.co.nz/Vocabulary.html).
+<span style = 'font-size: 80%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  Hadley Wickham lists functions that he believes constitute a good working vocabulary for R fluency in his book, [Advanced R (first edition)](http://adv-r.had.co.nz/Vocabulary.html), & Joachim Schork (the voice behind the blog, [Statistics Globe](https://statisticsglobe.com/)) curates a long list of R commands and functions in his post, [R Functions List (+ Examples) | All Basic Commands of the R Programming Language](https://statisticsglobe.com/r-functions-list/).</span>
 
-  - I would love to expand on this, with a focus on data wrangling and visualization. Ping me with ideas!
-  
-  - In the meantime, keeping a running vocab list for yourself might be massively helpful
+  - <span style = 'font-size: 75%;'>Keeping a running vocab list for yourself (that's organized in a way that makes most sense to *you*) can be massively helpful, even if just for the beginning stages of your R journey. It won't be long until you start realizing how much you actually know:</span> 
 
-`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Other resources include:
-
-  - [R Functions List (+ Examples) | All Basic Commands of the R Programming Language](https://statisticsglobe.com/r-functions-list/), by Statistics Globe
+.center[
+```{r echo = FALSE, out.width = '55%', fig.alt="A cartoon monster student in a backpack looks on at stunning gems labeled 'Touchstones of Intuition', which have the text 'You know some stuff' written on sequential crystals. "}
+knitr::include_graphics("media/know_stuff.png")
+```
+.center[
+<span style = 'font-size: 85%;'>Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)
+]
+]  
   
 ---
 
@@ -502,9 +517,10 @@ knitr::include_graphics("media/how_to_velocity.png")
 
 **For example, compare the following two Google queries:**
 
-  **1.** <span style = 'font-family: "Fira Mono";'>r dplyr join</span>: [see results here](https://www.google.com/search?q=r+dplyr+join&oq=R+dplyr+join&aqs=chrome.0.0i512l6j69i60.2431j0j7&sourceid=chrome&ie=UTF-8)
+  **1.** <span style = 'font-family: "Fira Mono";'>[r dplyr join](https://www.google.com/search?q=r+dplyr+join&oq=R+dplyr+join&aqs=chrome.0.0i512l6j69i60.2431j0j7&sourceid=chrome&ie=UTF-8)</span>
   
-  **2.** <span style = 'font-family: "Fira Mono";'>site:stackoverflow.com R "dplyr join"</span>: [see results here](https://www.google.com/search?q=site%3Astackoverflow.com+R+%22dplyr+join%22&oq=site%3Astackoverflow.com+R+%22dplyr+join%22&aqs=chrome..69i57j69i58.71866j0j7&sourceid=chrome&ie=UTF-8)
+  **2.** <span style = 'font-family: "Fira Mono";'>[site:stackoverflow.com R "dplyr join"](https://www.google.com/search?q=site%3Astackoverflow.com+R+%22dplyr+join%22&oq=site%3Astackoverflow.com+R+%22dplyr+join%22&aqs=chrome..69i57j69i58.71866j0j7&sourceid=chrome&ie=UTF-8)</span>
+
 
 ---
 

@@ -197,10 +197,10 @@ Common reason why things get funky in a way that makes it difficult to debug and
 **Helpful:** 
 
 ```r
-library(tidyverse)
-library(palmerpenguins)
+library(tidyverse) # a collection of data wrangling &amp; visualization packages
+library(palmerpenguins) # contains the 'penguins' data set
 
-# take a look at the data
+# print out the first three rows of the penguins data frame
 head(penguins, 3)
 ```
 
@@ -218,7 +218,7 @@ head(penguins, 3)
 
 
 ```r
-# what species are in this dataset?
+# what unique values are in the species column of the penguins data frame?
 unique(penguins$species)
 ```
 
@@ -305,6 +305,14 @@ Check out some of these additional resources for common R error messages and str
   * [R Error Message Cheat Sheet](http://varianceexplained.org/courses/errors/), by David Robinson on his blog, [Variance Explained](http://varianceexplained.org/)
     
   * [How to: Interpret Common Errors in R](https://warin.ca/posts/rcourse-howto-interpretcommonerrors/), by [Thierry Warin](https://warin.ca/)
+  
+.center[
+&lt;img src="media/blame_code.png" title="A friendly monster has slipped on a banana peel, and says 'I know it was you, code. It breaks my heart.' Meanwhile, a little character labeled 'CODE' looks on indignantly, pointing to evil characters labeled 'mismanaged files,' 'navigating your computer', and 'typing' hiding behind a bush holding a bunch of bananas. The point being: often folks blame code for data science problems that are often caused by other underlying issues." alt="A friendly monster has slipped on a banana peel, and says 'I know it was you, code. It breaks my heart.' Meanwhile, a little character labeled 'CODE' looks on indignantly, pointing to evil characters labeled 'mismanaged files,' 'navigating your computer', and 'typing' hiding behind a bush holding a bunch of bananas. The point being: often folks blame code for data science problems that are often caused by other underlying issues." width="55%" /&gt;
+.center[
+&lt;span style = 'font-size: 75%;'&gt;Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)&lt;/span&gt;
+]
+]
+
 ---
 
 ### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Alternate File" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Alternate File</title><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/></svg>  Double-check the documentation&lt;/span&gt;
@@ -421,9 +429,11 @@ James Frew posted in the eds-223 channel on Monday, October 4, 2021:
 &lt;img src="media/stackoverflow.png" width="65%" /&gt;
 ]
 
-???
+&lt;br&gt;
 
-Good example SO query: [r] “dplyr filter” answers:3
+.center[
+Check out the difference between searching for [[r] “dplyr filter” answers:3](https://stackoverflow.com/search?q=%5Br%5D+%22dplyr+filter%22+answers%3A3) versus [r filter](https://stackoverflow.com/search?q=r+filter).
+]
 
 ---
 
@@ -458,17 +468,18 @@ class: inverse, middle, center
 ]
 
 ---
-## A curated **vocabulary list** of R terminology may help
+## A curated **vocab list** of R terminology may help
 
-<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>  Hadley Wickham lists functions that he believes constitute a good working vocabulary for R fluency in his book, [Advanced R (first edition)](http://adv-r.had.co.nz/Vocabulary.html).
+&lt;span style = 'font-size: 80%;'&gt;<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>  Hadley Wickham lists functions that he believes constitute a good working vocabulary for R fluency in his book, [Advanced R (first edition)](http://adv-r.had.co.nz/Vocabulary.html), &amp; Joachim Schork (the voice behind the blog, [Statistics Globe](https://statisticsglobe.com/)) curates a long list of R commands and functions in his post, [R Functions List (+ Examples) | All Basic Commands of the R Programming Language](https://statisticsglobe.com/r-functions-list/).&lt;/span&gt;
 
-  - I would love to expand on this, with a focus on data wrangling and visualization. Ping me with ideas!
-  
-  - In the meantime, keeping a running vocab list for yourself might be massively helpful
+  - &lt;span style = 'font-size: 75%;'&gt;Keeping a running vocab list for yourself (that's organized in a way that makes most sense to *you*) can be massively helpful, even if just for the beginning stages of your R journey. It won't be long until you start realizing how much you actually know:&lt;/span&gt; 
 
-<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg> Other resources include:
-
-  - [R Functions List (+ Examples) | All Basic Commands of the R Programming Language](https://statisticsglobe.com/r-functions-list/), by Statistics Globe
+.center[
+&lt;img src="media/know_stuff.png" title="A cartoon monster student in a backpack looks on at stunning gems labeled 'Touchstones of Intuition', which have the text 'You know some stuff' written on sequential crystals. " alt="A cartoon monster student in a backpack looks on at stunning gems labeled 'Touchstones of Intuition', which have the text 'You know some stuff' written on sequential crystals. " width="55%" /&gt;
+.center[
+&lt;span style = 'font-size: 85%;'&gt;Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)
+]
+]  
   
 ---
 
@@ -488,9 +499,10 @@ class: inverse, middle, center
 
 **For example, compare the following two Google queries:**
 
-  **1.** &lt;span style = 'font-family: "Fira Mono";'&gt;r dplyr join&lt;/span&gt;: [see results here](https://www.google.com/search?q=r+dplyr+join&amp;oq=R+dplyr+join&amp;aqs=chrome.0.0i512l6j69i60.2431j0j7&amp;sourceid=chrome&amp;ie=UTF-8)
+  **1.** &lt;span style = 'font-family: "Fira Mono";'&gt;[r dplyr join](https://www.google.com/search?q=r+dplyr+join&amp;oq=R+dplyr+join&amp;aqs=chrome.0.0i512l6j69i60.2431j0j7&amp;sourceid=chrome&amp;ie=UTF-8)&lt;/span&gt;
   
-  **2.** &lt;span style = 'font-family: "Fira Mono";'&gt;site:stackoverflow.com R "dplyr join"&lt;/span&gt;: [see results here](https://www.google.com/search?q=site%3Astackoverflow.com+R+%22dplyr+join%22&amp;oq=site%3Astackoverflow.com+R+%22dplyr+join%22&amp;aqs=chrome..69i57j69i58.71866j0j7&amp;sourceid=chrome&amp;ie=UTF-8)
+  **2.** &lt;span style = 'font-family: "Fira Mono";'&gt;[site:stackoverflow.com R "dplyr join"](https://www.google.com/search?q=site%3Astackoverflow.com+R+%22dplyr+join%22&amp;oq=site%3Astackoverflow.com+R+%22dplyr+join%22&amp;aqs=chrome..69i57j69i58.71866j0j7&amp;sourceid=chrome&amp;ie=UTF-8)&lt;/span&gt;
+
 
 ---
 
