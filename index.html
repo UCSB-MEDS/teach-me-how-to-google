@@ -115,6 +115,15 @@ class: inverse, middle, center
 ## <svg aria-label="Exclamation Triangle" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#93C6C2;overflow:visible;position:relative;"><title>Exclamation Triangle</title><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg>  I got an error and need help fixing it
 
 ---
+### We've all been here before:
+
+&lt;img src="media/alligator.png" title="Comic panels of an alligator trying to debug some code. First panel: A confident looking alligator gets an error message. Second panel: a few minutes later, the error remains and the alligator is looking carefully at their code. Third panel: 10 minutes after that, the error remains and the alligator is giving a frustrated 'RAAAR' while desperately typing. Fourth panel: The error remains, and the alligator looks exhausted and exasperated, and a thought bubble reads 'maybe it's a bug.' Fifth panel: A friendly flamingo comes over to take a look, and reads aloud from the problematic code a spelling error: 'L-E-N-G-H-T.' Only the tail of the alligator is visible as it stomp stomp stomps out of the panel roaring." alt="Comic panels of an alligator trying to debug some code. First panel: A confident looking alligator gets an error message. Second panel: a few minutes later, the error remains and the alligator is looking carefully at their code. Third panel: 10 minutes after that, the error remains and the alligator is giving a frustrated 'RAAAR' while desperately typing. Fourth panel: The error remains, and the alligator looks exhausted and exasperated, and a thought bubble reads 'maybe it's a bug.' Fifth panel: A friendly flamingo comes over to take a look, and reads aloud from the problematic code a spelling error: 'L-E-N-G-H-T.' Only the tail of the alligator is visible as it stomp stomp stomps out of the panel roaring." width="100%" /&gt;
+
+.center[
+&lt;span style = 'font-size: 75%;'&gt;Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)&lt;/span&gt;
+]
+
+---
 
 ### Pause, exhale, narrow down your potential Google search
 
@@ -317,17 +326,25 @@ Check out some of these additional resources for common R error messages and str
 
 ### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Alternate File" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Alternate File</title><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/></svg>  Double-check the documentation&lt;/span&gt;
 
-&lt;span style = 'font-size: 75%;'&gt;While documentation can sometimes be tricky to read, it provides critical info for understanding how to use a package or function.&lt;/span&gt;
-
-&lt;span style = 'font-size: 75%;'&gt;Access the documentation for any loaded package or function by either typing `?function_name` or `help(function_name)` in your console. If you search for a function from a package that is not currently loaded, R will prompt you to type `??function_name`.&lt;/span&gt;
+&lt;span style = 'font-size: 75%;'&gt;While documentation can sometimes be tricky to read, it provides critical info for understanding how to use a package or function. Check out the documentation for any loaded package or function by either typing `?function_name` or `help(function_name)` in your console. If you search for a function from a package that is not currently loaded, R will prompt you to type `??function_name`.&lt;/span&gt;
 
 --
 
-&lt;span style = 'font-size: 75%;'&gt;Some important components:&lt;/span&gt;
+&lt;span style = 'font-size: 75%;'&gt;Documentation may include lots of different pieces of information. One example, `ggplot()`:&lt;/span&gt;
 
-  &lt;span style = 'font-size: 65%;'&gt;<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg> **Usage:** shows the various arguments to need to specify. Some are necessary, some are optional. Default values are shown here.&lt;/span&gt;
+.center[
+&lt;img src="media/ggplot_help.png" width="70%" /&gt;
+]
+
+---
+
+### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Alternate File" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Alternate File</title><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/></svg>  Double-check the documentation&lt;/span&gt;
+
+&lt;span style = 'font-size: 75%;'&gt;What's included in documentation varies by function and package. Some other important components include:&lt;/span&gt;
+
+  &lt;span style = 'font-size: 65%;'&gt;<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg> **Usage:** shows the various arguments to need to specify. Some are necessary, some are optional. Default values are shown here (See `ggplot` example on [previous slide](https://samanthacsik.github.io/teach-me-how-to-google/slides/WaterData_2022-11-08.html#34))&lt;/span&gt;
   
-  &lt;span style = 'font-size: 65%;'&gt;<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg> **Arguments:** briefly describes what each argument is/takes as a value&lt;/span&gt; 
+  &lt;span style = 'font-size: 65%;'&gt;<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg> **Arguments:** briefly describes what each argument is/takes as a value (See `ggplot` example on [previous slide](https://samanthacsik.github.io/teach-me-how-to-google/slides/WaterData_2022-11-08.html#34))&lt;/span&gt; 
 
   &lt;span style = 'font-size: 65%;'&gt;<svg aria-label="angle-right" role="img" viewBox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg> **Value:** describes the output of a function&lt;/span&gt; 
 
@@ -337,8 +354,10 @@ Check out some of these additional resources for common R error messages and str
 
 --
 
-&lt;span style = 'font-size: 70%;'&gt;Some packages will also have **vignettes**, which provide more detailed descriptions and examples of how functions within a package should be used. Googling `package_name vignette` will usually get you there (e.g. check out the [dplyr vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)). Alternatively, package documentation on [CRAN](https://cran.r-project.org/) will typically include any vignettes that are associated with that package (e.g. find all dplyr vignettes [here](https://cran.r-project.org/web/packages/dplyr/index.html)).&lt;/span&gt;
-    
+&lt;span style = 'font-size: 75%;'&gt;Some packages will also have **vignettes**, which provide more detailed descriptions of how functions within a package should be used. Googling `package_name vignette` will usually get you there (e.g. check out the [`dplyr` vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)). Alternatively, package documentation on [CRAN](https://cran.r-project.org/)&lt;sup&gt;1&lt;/sup&gt; will typically include any vignettes that are associated with that package (e.g. find all `dplyr` vignettes [here](https://cran.r-project.org/web/packages/dplyr/index.html)).&lt;/span&gt;
+
+&lt;span style = 'font-size: 60%;'&gt;&lt;sup&gt;1&lt;/sup&gt;[CRAN](https://cran.r-project.org/) stands for the **C**omprehensive **R** **A**rchive **N**etwork and is R's central software repository -- in other words, it's where published R packages (including previous versions of published R packages) live. When you run `install.packages("package_name)`, R (on your computer) reaches out to CRAN to find/install the latest version of that package on your computer.&lt;/span&gt;
+
 ---
 
 ### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Earlybirds" role="img" viewBox="0 0 480 512" style="height:1em;width:0.94em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Earlybirds</title><path d="M313.2 47.5c1.2-13 21.3-14 36.6-8.7.9.3 26.2 9.7 19 15.2-27.9-7.4-56.4 18.2-55.6-6.5zm-201 6.9c30.7-8.1 62 20 61.1-7.1-1.3-14.2-23.4-15.3-40.2-9.6-1 .3-28.7 10.5-20.9 16.7zM319.4 160c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-159.7 0c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm318.5 163.2c-9.9 24-40.7 11-63.9-1.2-13.5 69.1-58.1 111.4-126.3 124.2.3.9-2-.1 24 1 33.6 1.4 63.8-3.1 97.4-8-19.8-13.8-11.4-37.1-9.8-38.1 1.4-.9 14.7 1.7 21.6 11.5 8.6-12.5 28.4-14.8 30.2-13.6 1.6 1.1 6.6 20.9-6.9 34.6 4.7-.9 8.2-1.6 9.8-2.1 2.6-.8 17.7 11.3 3.1 13.3-14.3 2.3-22.6 5.1-47.1 10.8-45.9 10.7-85.9 11.8-117.7 12.8l1 11.6c3.8 18.1-23.4 24.3-27.6 6.2.8 17.9-27.1 21.8-28.4-1l-.5 5.3c-.7 18.4-28.4 17.9-28.3-.6-7.5 13.5-28.1 6.8-26.4-8.5l1.2-12.4c-36.7.9-59.7 3.1-61.8 3.1-20.9 0-20.9-31.6 0-31.6 2.4 0 27.7 1.3 63.2 2.8-61.1-15.5-103.7-55-114.9-118.2-25 12.8-57.5 26.8-68.2.8-10.5-25.4 21.5-42.6 66.8-73.4.7-6.6 1.6-13.3 2.7-19.8-14.4-19.6-11.6-36.3-16.1-60.4-16.8 2.4-23.2-9.1-23.6-23.1.3-7.3 2.1-14.9 2.4-15.4 1.1-1.8 10.1-2 12.7-2.6 6-31.7 50.6-33.2 90.9-34.5 19.7-21.8 45.2-41.5 80.9-48.3C203.3 29 215.2 8.5 216.2 8c1.7-.8 21.2 4.3 26.3 23.2 5.2-8.8 18.3-11.4 19.6-10.7 1.1.6 6.4 15-4.9 25.9 40.3 3.5 72.2 24.7 96 50.7 36.1 1.5 71.8 5.9 77.1 34 2.7.6 11.6.8 12.7 2.6.3.5 2.1 8.1 2.4 15.4-.5 13.9-6.8 25.4-23.6 23.1-3.2 17.3-2.7 32.9-8.7 47.7 2.4 11.7 4 23.8 4.8 36.4 37 25.4 70.3 42.5 60.3 66.9zM207.4 159.9c.9-44-37.9-42.2-78.6-40.3-21.7 1-38.9 1.9-45.5 13.9-11.4 20.9 5.9 92.9 23.2 101.2 9.8 4.7 73.4 7.9 86.3-7.1 8.2-9.4 15-49.4 14.6-67.7zm52 58.3c-4.3-12.4-6-30.1-15.3-32.7-2-.5-9-.5-11 0-10 2.8-10.8 22.1-17 37.2 15.4 0 19.3 9.7 23.7 9.7 4.3 0 6.3-11.3 19.6-14.2zm135.7-84.7c-6.6-12.1-24.8-12.9-46.5-13.9-40.2-1.9-78.2-3.8-77.3 40.3-.5 18.3 5 58.3 13.2 67.8 13 14.9 76.6 11.8 86.3 7.1 15.8-7.6 36.5-78.9 24.3-101.3z"/></svg>  Talk about it *out loud*&lt;/span&gt;
@@ -539,7 +558,7 @@ class: inverse, middle, center
 
 &lt;br&gt;
 
-&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Brain" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Brain</title><path d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z"/></svg>  Use explaining variables&lt;/span&gt;
+&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Brain" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Brain</title><path d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z"/></svg>  Use clear object/variable names&lt;/span&gt;
 
 --
 
@@ -577,6 +596,38 @@ penguins_new &lt;- penguins %&gt;%
 While pseudocode is often used for planning out more complex algorithms, practicing with simpler examples may help you to avoid making mistakes -- pseudocode forces you acknowledge what each line of your script is meant to do, before you even write any code.
 
 ---
+### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Brain" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Brain</title><path d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z"/></svg>  Use clear object/variable names&lt;/span&gt;
+
+&lt;span style = 'font-size: 80%;'&gt;It can get difficult to keep track of what's what when you start working with multiple datasets and creating lots of different objects. Be sure to name things so that collaborators (including future you!) can more easily understand what's going on. For example:&lt;/span&gt;
+
+
+```r
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                Not so good                               ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# load csv files
+data1 &lt;- read_csv("data/y2020_waterData.csv")
+data2 &lt;- read_csv("data/y2021_waterData.csv")
+
+# combine data using the `rbind()` function (assume both csv files have the same structure)
+data3 &lt;- rbind(waterData2020, waterData2021)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    Good!                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# load csv files
+waterData2020 &lt;- read_csv("data/y2020_waterData.csv")
+waterData2021 &lt;- read_csv("data/y2021_waterData.csv")
+
+# combine data using the `rbind()` function (assume both csv files have the same structure)
+waterData2020_2021 &lt;- rbind(waterData2020, waterData2021)
+```
+
+&lt;span style = 'font-size: 80%;'&gt;You don't need to create excessively long variable names, but being clear is important -- don't sacrifice clarity for shorter names (plus RStudio's autocomplete functionality makes retyping longer variable names a breeze).&lt;/span&gt;
+
+???
 
 ### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Brain" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Brain</title><path d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z"/></svg>  Use explaining variables&lt;/span&gt;
 

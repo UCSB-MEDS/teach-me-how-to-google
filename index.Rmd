@@ -153,6 +153,17 @@ class: inverse, middle, center
 ## `r fontawesome::fa("exclamation-triangle", fill = "#93C6C2", a11y = "sem")`  I got an error and need help fixing it
 
 ---
+### We've all been here before:
+
+```{r echo=FALSE, out.width="100%", fig.alt="Comic panels of an alligator trying to debug some code. First panel: A confident looking alligator gets an error message. Second panel: a few minutes later, the error remains and the alligator is looking carefully at their code. Third panel: 10 minutes after that, the error remains and the alligator is giving a frustrated 'RAAAR' while desperately typing. Fourth panel: The error remains, and the alligator looks exhausted and exasperated, and a thought bubble reads 'maybe it's a bug.' Fifth panel: A friendly flamingo comes over to take a look, and reads aloud from the problematic code a spelling error: 'L-E-N-G-H-T.' Only the tail of the alligator is visible as it stomp stomp stomps out of the panel roaring."}
+knitr::include_graphics("media/alligator.png")
+```
+
+.center[
+<span style = 'font-size: 75%;'>Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)</span>
+]
+
+---
 
 ### Pause, exhale, narrow down your potential Google search
 
@@ -323,17 +334,27 @@ knitr::include_graphics("media/blame_code.png")
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("file-alt", fill = "#05859B", a11y = "sem")`  Double-check the documentation</span>
 
-<span style = 'font-size: 75%;'>While documentation can sometimes be tricky to read, it provides critical info for understanding how to use a package or function.</span>
-
-<span style = 'font-size: 75%;'>Access the documentation for any loaded package or function by either typing `?function_name` or `help(function_name)` in your console. If you search for a function from a package that is not currently loaded, R will prompt you to type `??function_name`.</span>
+<span style = 'font-size: 75%;'>While documentation can sometimes be tricky to read, it provides critical info for understanding how to use a package or function. Check out the documentation for any loaded package or function by either typing `?function_name` or `help(function_name)` in your console. If you search for a function from a package that is not currently loaded, R will prompt you to type `??function_name`.</span>
 
 --
 
-<span style = 'font-size: 75%;'>Some important components:</span>
+<span style = 'font-size: 75%;'>Documentation may include lots of different pieces of information. One example, `ggplot()`:</span>
 
-  <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Usage:** shows the various arguments to need to specify. Some are necessary, some are optional. Default values are shown here.</span>
+.center[
+```{r out.width = '70%', echo=FALSE, eval=TRUE}
+knitr::include_graphics("media/ggplot_help.png")
+```
+]
+
+---
+
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("file-alt", fill = "#05859B", a11y = "sem")`  Double-check the documentation</span>
+
+<span style = 'font-size: 75%;'>What's included in documentation varies by function and package. Some other important components include:</span>
+
+  <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Usage:** shows the various arguments to need to specify. Some are necessary, some are optional. Default values are shown here (See `ggplot` example on [previous slide](https://samanthacsik.github.io/teach-me-how-to-google/slides/WaterData_2022-11-08.html#34))</span>
   
-  <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Arguments:** briefly describes what each argument is/takes as a value</span> 
+  <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Arguments:** briefly describes what each argument is/takes as a value (See `ggplot` example on [previous slide](https://samanthacsik.github.io/teach-me-how-to-google/slides/WaterData_2022-11-08.html#34))</span> 
 
   <span style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Value:** describes the output of a function</span> 
 
@@ -343,8 +364,10 @@ knitr::include_graphics("media/blame_code.png")
 
 --
 
-<span style = 'font-size: 70%;'>Some packages will also have **vignettes**, which provide more detailed descriptions and examples of how functions within a package should be used. Googling `package_name vignette` will usually get you there (e.g. check out the [dplyr vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)). Alternatively, package documentation on [CRAN](https://cran.r-project.org/) will typically include any vignettes that are associated with that package (e.g. find all dplyr vignettes [here](https://cran.r-project.org/web/packages/dplyr/index.html)).</span>
-    
+<span style = 'font-size: 75%;'>Some packages will also have **vignettes**, which provide more detailed descriptions of how functions within a package should be used. Googling `package_name vignette` will usually get you there (e.g. check out the [`dplyr` vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)). Alternatively, package documentation on [CRAN](https://cran.r-project.org/)<sup>1</sup> will typically include any vignettes that are associated with that package (e.g. find all `dplyr` vignettes [here](https://cran.r-project.org/web/packages/dplyr/index.html)).</span>
+
+<span style = 'font-size: 60%;'><sup>1</sup>[CRAN](https://cran.r-project.org/) stands for the **C**omprehensive **R** **A**rchive **N**etwork and is R's central software repository -- in other words, it's where published R packages (including previous versions of published R packages) live. When you run `install.packages("package_name)`, R (on your computer) reaches out to CRAN to find/install the latest version of that package on your computer.</span>
+
 ---
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("earlybirds", fill = "#05859B", a11y = "sem")`  Talk about it *out loud*</span>
@@ -557,7 +580,7 @@ class: inverse, middle, center
 
 <br>
 
-<span style = 'font-size: 120%;'>`r fontawesome::fa("brain", fill = "#05859B", a11y = "sem")`  Use explaining variables</span>
+<span style = 'font-size: 120%;'>`r fontawesome::fa("brain", fill = "#05859B", a11y = "sem")`  Use clear object/variable names</span>
 
 --
 
@@ -595,6 +618,37 @@ penguins_new <- penguins %>%
 While pseudocode is often used for planning out more complex algorithms, practicing with simpler examples may help you to avoid making mistakes -- pseudocode forces you acknowledge what each line of your script is meant to do, before you even write any code.
 
 ---
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("brain", fill = "#05859B", a11y = "sem")`  Use clear object/variable names</span>
+
+<span style = 'font-size: 80%;'>It can get difficult to keep track of what's what when you start working with multiple datasets and creating lots of different objects. Be sure to name things so that collaborators (including future you!) can more easily understand what's going on. For example:</span>
+
+```{r, eval=FALSE}
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                Not so good                               ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# load csv files
+data1 <- read_csv("data/y2020_waterData.csv")
+data2 <- read_csv("data/y2021_waterData.csv")
+
+# combine data using the `rbind()` function (assume both csv files have the same structure)
+data3 <- rbind(waterData2020, waterData2021)
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                    Good!                                 ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# load csv files
+waterData2020 <- read_csv("data/y2020_waterData.csv")
+waterData2021 <- read_csv("data/y2021_waterData.csv")
+
+# combine data using the `rbind()` function (assume both csv files have the same structure)
+waterData2020_2021 <- rbind(waterData2020, waterData2021)
+```
+
+<span style = 'font-size: 80%;'>You don't need to create excessively long variable names, but being clear is important -- don't sacrifice clarity for shorter names (plus RStudio's autocomplete functionality makes retyping longer variable names a breeze).</span>
+
+???
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("brain", fill = "#05859B", a11y = "sem")`  Use explaining variables</span>
 
