@@ -12,4 +12,4 @@ This talk has been slightly adapted and presented to a number of different group
 
 ### Taught on the following dates:
 -  October 11, 2021 
--  August, 18, 2022 ([Release v.1.0.0)[https://github.com/UCSB-MEDS/teach-me-how-to-google/releases/tag/v.1.0.0-meds-2023])
+-  August, 18, 2022 ([Release v.1.0.0-meds-2023](https://github.com/UCSB-MEDS/teach-me-how-to-google/releases/tag/v.1.0.0-meds-2023))
