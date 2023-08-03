@@ -1,8 +1,8 @@
 ---
-title: "Teach Me How to Google"
-subtitle: "<span style = 'font-size: 50%;'>*What do to when your code stops working (or you're just not sure where to even start)*</span>"
-author: "Sam Csik | Data Training Coordinator<br><span style = 'font-size: 65%;'>National Center for Ecological Analysis & Synthesis<br></span>"
-date: "<span style = 'font-size: 85%;'>Master of Environmental Data Science | Fall 2021</span><br><span style = 'font-size: 65%;'>Slides & source code available on [GitHub](https://github.com/UCSB-MEDS/teach-me-how-to-google)</span>"
+# title: "Teach Me How to Google"
+# subtitle: "<span style = 'font-size: 50%;'>*What do to when your code stops working (or you're just not sure where to even start)*</span>"
+# author: "Sam Csik | Data Training Coordinator<br><span style = 'font-size: 65%;'>National Center for Ecological Analysis & Synthesis<br></span>"
+# date: "<span style = 'font-size: 85%;'>Master of Environmental Data Science | Fall 2021</span><br><span style = 'font-size: 65%;'>Slides & source code available on [GitHub](https://github.com/UCSB-MEDS/teach-me-how-to-google)</span>"
 output:
   xaringan::moon_reader:
     css: ['xaringan-themer.css', 'my-css.css']
@@ -68,9 +68,35 @@ National Center for Ecological Analysis & Synthesis<br>
 
 <br>
 
-<span style = 'font-size: 130%;'>Master of Environmental Data Science | Summer 2022</span>   
+<span style = 'font-size: 130%;'>Master of Environmental Data Science Program</span>   
 
-Slides & source code available on [`r fontawesome::fa("github", fill = "#93C6C2", a11y = "sem")`](https://github.com/UCSB-MEDS/teach-me-how-to-google)
+Bren School of Environmental Science & Management<br>
+
+
+.footnote[Slides & source code available on [`r fontawesome::fa("github", fill = "#93C6C2", a11y = "sem")`](https://github.com/UCSB-MEDS/teach-me-how-to-google)]
+
+---
+
+### But first, a note on ChatGPT
+
+<p style = 'font-size: 75%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **What is it?** [ChatGPT](https://chat.openai.com/auth/login) is an artificial intelligence (AI) chat bot developed by [OpenAI](https://openai.com/) that uses natural language processing (NLP) to generate responses to user-generated prompts.</span>
+
+--
+
+<!-- <p style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why is everyone so exited about it?** ChatGPT can be a powerful tool to help increase productivity and efficiency, but it's important to consider using it responsibly and ethically</span> -->
+
+--
+
+<p style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why would I want to use Google over ChatGPT?**</span>
+
+--
+
+`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Should I be scared of it replacing jobs?** Short answer, no.
+
+- ChatGPT only uses data up to 2021
+- ChatGPT is insanely good at generating human-like responses to queries and solving problems through textual conversations. On the other hand, Google is really good at finding information, videos, images, products, and almost anything on the internet.
+- Programming or developing is more than just coding. ChatGPT may be good at generating codes but still lacks problem-solving abilities. Read what experts think about it.
+- ChatGPT can augment / assist 
 
 ---
 
