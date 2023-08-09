@@ -79,24 +79,35 @@ Bren School of Environmental Science & Management<br>
 
 ### But first, a note on ChatGPT
 
-<p style = 'font-size: 75%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **What is it?** [ChatGPT](https://chat.openai.com/auth/login) is an artificial intelligence (AI) chat bot developed by [OpenAI](https://openai.com/) that uses natural language processing (NLP) to generate responses to user-generated prompts.</span>
+<p style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **What is it?** [ChatGPT](https://chat.openai.com/auth/login) is an artificial intelligence (AI) chat bot developed by [OpenAI](https://openai.com/) that uses natural language processing (NLP) to generate responses to user-generated prompts.</span>
 
 --
 
-<!-- <p style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why is everyone so exited about it?** ChatGPT can be a powerful tool to help increase productivity and efficiency, but it's important to consider using it responsibly and ethically</span> -->
+<p style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why is everyone so exited about it?** ChatGPT can be a powerful tool to help increase productivity and efficiency, but it's important that you understand it's limitations and use it responsibly and ethically. This is beyond the scope of this talk, but I encourage you to read [ChatGPT: A comprehensive review on background, applications, key challenges, bias, ethics, limitations and future scope](https://doi.org/10.1016/j.iotcps.2023.04.003), by Partha Pratim Ray.</span>
 
 --
 
-<p style = 'font-size: 65%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why would I want to use Google over ChatGPT?**</span>
+<p style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why is it important to understand how to troubleshoot when I could just use ChatGPT?** Many reasons, but here are just a few:</span>
 
 --
 
-`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Should I be scared of it replacing jobs?** Short answer, no.
+- <p style = 'font-size: 80%;'>ChatGPT is currently (as of Fall 2023) data limited up to 2021</span>
 
-- ChatGPT only uses data up to 2021
-- ChatGPT is insanely good at generating human-like responses to queries and solving problems through textual conversations. On the other hand, Google is really good at finding information, videos, images, products, and almost anything on the internet.
-- Programming or developing is more than just coding. ChatGPT may be good at generating codes but still lacks problem-solving abilities. Read what experts think about it.
-- ChatGPT can augment / assist 
+--
+
+- <p style = 'font-size: 80%;'>ChatGPT can make stuff up (see [story](https://apnews.com/article/artificial-intelligence-chatgpt-fake-case-lawyers-d6ae9fa79d0542db9e1455397aef381c) on lawyers who submitted fake legal research created by ChatGPT)</span>
+
+--
+
+- <p style = 'font-size: 90%;'>Similarly, ChatGPT has been called a "stochastic parrot" meaning it can generate convincing responses, but ultimately does not understand what it is processing ([Bender, et al 2021](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922))</span>
+
+--
+
+- <p style = 'font-size: 80%;'>Programming/developing is more than just coding! It requires critical thinking about X, Y, Z. ChatGPT is not a replacement for innovative or creative thinking.</span>
+
+--
+
+- <p style = 'font-size: 80%;'>You're here because you're excited to learn and understand the many data science tools, workflows, and approaches that you can use to solve environmental problems (or at least, I hope!). Thinking critically about a problem and not blindly copying chat bot solutions is one of the best ways to do this.</span>
 
 ---
 
