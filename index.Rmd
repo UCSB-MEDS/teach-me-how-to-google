@@ -79,35 +79,54 @@ Bren School of Environmental Science & Management<br>
 
 ### But first, a note on ChatGPT
 
-<p style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **What is it?** [ChatGPT](https://chat.openai.com/auth/login) is an artificial intelligence (AI) chat bot developed by [OpenAI](https://openai.com/) that uses natural language processing (NLP) to generate responses to user-generated prompts.</span>
+--
+
+<!-- <center><span style = 'font-size:120%; font-weight: bold; color: #05859B;'>What is it?</span></center> -->
+
+<span style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **What is it?** [ChatGPT](https://chat.openai.com/auth/login) is an artificial intelligence (AI) chat bot developed by [OpenAI](https://openai.com/) that uses natural language processing (NLP) to generate responses to user-generated prompts.</span>
+
+<br>
+
+```{r echo=FALSE, eval=TRUE, out.width="50%", fig.align="center"}
+knitr::include_graphics("media/chatgpt-logo.png")
+```
+
+<br>
 
 --
 
-<p style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why is everyone so exited about it?** ChatGPT can be a powerful tool to help increase productivity and efficiency, but it's important that you understand it's limitations and use it responsibly and ethically. This is beyond the scope of this talk, but I encourage you to read [ChatGPT: A comprehensive review on background, applications, key challenges, bias, ethics, limitations and future scope](https://doi.org/10.1016/j.iotcps.2023.04.003), by Partha Pratim Ray.</span>
+<span style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why is everyone so exited about it?** ChatGPT can be a powerful tool to help increase productivity and efficiency, but it's important that you understand it's limitations and use it responsibly and ethically. This is beyond the scope of this talk, but I encourage you to read [ChatGPT: A comprehensive review on background, applications, key challenges, bias, ethics, limitations and future scope](https://doi.org/10.1016/j.iotcps.2023.04.003), by Partha Pratim Ray.</span>
+
+---
+
+## Why should I learn how to troubleshoot when I could just use ChatGPT?
+
+<span style = 'font-size: 100%;'>Many reasons! But here are just a few:</span>
+
+.footnote[
+<span style = 'font-size: 80%;'><sup>1</sup>[ChatGPT & Education Slide Deck](https://figshare.edgehill.ac.uk/articles/presentation/ChatGPT_Education_Slide_Deck/21901629/1)</span>
+]
+
 
 --
 
-<p style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why is it important to understand how to troubleshoot when I could just use ChatGPT?** Many reasons, but here are just a few:</span>
+- <span style = 'font-size: 80%;'>ChatGPT is trained on a massive corpus of data extending only to 2021 (as of Fall 2023) -- meaning it has biases<sup>1</sup></span>
 
 --
 
-- <p style = 'font-size: 80%;'>ChatGPT is currently (as of Fall 2023) data limited up to 2021</span>
+- <span style = 'font-size: 80%;'>ChatGPT can make stuff up (see [this story](https://apnews.com/article/artificial-intelligence-chatgpt-fake-case-lawyers-d6ae9fa79d0542db9e1455397aef381c) about lawyers who submitted fake legal research created by ChatGPT)</span>
 
 --
 
-- <p style = 'font-size: 80%;'>ChatGPT can make stuff up (see [story](https://apnews.com/article/artificial-intelligence-chatgpt-fake-case-lawyers-d6ae9fa79d0542db9e1455397aef381c) on lawyers who submitted fake legal research created by ChatGPT)</span>
+- <span style = 'font-size: 80%;'>Similarly, ChatGPT has been called a "stochastic parrot" meaning it can generate convincing responses, but ultimately does not understand what it is processing ([Bender, et al 2021](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922))</span>
 
 --
 
-- <p style = 'font-size: 90%;'>Similarly, ChatGPT has been called a "stochastic parrot" meaning it can generate convincing responses, but ultimately does not understand what it is processing ([Bender, et al 2021](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922))</span>
+- <span style = 'font-size: 80%;'>One of the more challenging aspects of both troubleshooting and crafting effective ChatGPT prompts is having the vocabulary to describe what it is you're looking for -- the more documentation, vignettes, and content you read, the easier this will become!</span>
 
 --
 
-- <p style = 'font-size: 80%;'>Programming/developing is more than just coding! It requires critical thinking about X, Y, Z. ChatGPT is not a replacement for innovative or creative thinking.</span>
-
---
-
-- <p style = 'font-size: 80%;'>You're here because you're excited to learn and understand the many data science tools, workflows, and approaches that you can use to solve environmental problems (or at least, I hope!). Thinking critically about a problem and not blindly copying chat bot solutions is one of the best ways to do this.</span>
+- <p style = 'font-size: 80%;'>Programming/developing is more than just coding. Reproducibility, intuitive organization, coming up with creative solutions for complex tasks, etc. requires contextual understanding and critical thinking. ChatGPT isn't a replacement for this.</p>
 
 ---
 
