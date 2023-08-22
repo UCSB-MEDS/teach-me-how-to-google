@@ -464,7 +464,7 @@ penguins_new <- penguins |>
 
 --
 
-<span style = 'font-size: 75%;'>It's not uncommon to confuse or mistake function names, particularly as you're just starting to learn a language or new packages. For example, a similarly named function, `forcats::fct_reorder()`, is used to reorder *factor* levels. In this case, however, we're looking to reorder *numeric values* in the `bill_length_mm` column.</span>
+<span style = 'font-size: 75%;'>It's easy to confuse or mistake function names, particularly as you're just starting to learn a language or new packages. For example, a similarly named tidyverse function, `forcats::fct_reorder()`, is used to reorder *factor* levels. In this case, however, we're looking to reorder *numeric values* in the `bill_length_mm` column.</span>
 
 --
 
@@ -696,7 +696,7 @@ knitr::include_graphics("media/how_to_velocity.png")
 
 ---
 
-### It's also okay just to **copy code**
+### It's also okay just to **copy code**, but take time to understand it
 
 .pull-left[
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Jokes are only the beginning.<br><br>The Key is available now, and your programming will never be the same.<a href="https://t.co/KAjJ1DKenf">https://t.co/KAjJ1DKenf</a> <a href="https://t.co/gDiYvBPSqp">https://t.co/gDiYvBPSqp</a> <a href="https://t.co/bhrBJN8N1Y">pic.twitter.com/bhrBJN8N1Y</a></p>&mdash; Cassidy (@cassidoo) <a href="https://twitter.com/cassidoo/status/1442936000578154498?ref_src=twsrc%5Etfw">September 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -827,22 +827,21 @@ Code comments are great, but variable and function names that explain what they 
 
 ```{r eval = FALSE, echo = TRUE}
 convert_temp <- function(from, to, temp) {
-  
-  # if `from` is "celsius" and `to` is "fahrenheit"
+
   if(from == "celsius" & to == "fahrenheit") {
+    message("Converting from Celsius to Fahrenheit")
     converted_temp <- temp*1.8 + 32
-    
-    # if `from` is "fahrenheit" and `to` is "celsius"
+
     } else if(from == "fahrenheit" & to == "celsius") {
-    converted_temp <- (temp - 32)/1.8
+      message("Converting from Fahrenheit to Celsius")
+      converted_temp <- (temp - 32)/1.8
    
-    # if inputs that don't match either of the first two conditionals are supplied, give warning and return NA 
+    # if inputs don't match either of the first two conditionals, return warning & NA 
   } else { #<<
       stop("The inputs provided (from = '", from, "' & to = '", to,"') are not as expected. Double check spelling.") #<<
       return(NA) #<<
     } #<<
   
-  # return the converted value
   return(converted_temp)
 }
 ```
@@ -854,13 +853,13 @@ convert_temp <- function(from, to, temp) {
 ```{r eval = TRUE, echo = FALSE}
 convert_temp <- function(from, to, temp) {
   
-  # if `from` is "celsius" and `to` is "fahrenheit"
   if(from == "celsius" & to == "fahrenheit") {
+    message("Converting from Celsius to Fahrenheit")
     converted_temp <- temp*1.8 + 32
     
-    # if `from` is "fahrenheit" and `to` is "celsius"
     } else if(from == "fahrenheit" & to == "celsius") {
-    converted_temp <- (temp - 32)/1.8
+      message("Converting from Fahrenheit to Celsius")
+      converted_temp <- (temp - 32)/1.8
    
     # if inputs that don't match either of the first two conditionals are supplied, give warning and return NA 
    } else { 
@@ -868,7 +867,6 @@ convert_temp <- function(from, to, temp) {
       return(NA) 
     } 
   
-  # return the converted value
   return(converted_temp)
 }
 ```
