@@ -696,7 +696,7 @@ knitr::include_graphics("media/how_to_velocity.png")
 
 ---
 
-### It's also okay just to **copy code**, but take time to understand it
+### It's also okay just to **copy code**, but take time to understand it (and give attribution as appropriate)
 
 .pull-left[
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Jokes are only the beginning.<br><br>The Key is available now, and your programming will never be the same.<a href="https://t.co/KAjJ1DKenf">https://t.co/KAjJ1DKenf</a> <a href="https://t.co/gDiYvBPSqp">https://t.co/gDiYvBPSqp</a> <a href="https://t.co/bhrBJN8N1Y">pic.twitter.com/bhrBJN8N1Y</a></p>&mdash; Cassidy (@cassidoo) <a href="https://twitter.com/cassidoo/status/1442936000578154498?ref_src=twsrc%5Etfw">September 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
