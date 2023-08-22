@@ -246,6 +246,13 @@ knitr::include_graphics("media/alligator.png")
 
 <br>
 
+
+<span style = 'font-size: 120%;'>`r fontawesome::fa("magnifying-glass", fill = "#05859B", a11y = "sem")`  Try to isolate the problem</span>
+
+--
+
+<br>
+
 <span style = 'font-size: 120%;'>`r fontawesome::fa("file-alt", fill = "#05859B", a11y = "sem")`  Double-check the documentation</span>
 
 --
@@ -385,6 +392,92 @@ knitr::include_graphics("media/blame_code.png")
 <span style = 'font-size: 75%;'>Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)</span>
 ]
 ]
+
+---
+
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("magnifying-glass", fill = "#05859B", a11y = "sem")`  Try to isolate the problem</span>
+
+<span style = 'font-size: 80%;'>It can feel overwhelming to figure out where an error or issue is occurring in a large chunk of text. For example, let's say we're wrangling some data and want to reorder values in a column from highest to lowest:</span>
+
+```{r eval = TRUE, echo = TRUE, error = TRUE}
+# load libraries ----
+library(dplyr)
+library(palmerpenguins)
+
+# wrangle data ----
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) |> 
+  filter(species == "Adelie") |>
+  reorder(bill_length_mm)
+```
+
+--
+
+<span style = 'font-size: 80%;'>**Running all of our piped-together wrangling code at once can make it difficult to identify which line(s) of code is responsible for this error** (and you might imagine situations where you have much longer and more complex code than the short example presented here).</span>
+
+--
+
+<span style = 'font-size: 80%;'>**Instead, run line-by-line to isolate where the problem is occurring** so that you may start investigating from there.</span>
+
+---
+
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("magnifying-glass", fill = "#05859B", a11y = "sem")`  Try to isolate the problem</span>
+
+<span style = 'font-size: 80%;'>Run line-by-line until you hit the error (**Tip:** comment/uncomment lines of code using the keyboard shortcut, `command`/`control` + `shift` + `C`):</span>
+
+```{r eval = TRUE, echo = TRUE, error = TRUE}
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) # |> 
+  # filter(species == "Adelie") |> 
+  # reorder(bill_length_mm)
+```
+
+<span style = 'font-size: 80%;'>Works!</span>
+
+--
+
+```{r eval = TRUE, echo = TRUE, error = TRUE}
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) |> 
+  filter(species == "Adelie") # |> 
+  # reorder(bill_length_mm)
+```
+
+<span style = 'font-size: 80%;'>Works!</span>
+
+--
+
+```{r eval = TRUE, echo = TRUE, error = TRUE}
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) |>
+  filter(species == "Adelie") |>
+  reorder(bill_length_mm)
+```
+
+<span style = 'font-size: 80%;'>Doesn't work...let's look into what `reorder()` is / does...</span>
+
+---
+
+### <span style = 'font-size: 120%;'>`r fontawesome::fa("magnifying-glass", fill = "#05859B", a11y = "sem")`  Try to isolate the problem</span>
+
+<span style = 'font-size: 75%;'>Searching for `reorder()` (either by looking up documentation -- more on that in a moment -- or Googling it) will reveal that it's not actually a `{dplyr}` (or tidyverse) function at all.</span>
+
+--
+
+<span style = 'font-size: 75%;'>It's not uncommon to confuse or mistake function names, particularly as you're just starting to learn a language or new packages. For example, a similarly named function, `forcats::fct_reorder()`, is used to reorder *factor* levels. In this case, however, we're looking to reorder *numeric values* in the `bill_length_mm` column.</span>
+
+--
+
+<span style = 'font-size: 75%;'>A Google search ("[R tidyverse reorder values high to low](https://www.google.com/search?q=R+tidyverse+reorder+values+high+to+low&sca_esv=558984878&ei=KlPkZOzoK8TFkPIPqf2ikAI&ved=0ahUKEwjspZqwz--AAxXEIkQIHam-CCIQ4dUDCBA&uact=5&oq=R+tidyverse+reorder+values+high+to+low&gs_lp=Egxnd3Mtd2l6LXNlcnAiJlIgdGlkeXZlcnNlIHJlb3JkZXIgdmFsdWVzIGhpZ2ggdG8gbG93MgUQIRigATIFECEYoAEyBRAhGKsCSJ4fUPECWJ4dcAF4AJABAJgBqwGgAdAOqgEENC4xMrgBA8gBAPgBAcICChAAGEcY1gQYsAPCAgUQABiiBOIDBBgAIEGIBgGQBgg&sclient=gws-wiz-serp)") leads us to the [`{dplyr}` documentation](https://dplyr.tidyverse.org/reference/arrange.html) for the `arrange()` function, which also allows us to sort values in descending order when coupled with `desc()`:</span>
+
+```{r eval = TRUE, echo = TRUE, error = TRUE}
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) |>
+  filter(species == "Adelie") |>
+  arrange(desc(bill_length_mm))
+
+head(penguins_new)
+```
 
 ---
 

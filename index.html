@@ -203,6 +203,13 @@ class: inverse, middle, center
 
 &lt;br&gt;
 
+
+&lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Magnifying Glass" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Magnifying Glass</title><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>  Try to isolate the problem&lt;/span&gt;
+
+--
+
+&lt;br&gt;
+
 &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="File Lines" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>File Lines</title><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm56 256c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120z"/></svg>  Double-check the documentation&lt;/span&gt;
 
 --
@@ -374,6 +381,117 @@ Check out some of these additional resources for common R error messages and str
 &lt;span style = 'font-size: 75%;'&gt;Artwork by [@allison_horst](https://twitter.com/allison_horst?lang=en)&lt;/span&gt;
 ]
 ]
+
+---
+
+### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Magnifying Glass" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Magnifying Glass</title><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>  Try to isolate the problem&lt;/span&gt;
+
+&lt;span style = 'font-size: 80%;'&gt;It can feel overwhelming to figure out where an error or issue is occurring in a large chunk of text. For example, let's say we're wrangling some data and want to reorder values in a column from highest to lowest:&lt;/span&gt;
+
+
+```r
+# load libraries ----
+library(dplyr)
+library(palmerpenguins)
+
+# wrangle data ----
+penguins_new &lt;- penguins |&gt; 
+  select(species, sex, bill_length_mm) |&gt; 
+  filter(species == "Adelie") |&gt;
+  reorder(bill_length_mm)
+```
+
+```
+## Error in eval(expr, envir, enclos): object 'bill_length_mm' not found
+```
+
+--
+
+&lt;span style = 'font-size: 80%;'&gt;**Running all of our piped-together wrangling code at once can make it difficult to identify which line(s) of code is responsible for this error** (and you might imagine situations where you have much longer and more complex code than the short example presented here).&lt;/span&gt;
+
+--
+
+&lt;span style = 'font-size: 80%;'&gt;**Instead, run line-by-line to isolate where the problem is occurring** so that you may start investigating from there.&lt;/span&gt;
+
+---
+
+### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Magnifying Glass" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Magnifying Glass</title><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>  Try to isolate the problem&lt;/span&gt;
+
+&lt;span style = 'font-size: 80%;'&gt;Run line-by-line until you hit the error (**Tip:** comment/uncomment lines of code using the keyboard shortcut, `command`/`control` + `shift` + `C`):&lt;/span&gt;
+
+
+```r
+penguins_new &lt;- penguins |&gt; 
+  select(species, sex, bill_length_mm) # |&gt; 
+  # filter(species == "Adelie") |&gt; 
+  # reorder(bill_length_mm)
+```
+
+&lt;span style = 'font-size: 80%;'&gt;Works!&lt;/span&gt;
+
+--
+
+
+```r
+penguins_new &lt;- penguins |&gt; 
+  select(species, sex, bill_length_mm) |&gt; 
+  filter(species == "Adelie") # |&gt; 
+  # reorder(bill_length_mm)
+```
+
+&lt;span style = 'font-size: 80%;'&gt;Works!&lt;/span&gt;
+
+--
+
+
+```r
+penguins_new &lt;- penguins |&gt; 
+  select(species, sex, bill_length_mm) |&gt;
+  filter(species == "Adelie") |&gt;
+  reorder(bill_length_mm)
+```
+
+```
+## Error in eval(expr, envir, enclos): object 'bill_length_mm' not found
+```
+
+&lt;span style = 'font-size: 80%;'&gt;Doesn't work...let's look into what `reorder()` is / does...&lt;/span&gt;
+
+---
+
+### &lt;span style = 'font-size: 120%;'&gt;<svg aria-label="Magnifying Glass" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Magnifying Glass</title><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>  Try to isolate the problem&lt;/span&gt;
+
+&lt;span style = 'font-size: 75%;'&gt;Searching for `reorder()` (either by looking up documentation -- more on that in a moment -- or Googling it) will reveal that it's not actually a `{dplyr}` (or tidyverse) function at all.&lt;/span&gt;
+
+--
+
+&lt;span style = 'font-size: 75%;'&gt;It's not uncommon to confuse or mistake function names, particularly as you're just starting to learn a language or new packages. For example, a similarly named function, `forcats::fct_reorder()`, is used to reorder *factor* levels. In this case, however, we're looking to reorder *numeric values* in the `bill_length_mm` column.&lt;/span&gt;
+
+--
+
+&lt;span style = 'font-size: 75%;'&gt;A Google search ("[R tidyverse reorder values high to low](https://www.google.com/search?q=R+tidyverse+reorder+values+high+to+low&amp;sca_esv=558984878&amp;ei=KlPkZOzoK8TFkPIPqf2ikAI&amp;ved=0ahUKEwjspZqwz--AAxXEIkQIHam-CCIQ4dUDCBA&amp;uact=5&amp;oq=R+tidyverse+reorder+values+high+to+low&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiJlIgdGlkeXZlcnNlIHJlb3JkZXIgdmFsdWVzIGhpZ2ggdG8gbG93MgUQIRigATIFECEYoAEyBRAhGKsCSJ4fUPECWJ4dcAF4AJABAJgBqwGgAdAOqgEENC4xMrgBA8gBAPgBAcICChAAGEcY1gQYsAPCAgUQABiiBOIDBBgAIEGIBgGQBgg&amp;sclient=gws-wiz-serp)") leads us to the [`{dplyr}` documentation](https://dplyr.tidyverse.org/reference/arrange.html) for the `arrange()` function, which also allows us to sort values in descending order when coupled with `desc()`:&lt;/span&gt;
+
+
+```r
+penguins_new &lt;- penguins |&gt; 
+  select(species, sex, bill_length_mm) |&gt;
+  filter(species == "Adelie") |&gt;
+  arrange(desc(bill_length_mm))
+
+head(penguins_new)
+```
+
+```
+## # A tibble: 6 × 3
+##   species sex   bill_length_mm
+##   &lt;fct&gt;   &lt;fct&gt;          &lt;dbl&gt;
+## 1 Adelie  male            46  
+## 2 Adelie  male            45.8
+## 3 Adelie  male            45.6
+## 4 Adelie  male            44.1
+## 5 Adelie  male            44.1
+## 6 Adelie  male            43.2
+```
 
 ---
 
