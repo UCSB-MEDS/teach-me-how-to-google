@@ -95,7 +95,7 @@ knitr::include_graphics("media/chatgpt-logo.png")
 
 --
 
-<span style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why is everyone so exited about it?** ChatGPT can be a powerful tool to help increase productivity and efficiency, but it's important that you understand it's limitations and use it responsibly and ethically. This is beyond the scope of this talk, but I encourage you to read [ChatGPT: A comprehensive review on background, applications, key challenges, bias, ethics, limitations and future scope](https://doi.org/10.1016/j.iotcps.2023.04.003), by Partha Pratim Ray.</span>
+<span style = 'font-size: 90%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Why is everyone so exited about it?** ChatGPT can be a powerful tool to help increase productivity and efficiency, but it's important that you understand it's limitations and use it responsibly and ethically. This is beyond the scope of this talk, but I encourage you to read [ChatGPT: A comprehensive review on background, applications, key challenges, bias, ethics, limitations and future scope](https://doi.org/10.1016/j.iotcps.2023.04.003), by Partha Pratim Ray, or revist Ruth Oliver's talk, [Generative AI: What is it and how do we use it responsibly?](https://docs.google.com/presentation/d/1XxPoHLhUl2r7t0pAu8Hub_5NmY6bY6sH4_NfOa_cw3I/present?slide=id.g2ef98dcd5ad_0_51).</span>
 
 ---
 
@@ -110,23 +110,23 @@ knitr::include_graphics("media/chatgpt-logo.png")
 
 --
 
-- <span style = 'font-size: 80%;'>ChatGPT is trained on a massive corpus of data extending only to 2021 (as of Fall 2023) -- meaning it has biases<sup>1</sup></span>
+- <span style = 'font-size: 80%;'>ChatGPT is trained on a massive corpus of data extending only to 2021 (as of Fall 2023) -- meaning **it has biases**<sup>1</sup></span>
 
 --
 
-- <span style = 'font-size: 80%;'>ChatGPT can make stuff up (see [this story](https://apnews.com/article/artificial-intelligence-chatgpt-fake-case-lawyers-d6ae9fa79d0542db9e1455397aef381c) about lawyers who submitted fake legal research created by ChatGPT)</span>
+- <span style = 'font-size: 80%;'>**ChatGPT can make stuff up** (see [this story](https://apnews.com/article/artificial-intelligence-chatgpt-fake-case-lawyers-d6ae9fa79d0542db9e1455397aef381c) about lawyers who submitted fake legal research created by ChatGPT)</span>
 
 --
 
-- <span style = 'font-size: 80%;'>Similarly, ChatGPT has been called a "stochastic parrot" meaning it can generate convincing responses, but ultimately does not understand what it is processing ([Bender, et al 2021](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922))</span>
+- <span style = 'font-size: 80%;'>Similarly, ChatGPT has been called a **"stochastic parrot"** meaning it can generate convincing responses, but ultimately does not understand what it is processing ([Bender, et al 2021](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922))</span>
 
 --
 
-- <span style = 'font-size: 80%;'>One of the more challenging aspects of both troubleshooting and crafting effective ChatGPT prompts is having the vocabulary to describe what it is you're looking for -- the more documentation, vignettes, and content you read, the easier this will become!</span>
+- <span style = 'font-size: 80%;'>One of the more challenging aspects of both troubleshooting and crafting effective ChatGPT prompts is **having the vocabulary to describe what it is you're looking for** -- the more documentation, vignettes, and content you read, the easier this will become!</span>
 
 --
 
-- <p style = 'font-size: 80%;'>Programming/developing is more than just coding. Reproducibility, intuitive organization, coming up with creative solutions for complex tasks, etc. requires contextual understanding and critical thinking. ChatGPT isn't a replacement for this.</p>
+- <span style = 'font-size: 80%;'>**Programming/developing is more than just coding.** Reproducibility, intuitive organization, coming up with creative solutions for complex tasks, etc. requires contextual understanding and critical thinking. ChatGPT isn't a replacement for this.</span>
 
 ---
 
@@ -174,6 +174,7 @@ knitr::include_graphics("media/ron_swanson.gif")
 
 ### But the goal is to be a bit more at peace with that feeling...and have the confidence that you can find your way
 
+<br>
 <br>
 
 .center2[
@@ -460,11 +461,11 @@ penguins_new <- penguins |>
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("magnifying-glass", fill = "#05859B", a11y = "sem")`  Try to isolate the problem</span>
 
-<span style = 'font-size: 75%;'>Searching for `reorder()` (either by looking up documentation -- more on that in a moment -- or Googling it) will reveal that it's not actually a `{dplyr}` (or tidyverse) function at all.</span>
+<span style = 'font-size: 75%;'>Searching for `reorder()` (either by looking up documentation -- more on that in a moment -- or Googling it) will reveal that **it's not actually a `{dplyr}` (or tidyverse) function at all**.</span>
 
 --
 
-<span style = 'font-size: 75%;'>It's easy to confuse or mistake function names, particularly as you're just starting to learn a language or new packages. For example, a similarly named tidyverse function, `forcats::fct_reorder()`, is used to reorder *factor* levels. In this case, however, we're looking to reorder *numeric values* in the `bill_length_mm` column.</span>
+<span style = 'font-size: 75%;'>**It's easy to confuse or mistake function names, particularly as you're just starting to learn a language or new packages.** For example, a similarly named tidyverse function, `forcats::fct_reorder()`, is used to reorder *factor* levels. In this case, however, we're looking to reorder *numeric values* in the `bill_length_mm` column.</span>
 
 --
 
@@ -483,7 +484,7 @@ head(penguins_new)
 
 ### <span style = 'font-size: 120%;'>`r fontawesome::fa("file-alt", fill = "#05859B", a11y = "sem")`  Double-check the documentation</span>
 
-<span style = 'font-size: 75%;'>While documentation can sometimes be tricky to read, it provides critical info for understanding how to use a package or function. Check out the documentation for any loaded package or function by either typing `?function_name` or `help(function_name)` in your console. If you search for a function from a package that is not currently loaded, R will prompt you to type `??function_name`.</span>
+<span style = 'font-size: 75%;'>While documentation can sometimes be tricky to read, it provides critical info for understanding how to use a package or function. **Check out the documentation for any loaded package or function by either typing `?function_name` or `help(function_name)` in your console.** If you search for a function from a package that is not currently loaded, R will prompt you to type `??function_name`.</span>
 
 --
 
@@ -656,7 +657,7 @@ class: inverse, middle, center
 
 <span style = 'font-size: 80%;'>`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  Hadley Wickham lists functions that he believes constitute a good working vocabulary for R fluency in his book, [Advanced R (first edition)](http://adv-r.had.co.nz/Vocabulary.html), & Joachim Schork (the voice behind the blog, [Statistics Globe](https://statisticsglobe.com/)) curates a long list of R commands and functions in his post, [R Functions List (+ Examples) | All Basic Commands of the R Programming Language](https://statisticsglobe.com/r-functions-list/).</span>
 
-  - <span style = 'font-size: 75%;'>Keeping a running vocab list for yourself (that's organized in a way that makes most sense to *you*) can be massively helpful, even if just for the beginning stages of your R journey. It won't be long until you start realizing how much you actually know:</span> 
+  - <span style = 'font-size: 75%;'>**Keeping a running vocab list for yourself** (that's organized in a way that makes most sense to *you*) can be massively helpful, even if just for the beginning stages of your R journey. It won't be long until you start realizing how much you actually know:</span> 
 
 .center[
 ```{r echo = FALSE, out.width = '55%', fig.alt="A cartoon monster student in a backpack looks on at stunning gems labeled 'Touchstones of Intuition', which have the text 'You know some stuff' written on sequential crystals. "}
@@ -836,7 +837,7 @@ convert_temp <- function(from, to, temp) {
       message("Converting from Fahrenheit to Celsius")
       converted_temp <- (temp - 32)/1.8
    
-    # if inputs don't match either of the first two conditionals, return warning & NA 
+    # if inputs don't match either of the first two conditionals, return error & NA 
   } else { #<<
       stop("The inputs provided (from = '", from, "' & to = '", to,"') are not as expected. Double check spelling.") #<<
       return(NA) #<<
