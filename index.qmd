@@ -10,22 +10,35 @@ format:
     # scrollable: true
     theme: 
       - meds-slides-styles.scss
+engine: knitr
+execute:
+  eval: true
 ---
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[Teach Me How to Google]{.custom-title}
+```{r}
+#| eval: true
+#| echo: false
+today <- format(Sys.time(), "%b %d, %Y")
+```
 
-[*Some subtitle*]{.custom-subtitle}
+[Teach Me How to Google *2.0*]{.custom-title}
+
+[*The case for search & debugging skills in the age of AI*]{.custom-subtitle2}
+
+<!-- [*Debugging and search skills for new data scientists in the age of AI*]{.custom-subtitle2} -->
+<!-- Debugging skills and programming competencies for budding data scientists*]{.custom-subtitle2} -->
+<!-- [*Why search engines still matter & how to search ... a valuable tool, and how to query effectively*]{.custom-subtitle2} -->
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-[**Published:** Oct 2021]{.body-text-s .baby-blue-text}
+[**Published:** October 11, 2021]{.body-text-s .baby-blue-text}
 :::
 
 ::: {.column width="50%"}
-[**Last updated:** `r format(Sys.time(), '%b %d, %Y')`]{.body-text-s .baby-blue-text}
+[**Last updated:** `r today`]{.body-text-s .baby-blue-text}
 :::
 
 ::::
@@ -36,9 +49,7 @@ format:
 
 ::: {.column width="50%"}
 [Sam Shanny-Csik |]{.custom-subtitle2}<br>
-[*Lecturer & Data Training Coordinator*]{.custom-subtitle3}<br>
-<!-- [*Bren & NCEAS*]{.custom-subtitle3} -->
-<!-- [*National Center for Ecological Analysis & Synthesis*]{.custom-subtitle3} -->
+[*Lecturer & Data Training Coordinator*]{.custom-subtitle3}
 :::
 
 ::: {.column width="50%"}
@@ -53,3 +64,104 @@ format:
 ::: {.title-footer}
 Slides & source code available on [GitHub {{< fa brands github title="GitHub Octocat logo" >}}](https://github.com/UCSB-MEDS/teach-me-how-to-google)
 :::
+
+---
+
+- Address the elephant in the room (ChatGPT / GenAI)
+  - it's everywhere and for a lot of us, it's the first place we might turn to for answers
+  - even Google provides an AI summary at the very top of the page
+  - so, does it even pay to "Google" in the traditional sense anymore?
+
+- Argue, YES!
+
+---
+
+I asked ChatGPT what it would tell new data science students about the importance and utility of using Google vs. ChatGPT (or related GenAI tools) in the early stages of a learning journey. It's response:
+
+"Think of Google as your first stop for researching and understanding the problem, and GenAI as a helpful assistant for brainstorming or clarifying once you know what you’re asking."
+
+---
+
+Erosion of critical thinking skills from overreliance on ChatGPT
+
+- MIT study (June 2025 [preprint](https://arxiv.org/pdf/2506.08872v1) & [summary article by Time](https://time.com/7295195/ai-chatgpt-google-learning-school/))
+
+- divided subjects into 3 groups and asked them to write multiple SAT-style essays over the course of several months
+  - group 1: could use ChatGPT
+  - group 2: could use Google Searches
+  - group 3: only their brains!
+
+- Group 1: lowest brain engagement, delivered similar "souless" esssays that lacked original thought; by 3rd essay, largely copy/pasting 
+- Group 3: highest neural connectivity especially in bands associated with "creativity ideation, memory load, and semantic processing"; more engaged/curious, claimed ownership, expressed higher satisfaction with their essasys
+- Group 2: also high levels of satisfaction and brain activity
+
+. . .
+
+After 3 essays, they were asked to re-write one of their previous efforts. BUT group 1 couldn't use tool, while group 3 could. Group 1 "remembered little of their own essays, and showed weaker alpha and theta brain waves, which likely reflected a bypassing of deep memory processes" (don't integrate into your memory networks). 
+
+"The second group, in contrast, performed well, exhibiting a significant increase in brain connectivity across all EEG frequency bands. This gives rise to the hope that AI, if used properly, could enhance learning as opposed to diminishing it."
+
+---
+
+Our approach: 
+
+Summer / Fall: developing core programming competencies (workflows, patterns, syntax, vocabulary, documentation)
+
+Winter / Spring: leveraging GenAI tools to increase problem-solving efficiency (includes workshops, intentionally integrating GenAI into course curricula)
+
+You're here because you want to learn! ChatGPT (and related tools) will certainly become a part of your workflow, but in this early stage of MEDS, we want you to focus on core competencies, understanding how to properly use tools, write code, and troubleshoot problems. To do that most effectively, you need to commit to active learning processes and approaches. 
+
+---
+
+Googling...
+
+1. Teaches you how to read documentation and official sources
+  - documentation is like a cookbook for code -- Imagine trying to cook a new dish without ever looking at the recipe. You might get something edible by copying what someone else does, but you won’t know why you’re doing each step, what ingredients you can substitute, or how to adjust it to your taste.
+2. Exposes you to different solutions and perspectives
+  - seeing many approaches helps us understand not only *what* works, but *why* it works
+3. Build your debugging and search skills, including expanding your vocabulary!
+  - it's difficult to craft effective queries without exposure to vocab, primary sources, documentation, 
+4. Promotes critical thinking
+  - evaluate source credibility, compare solutions, decide what fits *your* use case; GenAI often gives one 
+5. Tempers overreliance on black-box answers
+  - e.g. ChatGPT can hallucinate or offer solutions that simply don't work (or worse, cause serious downstream problems); online searches often return code vetted by other uses
+6. Show real-world probelm solving patterns
+7. Encourages community learning 
+  - Googling can take you to community forums, blog posts, etc. Seeing how people ask and respond to questions is important
+8. Seek help with version-specific issues
+  - GenAI sometimes suggest outdated solutions
+9. Develop resilience!
+  - rarely will you get to a perfect answer on your first try when troublshooting complex problems (even when using GenAI)
+
+---
+
+<!-- ChatGPT will post knowledge from Stack Overflow directly into responses. The OpenAI chatbot will provide attribution to the Stack Overflow source, guiding users to the relevant source. [ChatGPT Partners With Stack Overflow, Enhancing Access to Coding Data](https://aibusiness.com/nlp/chatgpt-partners-with-stack-overflow-enhancing-access-to-coding-data#close-modal) (May 9, 2024)
+ -->
+
+
+
+
+
+<!-- ---
+
+Some things you may have already heard: 
+
+- CHatGPT has biases (cite)
+- It can halucinate / make stuff up (cite)
+
+. . . 
+
+It *is* continually getting better (cite study about how much it's improved since 2022?)
+
+---
+
+Environmental impacts
+- energy demands
+- water for cooling hardware
+- raw material mining for GPU fabrication
+
+[Explained: Generative AI’s environmental impact](https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117) (Jan 17, 2025)
+
+But also, GenAI is poised to help us solve environmental problems at a much faster pace than ever before. 
+
+Remains to be seen if benefits outweigh risks. -->
