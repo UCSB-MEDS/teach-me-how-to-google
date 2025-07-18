@@ -23,13 +23,9 @@ execute:
 today <- format(Sys.time(), "%b %d, %Y")
 ```
 
-[Teach Me How to Google *2.0*]{.custom-title}
+[Teach Me How to Google *(2.0)*]{.custom-title}
 
-[*The case for search & debugging skills in the age of AI*]{.custom-subtitle2}
-
-<!-- [*Debugging and search skills for new data scientists in the age of AI*]{.custom-subtitle2} -->
-<!-- Debugging skills and programming competencies for budding data scientists*]{.custom-subtitle2} -->
-<!-- [*Why search engines still matter & how to search ... a valuable tool, and how to query effectively*]{.custom-subtitle2} -->
+[*The case for search & debugging skills in the age of AI + tips on how to do so effectively*]{.custom-subtitle2}
 
 :::: {.columns}
 
@@ -67,53 +63,998 @@ Slides & source code available on [GitHub {{< fa brands github title="GitHub Oct
 
 ---
 
-- Address the elephant in the room (ChatGPT / GenAI)
-  - it's everywhere and for a lot of us, it's the first place we might turn to for answers
-  - even Google provides an AI summary at the very top of the page
-  - so, does it even pay to "Google" in the traditional sense anymore?
+## {#elephant data-menu-title="Elephant in the room"}
 
-- Argue, YES!
+[Let's address the elephant in the room . . .]{.slide-title}
 
----
+<hr>
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "elephant.png"))
+```
+:::
+::: {.column width="50%"}
+<br>
+<br>
+
+- Generative AI tools (e.g. ChatGPT) are *everywhere* now (and maybe you're already using them!)
+- Even Google provides an AI summery with each query
+- Does it even pay to "Google," in the traditional sense, anymore? 
+:::
+::::
+
+::: {.footer}
+Image source: [Wikipedia](https://en.wikipedia.org/wiki/Elephant_in_the_room){target="_blank"}
+:::
+
+. . . 
+
+::: {.center-text .body-text-l}
+**We argue, YES!**
+:::
+
+<!-- ---
 
 I asked ChatGPT what it would tell new data science students about the importance and utility of using Google vs. ChatGPT (or related GenAI tools) in the early stages of a learning journey. It's response:
 
-"Think of Google as your first stop for researching and understanding the problem, and GenAI as a helpful assistant for brainstorming or clarifying once you know what you’re asking."
+"Think of Google as your first stop for researching and understanding the problem, and GenAI as a helpful assistant for brainstorming or clarifying once you know what you’re asking." -->
 
 ---
 
-Erosion of critical thinking skills from overreliance on ChatGPT
+## {#MIT1 data-menu-title="MIT study 1"}
 
-- MIT study (June 2025 [preprint](https://arxiv.org/pdf/2506.08872v1) & [summary article by Time](https://time.com/7295195/ai-chatgpt-google-learning-school/))
+[Evidence suggests that overreliance on ChatGPT can erode critical thinking skills]{.slide-title2}
 
-- divided subjects into 3 groups and asked them to write multiple SAT-style essays over the course of several months
-  - group 1: could use ChatGPT
-  - group 2: could use Google Searches
-  - group 3: only their brains!
+<hr>
 
-- Group 1: lowest brain engagement, delivered similar "souless" esssays that lacked original thought; by 3rd essay, largely copy/pasting 
-- Group 3: highest neural connectivity especially in bands associated with "creativity ideation, memory load, and semantic processing"; more engaged/curious, claimed ownership, expressed higher satisfaction with their essasys
-- Group 2: also high levels of satisfaction and brain activity
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "kosmyna-etal-2025.png"))
+```
+:::
+
+::: {.column width="60%"}
+[{{< fa robot title="robot head" >}} **Group 1:**]{.teal-text} could use ChatGPT
+
+<br>
+
+[{{< fa brands google title="Google G" >}} **Group 2:**]{.teal-text} could use Google
+
+<br>
+
+[{{< fa brain title="brain" >}} **Group 3:**]{.teal-text} only their brains!
+:::
+::::
+
+::: {.footer}
+[Kosmyna et al. 2025 (Preprint)](https://arxiv.org/pdf/2506.08872v1){target="_blank"} & [summary article by Time](https://time.com/7295195/ai-chatgpt-google-learning-school/){target="_blank"}
+:::
+
+---
+
+## {#AI-group data-menu-title="AI Group"}
+
+[Evidence suggests that overreliance on ChatGPT can erode critical thinking skills]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "kosmyna-etal-2025.png"))
+```
+:::
+
+::: {.column width="60%"}
+
+[{{< fa robot title="robot head" >}} **Group 1:**]{.teal-text} could use ChatGPT
+
+- [low brain engagement]{.body-text-s}
+- ["souless," lacked originality]{.body-text-s}
+- [copy / pasting by 3rd essay]{.body-text-s}
+
+[{{< fa brands google title="Google G" >}} **Group 2:**]{.teal-text} could use Google
+
+<br>
+
+[{{< fa brain title="brain" >}} **Group 3:**]{.teal-text} only their brains!
+
+:::
+::::
+
+::: {.footer}
+[Kosmyna et al. 2025 (Preprint)](https://arxiv.org/pdf/2506.08872v1){target="_blank"} & [summary article by Time](https://time.com/7295195/ai-chatgpt-google-learning-school/){target="_blank"}
+:::
+
+---
+
+## {#brain-group data-menu-title="Brain Group"}
+
+[Evidence suggests that overreliance on ChatGPT can erode critical thinking skills]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "kosmyna-etal-2025.png"))
+```
+:::
+
+::: {.column width="60%"}
+
+[{{< fa robot title="robot head" >}} **Group 1:**]{.teal-text} could use ChatGPT
+
+- [low brain engagement]{.body-text-s}
+- ["souless," lacked originality]{.body-text-s}
+- [copy / pasting by 3rd essay]{.body-text-s}
+
+[{{< fa brands google title="Google G" >}} **Group 2:**]{.teal-text} could use Google
+
+<br>
+
+[{{< fa brain title="brain" >}} **Group 3:**]{.teal-text} only their brains!
+
+- [high neural connectivity]{.body-text-s}
+- [engaged / curious]{.body-text-s}
+- [claimed ownership & expressed higher satisfaction]{.body-text-s}
+:::
+::::
+
+::: {.footer}
+[Kosmyna et al. 2025 (Preprint)](https://arxiv.org/pdf/2506.08872v1){target="_blank"} & [summary article by Time](https://time.com/7295195/ai-chatgpt-google-learning-school/){target="_blank"}
+:::
+
+---
+
+## {#google-group data-menu-title="Google Group"}
+
+[Evidence suggests that overreliance on ChatGPT can erode critical thinking skills]{.slide-title2}
+
+<hr>
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "kosmyna-etal-2025.png"))
+```
+:::
+
+::: {.column width="60%"}
+
+[{{< fa robot title="robot head" >}} **Group 1:**]{.teal-text} could use ChatGPT
+
+- [low brain engagement]{.body-text-s}
+- ["souless," lacked originality]{.body-text-s}
+- [copy / pasting by 3rd essay]{.body-text-s}
+
+[{{< fa brands google title="Google G" >}} **Group 2:**]{.teal-text} could use Google
+
+- [also high levels of brain activity and satisfaction!]{.body-text-s}
+
+[{{< fa brain title="brain" >}} **Group 3:**]{.teal-text} only their brains!
+
+- [high neural connectivity]{.body-text-s}
+- [engaged / curious]{.body-text-s}
+- [claimed ownership & expressed higher satisfaction]{.body-text-s}
+:::
+::::
+
+::: {.footer}
+[Kosmyna et al. 2025 (Preprint)](https://arxiv.org/pdf/2506.08872v1){target="_blank"} & [summary article by Time](https://time.com/7295195/ai-chatgpt-google-learning-school/){target="_blank"}
+:::
+
+::: {.notes}
+"The brain-only group, conversely, showed the highest neural connectivity, especially in alpha, theta and delta bands, which are associated with creativity ideation, memory load, and semantic processing."
+:::
+
+---
+
+## {#group-change data-menu-title="Group change"}
+
+[Evidence suggests that overreliance on ChatGPT can erode critical thinking skills]{.slide-title2}
+
+<hr>
+
+<br>
+
+[After 3 essays, everyone was asked to re-write one of their previous essays, [but [{{< fa robot title="robot head" >}} **Group 1**]{.teal-text} *could no longer use* ChatGPT,]{.fragment .fade-in} [while [{{< fa brands google title="Google G" >}} **Group 2**]{.teal-text} **&** [{{< fa brain title="brain" >}} **Group 3**]{.teal-text} *could now use* ChatGPT]{.fragment .fade-in}]{.body-text-m}
+
+<br>
+
+::: {.incremental}
+- [{{< fa robot title="robot head" >}} **Group 1:**]{.teal-text} difficulty remembering, weaker alpha & theta brain waves (creative ideation & memory load); suggests that they **didn't integrate work into their memory networks**
+
+<br>
+
+- [{{< fa brands google title="Google G" >}} **Group 2:**]{.teal-text} performed well, significant increase in brain connectivity across all bands; suggests that **if used properly, AI can enhance learning as opposed to diminishing it**
+:::
+
+::: {.footer}
+[Kosmyna et al. 2025 (Preprint)](https://arxiv.org/pdf/2506.08872v1){target="_blank"} & [summary article by Time](https://time.com/7295195/ai-chatgpt-google-learning-school/){target="_blank"}
+:::
+
+---
+
+## {#paper-concolusion data-menu-title="Paper conclusion"}
+
+<br>
+<br>
+<br>
+
+>[*"The **LLM** undeniably **reduced the friction** involved in answering participants' questions compared to the Search Engine. However, this convenience **came at a cognitive cost**, diminishing users' inclination to critically evaluate the LLM's output or ”opinions” (probabilistic answers based on the training datasets). This highlights a concerning evolution of the **'echo chamber' effect**: rather than disappearing, it has adapted to **shape user exposure through algorithmically curated content**. What is ranked as “top” is ultimately influenced by the priorities of the LLM's shareholders."*]{.body-text-m}
+
+::: {.footer}
+[Kosmyna et al. 2025 (Preprint)](https://arxiv.org/pdf/2506.08872v1){target="_blank"}
+:::
+
+---
+
+## {#lee-etal-2025 data-menu-title="Lee et al. 2025"}
+
+[Other related findings]{.slide-title}
+
+<hr>
+
+>[*"Moreover, while GenAI can improve worker efficiency, it **can inhibit critical engagement with work and can potentially lead to long-term overreliance on the tool and diminished skill for independent problem-solving**. **Higher confidence in GenAI’s ability to perform a task is related to less critical thinking effort.** When using GenAI tools, the **effort invested in critical thinking shifts from information gathering to information verification; from problem-solving to AI response integration; and from task execution to task stewardship.** Knowledge workers face new challenges in critical thinking as they incorporate GenAI into their knowledge workflows."*]{.body-text-m}
+
+::: {.footer}
+[Lee et al. 2025 (Proceedings of the 2025 CHI conference on human factors in computing systems)](https://dl.acm.org/doi/pdf/10.1145/3706598.3713778){target="_blank"}
+:::
+
+---
+
+## {#meds-calendar data-menu-title="MEDS calendar"}
+
+[GenAI in the MEDS calendar]{.slide-title}
+
+<hr>
+
+| Term   | Incorporation of GenAI                                                                        |
+|--------|-----------------------------------------------------------------------------------------------|
+| SUMMER | **Establish context**<br>Student use is discourage                                            |
+| FALL   | **Critical interrogation**<br>Instructors demonstrate examples of use and discuss pros / cons |
+| WINTER | **Guided Use**<br>Workshops early in quarter<br>Instructors model use                         |
+| SPRING | **Supported Use**<br>Instructors model use                                                    |
+
+<br>
+
+. . . 
+
+**You're here because you want to learn!** ChatGPT (and related tools) will certainly become a part of your workflow[, but in this early stage of MEDS, we want you to focus on core competencies and critical thinking skills, including an understanding of how to properly use tools, design workflows, write and organize code, and troubleshoot problems.]{.fragment .fade-in} 
 
 . . .
 
-After 3 essays, they were asked to re-write one of their previous efforts. BUT group 1 couldn't use tool, while group 3 could. Group 1 "remembered little of their own essays, and showed weaker alpha and theta brain waves, which likely reflected a bypassing of deep memory processes" (don't integrate into your memory networks). 
-
-"The second group, in contrast, performed well, exhibiting a significant increase in brain connectivity across all EEG frequency bands. This gives rise to the hope that AI, if used properly, could enhance learning as opposed to diminishing it."
+***To do that most effectively, you need to commit to active learning processes and approaches.***
 
 ---
 
-Our approach: 
+## {#welcome data-menu-title="Welcome"}
 
-Summer / Fall: developing core programming competencies (workflows, patterns, syntax, vocabulary, documentation)
+[Welcome to data science, where questions are aplenty!]{.slide-title2}
 
-Winter / Spring: leveraging GenAI tools to increase problem-solving efficiency (includes workshops, intentionally integrating GenAI into course curricula)
+<hr>
 
-You're here because you want to learn! ChatGPT (and related tools) will certainly become a part of your workflow, but in this early stage of MEDS, we want you to focus on core competencies, understanding how to properly use tools, write code, and troubleshoot problems. To do that most effectively, you need to commit to active learning processes and approaches. 
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+- You will become increasingly more comfortable with **not immediately knowing** the answers to all your coding problems (*even* when using GenAI tools). It's all part of the job.
+
+<br>
+
+- Googling can be difficult, and it is a **skill** that **requries practice**. But you can and will get better at it over time.
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "questions.gif"))
+```
+::: {.center-text .body-text-s .gray-text}
+-Me, everytime I sit down to program
+:::
+:::
+
+::::
 
 ---
 
-Googling...
+## {#frustration data-menu-title="Frustration"}
+
+[It doesn't mean you won't still feel like this at times:]{.slide-title2}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "ron_swanson.gif"))
+```
+
+::: {.center-text .body-text-s .gray-text}
+-Me still, about half the times I sit down to program
+:::
+
+---
+
+## {#goal data-menu-title="Goal"}
+
+[But the goal is to be a bit more at peace with that feeling...and have the confidence that you can find your way]{.slide-title3}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "how_much_i_know.jpeg"))
+```
+
+::: {.center-text .body-text-s .gray-text}
+Artwork by [Allison Horst](https://allisonhorst.com/){target="_blank"}
+:::
+
+---
+
+## {#when-to-google data-menu-title="When to Google"}
+
+[I typically find myself turning to Google because:]{.slide-title2}
+
+<hr>
+
+<br>
+
+[[{{< fa exclamation-triangle title="an exclamation point in a triangle">}}]{.teal-text} I got an error and need help fixing it]{.body-text-m}
+
+<br>
+
+[[{{< fa question-circle title="a question mark in a circle">}}]{.teal-text} I know what I want my code to do, but I have no idea how to actually pull it off]{.body-text-m}
+
+<br>
+
+. . . 
+
+[[{{< fa flushed title="a flushed face with wide eyes">}}]{.teal-text} Sometimes, it's both of these things happening at the same time]{.body-text-m}
+
+<!-- ---
+
+##  {#use-sass data-menu-title="## Use Sass ##" background="#053660"}
+
+<div class="vertical-center">
+<div class="custom-subtitle center-text">{{< fa exclamation-triangle title="an exclamation point in a triangle">}} I got an error and need help fixing it</div>
+</div> -->
+
+---
+
+## {#lentgh data-menu-title="Lentgh"}
+
+[We've all been here before:]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "alligator.png"))
+```
+
+::: {.center-text .body-text-s .gray-text}
+Artwork by [Allison Horst](https://allisonhorst.com/){target="_blank"}
+:::
+
+---
+
+## {#narrow-down data-menu-title="Narrow down"}
+
+[Pause, exhale, narrow down your potential Google search]{.slide-title2}
+
+<hr>
+
+. .  .
+
+[[{{< fa power-off title="power button" >}}]{.teal-text} Restart R]{.body-text-m}
+
+. .  .
+
+<br>
+
+[[{{< fa lightbulb title="lightbulb" >}}]{.teal-text} Check the easy stuff]{.body-text-m}
+
+. .  .
+
+<br>
+[[{{< fa exclamation-triangle title="exclamation point in a triangle" >}}]{.teal-text} Read that error message]{.body-text-m}
+
+. .  .
+
+<br>
+
+[[{{< fa magnifying-glass title="magnifying glass" >}}]{.teal-text} Try to islate the problem]{.body-text-m}
+
+. .  .
+
+<br>
+
+[[{{< fa file-alt title="a file" >}}]{.teal-text} Double-check the documentation]{.body-text-m}
+
+. .  .
+
+<br>
+
+[[{{< fa people-arrows title="two people with an arrow pointing to each of them" >}}]{.teal-text} Talk about it out loud]{.body-text-m}
+
+---
+
+## {#restart-r data-menu-title="Restart R"}
+
+[{{< fa power-off title="power button" >}} Restart R]{.slide-title}
+
+<hr>
+
+>*"Restart R often, especially when things get weird...We install and update packages from R, which is a little bit like working on your airplane engine while you're flying."*
+
+::: {.right-align-text .gray-text .body-text-s}
+-Jenny Bryan, in her 2020 rstudio::conf keynote, [Object of type ‘closure’ is not subsettable](https://posit.co/resources/videos/object-of-type-closure-is-not-subsettable/){target="_blank"}
+:::
+
+<br>
+
+. . . 
+
+Similarly, going to sleep and trying again tomorrow is a legitimate (and often impactful) strategy -- think of it as restarting your own internal computer (i.e. your brain).
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "60%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "tweet-kvaughn.png"))
+```
+
+---
+
+## {#check-easy-stuff data-menu-title="Check the easy stuff"}
+
+[{{< fa lightbulb title="lightbulb" >}} Check the easy stuff]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "60%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "debug_bingo.png"))
+```
+
+::: {.footer}
+Source: This [tweet](https://x.com/cogscimom/status/1354508785365078016?ref_src=twsrc%5Etfw){target="_blank"} by @cogscimom
+:::
+
+---
+
+## {#error-message-helpful1 data-menu-title="Error message (helpful 1)"}
+
+[{{< fa exclamation-triangle title="exclamation point in a triangle" >}} Read that error message]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: true
+# load packages ----
+library(tidyverse) # a collection of data wrangling & visualization packages
+library(palmerpenguins) # contains the 'penguins' data set
+
+# print out the first three rows of the penguins data frame ----
+head(penguins, 3) 
+```
+
+<br>
+
+. . . 
+
+```{r}
+#| eval: true
+#| echo: true
+# what unique values are in the species column of the penguins data frame? ----
+unique(penguins$species) 
+```
+
+---
+
+## {#error-message-helpful2 data-menu-title="Error message (helpful 2)"}
+
+[{{< fa exclamation-triangle title="exclamation point in a triangle" >}} Read that error message]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: true
+#| error: true
+# create a new data frame with just rows (observations) containing "Gentoo" penguins ----
+gentoo <- penguins |> 
+  filter(species = "Gentoo")
+```
+
+<br>
+
+::: {.center-text .body-text-m}
+**Returns a helpful error message with a potential fix!**
+:::
+
+---
+
+## {#error-message-unhelpful data-menu-title="Error message (unhelpful)"}
+
+[{{< fa exclamation-triangle title="exclamation point in a triangle" >}} Read that error message]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: true
+# create data object, named 'dat' ----
+dat <- data.frame(x = 1, y = 2)
+dat
+```
+
+<br>
+
+. . . 
+
+```{r}
+#| eval: true
+#| echo: true
+#| error: true
+# extract column 'x' from your data object (oops, we forgot we named it 'dat' and not 'df') ----
+df$x
+```
+
+. . . 
+
+<br>
+
+>*"Your first “object of type ‘closure’ is not subsettable” error message is a big milestone for an R user. Congratulations, if there was any lingering doubt, you now know that you are officially programming!"*
+
+::: {.right-align-text .gray-text .body-text-s}
+-Jenny Bryan, in her 2020 rstudio::conf keynote, [Object of type ‘closure’ is not subsettable](https://posit.co/resources/videos/object-of-type-closure-is-not-subsettable/){target="_blank"}
+:::
+
+::: {.body-text-xs .center-text}
+This error often arises when you attempt to subset a function (i.e. treat a function in a way that it is shouldn't be; a "closure" is a type of function in R). Here, we forgot that we called called our object `dat`, and not `df`. `df()` also happens to be a function that gives you the density of the 'F' distribution and we are attempting to subset (i.e. extract) a column (`x`) from it.
+:::
+
+---
+
+## {#error-message-resources data-menu-title="Error message (resources)"}
+
+[{{< fa exclamation-triangle title="exclamation point in a triangle" >}} Read that error message]{.slide-title}
+
+<hr>
+
+::: {.center-text .body-text-m}
+**Error messages provide helpful context and information, even if they seem unhelpful on the surface!** 
+:::
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+You'll become more familiar with common error messages the more time you spend coding, but it can be helpful to explore some resources for deciphering the big ones:
+
+- [Common R Error Messages](https://www.programmingr.com/r-error-messages/){target="_blank"}
+- [Common R Programming Errors Faced by Beginners](https://www.r-bloggers.com/2016/06/common-r-programming-errors-faced-by-beginners/){target="_blank"}
+- [How to: Interpret Common Errors in R](https://warin.ca/posts/rcourse-howto-interpretcommonerrors/){target="_blank"}
+- [R Error Message Cheat Sheet](http://varianceexplained.org/courses/errors/){target="_blank"}
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "horst-error-teaching.png"))
+```
+
+::: {.center-text .body-text-s .gray-text}
+Artwork by [Allison Horst](https://allisonhorst.com/){target="_blank"}
+:::
+:::
+::::
+
+---
+
+## {#isolate-problem1 data-menu-title="Isolate the problem 1"}
+
+[{{< fa magnifying-glass title="magnifying glass" >}} Try to isolate the problem]{.slide-title}
+
+<hr>
+
+It can be overwhelming to figure out where an error or issue is occurring in a large chunk of code. A (very small) example:
+
+```{r}
+#| eval: true
+#| echo: true
+#| error: true
+# load libraries ----
+library(dplyr)
+library(palmerpenguins)
+
+# wrangle data ----
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) |> 
+  filter(species == "Adelie") |>
+  reorder(bill_length_mm)
+```
+
+. . . 
+
+<br>
+
+**Running all lines together can make it difficult which line(s) is responsible for this error** (and imagine dealing with much longer, more complex code chunks!).
+
+. . . 
+
+<br>
+
+**Instead, run line-by-line to isolate where the problem is occurring** so that you can begin investigating from there.
+
+---
+
+## {#isolate-problem2 data-menu-title="Isolate the problem 2"}
+
+[{{< fa magnifying-glass title="magnifying glass" >}} Try to isolate the problem]{.slide-title}
+
+<hr>
+
+Run line-by-line until you hit the error:
+```{r}
+#| eval: true
+#| echo: true
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) # |> 
+  # filter(species == "Adelie") |> 
+  # reorder(bill_length_mm)
+```
+
+
+**Works!**
+
+. . . 
+
+```{r}
+#| eval: true
+#| echo: true
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) |> 
+  filter(species == "Adelie") # |> 
+  # reorder(bill_length_mm)
+```
+
+**Works!**
+
+. . . 
+
+```{r}
+#| eval: true
+#| echo: true
+#| error: true
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) |> 
+  filter(species == "Adelie") |> 
+  reorder(bill_length_mm)
+```
+
+**Doesn't work... let's look into what `reorder()` is / does...**
+
+::: {.footer}
+**Tip:** comment / uncomment lines of code using the keyboard shortcut `Cmd` / `Ctrl` + `shift` + `C`
+:::
+
+---
+
+## {#isolate-problem3 data-menu-title="Isolate the problem 3"}
+
+[{{< fa magnifying-glass title="magnifying glass" >}} Try to isolate the problem]{.slide-title}
+
+<hr>
+
+Searching for `reorder()` (either by looking up documentation -- more on that in a moment -- or Googling it) reveals that **it's not actually a function** {{< fa face-grin-beam-sweat title="a grinning face with a sweat droplet" >}}
+
+. . . 
+
+Googling, "[R tidyverse reorder values high to low](https://www.google.com/search?q=R+tidyverse+reorder+values+high+to+low&sca_esv=558984878&ei=KlPkZOzoK8TFkPIPqf2ikAI&ved=0ahUKEwjspZqwz--AAxXEIkQIHam-CCIQ4dUDCBA&uact=5&oq=R+tidyverse+reorder+values+high+to+low&gs_lp=Egxnd3Mtd2l6LXNlcnAiJlIgdGlkeXZlcnNlIHJlb3JkZXIgdmFsdWVzIGhpZ2ggdG8gbG93MgUQIRigATIFECEYoAEyBRAhGKsCSJ4fUPECWJ4dcAF4AJABAJgBqwGgAdAOqgEENC4xMrgBA8gBAPgBAcICChAAGEcY1gQYsAPCAgUQABiiBOIDBBgAIEGIBgGQBgg&sclient=gws-wiz-serp){target="_blank"}," leads us to the [`{dplyr}` documentation](https://dplyr.tidyverse.org/reference/arrange.html){target="_blank"} for the `arrange()` function, which allows us to sort values in descending order when coupled with `desc()`:
+
+```{r}
+#| eval: true
+#| echo: true
+
+penguins_new <- penguins |> 
+  select(species, sex, bill_length_mm) |>
+  filter(species == "Adelie") |>
+  arrange(desc(bill_length_mm))
+
+head(penguins_new, 4)
+```
+
+::: {.footer}
+**It can be easy to confuse or mistake function names, particularly as you're just starting to learn a langauge or new packages** (e.g. `forcats::fct_reorder()` is used to reorder *factor* levels, but here, we're looking to reorder *numeric values* in the `bill_length_mm` column).
+:::
+
+---
+
+## {#read-documentation1 data-menu-title="Double-check documentation 1"}
+
+[{{< fa file-alt title="a file" >}} Double-check the documentation]{.slide-title}
+
+<hr>
+
+**Documentation provides *critical* info for understanding how to correctly use a package or function**
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- written by the people who actually developed the tools you're using
+- describes inputs, outputs, how a function can be modified to acheive a particular outcome
+- demonstrates standards 
+- often includes reproducible examples
+
+**Pull up documentation for a loaded function by typing `?function_name` in your console. E.g.**
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+?tidyr::pivot_longer
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "pivot_wider_doc.png"))
+```
+:::
+::::
+<!-- ::: {.footer}
+The documentation that appears in the Help pane is the same that you'll find in the official documentation online.
+::: -->
+
+---
+
+## {#read-documentation2 data-menu-title="Double-check documentation 2"}
+
+[{{< fa file-alt title="a file" >}} Double-check the documentation]{.slide-title}
+
+<hr>
+
+---
+
+You are rarely using a single function in isolation -- more often, you're stringing together numerous functions to achieve a larger task.  But you need to know how each individual piece works before you can effectively get all pieces talking to / working with one another.
+
+(Unofficial) tutorials and GenAI tend to provide easy / fast approaches or fixes to a problem, but often may lead to difficulties in scaling or lack of nuanced understanding.
+Read documentation first > seek clarification using videos / tutorials / GenAI (later in the academic year {{< fa face-smile-wink title="a winking smiling face">}} second.
+
+. . . 
+
+Vignettes are official tutorials that often accompnay documentation -- these are wonderful! 
+
+These are sometimes linked in the documentation, or you can Google "package_name vignette" to find it onlilne. Alternatively, package documentation on CRAN1 will typically include any vignettes that are associated with that package (e.g. find all dplyr vignettes here).
+
+::: {.footer}
+[CRAN](https://cran.r-project.org/){target="_blank"} stands for the **C**omprehensive **R** **A**rchive **N**etwork and is R's central software repository -- in other words, it's where published R packages (including previous versions of published R packages) live. When you run `install.packages("package_name)`, R (on your computer) reaches out to CRAN to find / install the latest version of that package on your computer.
+:::
+
+---
+
+## {#talk-out-loud data-menu-title="Talk out loud"}
+
+[{{< fa people-arrows title="two people with an arrow pointing to each of them" >}} Talk about it out loud]{.slide-title}
+
+<hr> 
+
+This is often referred to as **rubber duck debugging**, and it goes something like this:
+
+:::: {.columns}
+
+::: {.column width="50%" .body-text-s}
+>*1. Beg, borrow, steal, buy, fabricate or otherwise obtain a rubber duck (bathtub variety).*
+>
+>*2. Place rubber duck on desk and inform it you are just going to go over some code with it, if that’s all right.*
+>
+>*3. Explain to the duck what your code is supposed to do, and then go into detail and explain your code line by line.*
+>
+>*4. At some point you will tell the duck what you are doing next and then realise that that is not in fact what you are actually doing. The duck will sit there serenely, happy in the knowledge that it has helped you on your way.*
+
+::: {.right-align-text}
+-[rubberduckdebugging.com](https://rubberduckdebugging.com/){target="_blank"} with original credit to Andy from lists.ethernal.org
+:::
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "duck.jpeg"))
+```
+::: {.center-text .body-text-s .gray-text}
+Image source: [Wikipedia](https://en.wikipedia.org/wiki/Rubber_duck_debugging){target="_blank"}
+:::
+:::
+::::
+
+---
+
+## {#talk-out-loud2 data-menu-title="Talk out loud 2"}
+
+[{{< fa people-arrows title="two people with an arrow pointing to each of them" >}} Talk about it out loud]{.slide-title}
+
+<hr> 
+
+why is this different than using ChatGPT?
+
+ChatGPT gives you whole answers (which are not always correct) whereas rubber duck debugging is like conversing an instructor or tutor who steers you in the right direction:
+
+[Quack! Configuring Large Language Models to Serve as Rubber Duck Coding Assistants](https://dl.acm.org/doi/pdf/10.1145/3641555.3705235?casa_token=g_V2W5f2vtgAAAAA:reTmZlZx14O-vZJEnACFGId9Cr_Gt1lOtQr2X4YKQdhiG3Jb6qzcV5Qr-Sqfs66h6spIXtEsabIF){target="_blank"}
+
+---
+
+## {#enter-google data-menu-title="Enter Google"}
+
+[Still haven't figured it out? Enter Google.]{.slide-title}
+
+<hr> 
+
+**[{{< fa brands google title="Google G" >}}]{.teal-text} General Googling tips:**
+
+- [[r] + error message]{.body-text-s}
+- [error message + function or package name]{.body-text-s}
+- [sometimes even just the error message alone (especially if hyperspecific) will suffice]{.body-text-s}
+ 
+. .  .
+
+**[{{< fa calendar title="calendar" >}}]{.teal-text} Check the date of online solutions:**
+
+- [past solutions can become outdated quickly -- target recent posts and responses (also an issue when using GenAI!)]{.body-text-s}
+
+. .  .
+
+**[{{< fa plus title="plus" >}}]{.teal-text} Read multiple search results:**
+
+- [sometimes one explanation will make sense in a way that another explanation will not]{.body-text-s}
+  
+. . . 
+
+**[{{< fa user-secret title="detective" >}}]{.teal-text} Isolate the relevant part(s) of an answer:**
+
+- [not every part of an online response will be relevant to *your* problem -- take care when copy / pasting entire "solutions"]{.body-text-s}
+
+---
+
+## {#google-search-ops data-menu-title="Google search operators"}
+
+[Use search operators to get more specific results]{.slide-title2}
+
+<hr> 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "how_to_nytimes.png"))
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "how_to_velocity.png"))
+```
+:::
+
+::::
+
+**For example, compare the following two Google queries:**
+
+TBD
+
+--- 
+
+Places to look:
+
+- stackoverflow
+- GitHub
+- vignettes
+- blogs!
+
+---
+
+**{{< fa brands github-square title="GitHub Octocat" >}} Explore package source code on GitHub:**
+
+- [this may include looking at any issues or pull requests associated with that package to check if there are known problems (e.g. check out ___ on [GitHub](){target="_blank"})]{.body-text-s}
+- [check ot see if there are wikis available for a particular repository (e.g. ....)]{.body-text-s}
+
+---
+
+still stumped?
+
+reprex
+
+---
+
+Other suggestions:
+
+- read!
+- create a curated vocab list
+- it's okay to copy code
+- psuedocode
+- clear var names
+- build in checks
+
+---
+
+What's to come
+
+- AI workshops in the winter
+
+---
+
+
+
+<!-- Googling...
 
 1. Teaches you how to read documentation and official sources
   - documentation is like a cookbook for code -- Imagine trying to cook a new dish without ever looking at the recipe. You might get something edible by copying what someone else does, but you won’t know why you’re doing each step, what ingredients you can substitute, or how to adjust it to your taste.
@@ -131,9 +1072,9 @@ Googling...
 8. Seek help with version-specific issues
   - GenAI sometimes suggest outdated solutions
 9. Develop resilience!
-  - rarely will you get to a perfect answer on your first try when troublshooting complex problems (even when using GenAI)
+  - rarely will you get to a perfect answer on your first try when troublshooting complex problems (even when using GenAI) -->
 
----
+<!-- --- -->
 
 <!-- ChatGPT will post knowledge from Stack Overflow directly into responses. The OpenAI chatbot will provide attribution to the Stack Overflow source, guiding users to the relevant source. [ChatGPT Partners With Stack Overflow, Enhancing Access to Coding Data](https://aibusiness.com/nlp/chatgpt-partners-with-stack-overflow-enhancing-access-to-coding-data#close-modal) (May 9, 2024)
  -->
@@ -165,3 +1106,15 @@ Environmental impacts
 But also, GenAI is poised to help us solve environmental problems at a much faster pace than ever before. 
 
 Remains to be seen if benefits outweigh risks. -->
+
+---
+
+Troubleshooting your own code (rather than sending it right to ChatGPT when you run into an error) fosters a deeper understanding and problem-solving skills. You don't want to be caught in an interview or end up working for an organization that prohibts you from using a tool you've built an overreliance on! 
+
+My husband is a software engineer for an AI company and they don't allow interviewees to use GenAI in interviews because they want to understand how a candidate can break down a complex problem, piece together an approach to solving it, then execute on it.
+
+By troubleshooting your own code (with help from Google!), you are forced to:
+
+- use critical thinking and logical reasoning skills to break down complex technical problems into smaller, manageable parts
+- think carefully about what you want your code to be doing vs. what your code actually is doing 
+- understand your code's functionality and identify root causes of issues

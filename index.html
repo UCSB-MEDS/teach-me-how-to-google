@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
 <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
 <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -330,16 +395,13 @@
 
 
 <section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#053660"><h2></h2>
-<p><span class="custom-title">Teach Me How to Google <em>2.0</em></span></p>
-<p><span class="custom-subtitle2"><em>The case for search &amp; debugging skills in the age of AI</em></span></p>
-<!-- [*Debugging and search skills for new data scientists in the age of AI*]{.custom-subtitle2} -->
-<!-- Debugging skills and programming competencies for budding data scientists*]{.custom-subtitle2} -->
-<!-- [*Why search engines still matter & how to search ... a valuable tool, and how to query effectively*]{.custom-subtitle2} -->
+<p><span class="custom-title">Teach Me How to Google <em>(2.0)</em></span></p>
+<p><span class="custom-subtitle2"><em>The case for search &amp; debugging skills in the age of AI + tips on how to do so effectively</em></span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="body-text-s baby-blue-text"><strong>Published:</strong> October 11, 2021</span></p>
 </div><div class="column" style="width:50%;">
-<p><span class="body-text-s baby-blue-text"><strong>Last updated:</strong> Jul 01, 2025</span></p>
+<p><span class="body-text-s baby-blue-text"><strong>Last updated:</strong> Jul 18, 2025</span></p>
 </div></div>
 <hr class="hr-teal">
 <div class="columns">
@@ -352,90 +414,735 @@
 <div class="title-footer">
 <p>Slides &amp; source code available on <a href="https://github.com/UCSB-MEDS/teach-me-how-to-google">GitHub <i class="fa-brands fa-github" title="GitHub Octocat logo" aria-label="github"></i></a></p>
 </div>
-</section><section class="slide level2"><ul>
-<li>Address the elephant in the room (ChatGPT / GenAI)
+</section><section id="elephant" class="slide level2" data-menu-title="Elephant in the room"><h2></h2>
+<p><span class="slide-title">Let’s address the elephant in the room . . .</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/elephant.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br><br></p>
 <ul>
-<li>it’s everywhere and for a lot of us, it’s the first place we might turn to for answers</li>
-<li>even Google provides an AI summary at the very top of the page</li>
-<li>so, does it even pay to “Google” in the traditional sense anymore?</li>
+<li>Generative AI tools (e.g.&nbsp;ChatGPT) are <em>everywhere</em> now (and maybe you’re already using them!)</li>
+<li>Even Google provides an AI summery with each query</li>
+<li>Does it even pay to “Google,” in the traditional sense, anymore?</li>
 </ul>
-</li>
-<li>Argue, YES!</li>
-</ul></section><section class="slide level2"><p>I asked ChatGPT what it would tell new data science students about the importance and utility of using Google vs.&nbsp;ChatGPT (or related GenAI tools) in the early stages of a learning journey. It’s response:</p>
-<p>“Think of Google as your first stop for researching and understanding the problem, and GenAI as a helpful assistant for brainstorming or clarifying once you know what you’re asking.”</p>
-</section><section class="slide level2"><p>Erosion of critical thinking skills from overreliance on ChatGPT</p>
+</div></div>
+<div class="footer">
+<p>Image source: <a href="https://en.wikipedia.org/wiki/Elephant_in_the_room" target="_blank">Wikipedia</a></p>
+</div>
+<div class="fragment">
+<div class="center-text body-text-l">
+<p><strong>We argue, YES!</strong></p>
+</div>
+<!-- ---
+
+I asked ChatGPT what it would tell new data science students about the importance and utility of using Google vs. ChatGPT (or related GenAI tools) in the early stages of a learning journey. It's response:
+
+"Think of Google as your first stop for researching and understanding the problem, and GenAI as a helpful assistant for brainstorming or clarifying once you know what you’re asking." -->
+</div>
+</section><section id="MIT1" class="slide level2" data-menu-title="MIT study 1"><h2></h2>
+<p><span class="slide-title2">Evidence suggests that overreliance on ChatGPT can erode critical thinking skills</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/kosmyna-etal-2025.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<p><span class="teal-text"><i class="fa-solid fa-robot" title="robot head" aria-label="robot"></i> <strong>Group 1:</strong></span> could use ChatGPT</p>
+<p><br></p>
+<p><span class="teal-text"><i class="fa-brands fa-google" title="Google G" aria-label="google"></i> <strong>Group 2:</strong></span> could use Google</p>
+<p><br></p>
+<p><span class="teal-text"><i class="fa-solid fa-brain" title="brain" aria-label="brain"></i> <strong>Group 3:</strong></span> only their brains!</p>
+</div></div>
+<div class="footer">
+<p><a href="https://arxiv.org/pdf/2506.08872v1" target="_blank">Kosmyna et al.&nbsp;2025 (Preprint)</a> &amp; <a href="https://time.com/7295195/ai-chatgpt-google-learning-school/" target="_blank">summary article by Time</a></p>
+</div>
+</section><section id="AI-group" class="slide level2" data-menu-title="AI Group"><h2></h2>
+<p><span class="slide-title2">Evidence suggests that overreliance on ChatGPT can erode critical thinking skills</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/kosmyna-etal-2025.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<p><span class="teal-text"><i class="fa-solid fa-robot" title="robot head" aria-label="robot"></i> <strong>Group 1:</strong></span> could use ChatGPT</p>
 <ul>
-<li><p>MIT study (June 2025 <a href="https://arxiv.org/pdf/2506.08872v1">preprint</a> &amp; <a href="https://time.com/7295195/ai-chatgpt-google-learning-school/">summary article by Time</a>)</p></li>
-<li>
-<p>divided subjects into 3 groups and asked them to write multiple SAT-style essays over the course of several months</p>
-<ul>
-<li>group 1: could use ChatGPT</li>
-<li>group 2: could use Google Searches</li>
-<li>group 3: only their brains!</li>
+<li><span class="body-text-s">low brain engagement</span></li>
+<li><span class="body-text-s">“souless,” lacked originality</span></li>
+<li><span class="body-text-s">copy / pasting by 3rd essay</span></li>
 </ul>
+<p><span class="teal-text"><i class="fa-brands fa-google" title="Google G" aria-label="google"></i> <strong>Group 2:</strong></span> could use Google</p>
+<p><br></p>
+<p><span class="teal-text"><i class="fa-solid fa-brain" title="brain" aria-label="brain"></i> <strong>Group 3:</strong></span> only their brains!</p>
+</div></div>
+<div class="footer">
+<p><a href="https://arxiv.org/pdf/2506.08872v1" target="_blank">Kosmyna et al.&nbsp;2025 (Preprint)</a> &amp; <a href="https://time.com/7295195/ai-chatgpt-google-learning-school/" target="_blank">summary article by Time</a></p>
+</div>
+</section><section id="brain-group" class="slide level2" data-menu-title="Brain Group"><h2></h2>
+<p><span class="slide-title2">Evidence suggests that overreliance on ChatGPT can erode critical thinking skills</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/kosmyna-etal-2025.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<p><span class="teal-text"><i class="fa-solid fa-robot" title="robot head" aria-label="robot"></i> <strong>Group 1:</strong></span> could use ChatGPT</p>
+<ul>
+<li><span class="body-text-s">low brain engagement</span></li>
+<li><span class="body-text-s">“souless,” lacked originality</span></li>
+<li><span class="body-text-s">copy / pasting by 3rd essay</span></li>
+</ul>
+<p><span class="teal-text"><i class="fa-brands fa-google" title="Google G" aria-label="google"></i> <strong>Group 2:</strong></span> could use Google</p>
+<p><br></p>
+<p><span class="teal-text"><i class="fa-solid fa-brain" title="brain" aria-label="brain"></i> <strong>Group 3:</strong></span> only their brains!</p>
+<ul>
+<li><span class="body-text-s">high neural connectivity</span></li>
+<li><span class="body-text-s">engaged / curious</span></li>
+<li><span class="body-text-s">claimed ownership &amp; expressed higher satisfaction</span></li>
+</ul>
+</div></div>
+<div class="footer">
+<p><a href="https://arxiv.org/pdf/2506.08872v1" target="_blank">Kosmyna et al.&nbsp;2025 (Preprint)</a> &amp; <a href="https://time.com/7295195/ai-chatgpt-google-learning-school/" target="_blank">summary article by Time</a></p>
+</div>
+</section><section id="google-group" class="slide level2" data-menu-title="Google Group"><h2></h2>
+<p><span class="slide-title2">Evidence suggests that overreliance on ChatGPT can erode critical thinking skills</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/kosmyna-etal-2025.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<p><span class="teal-text"><i class="fa-solid fa-robot" title="robot head" aria-label="robot"></i> <strong>Group 1:</strong></span> could use ChatGPT</p>
+<ul>
+<li><span class="body-text-s">low brain engagement</span></li>
+<li><span class="body-text-s">“souless,” lacked originality</span></li>
+<li><span class="body-text-s">copy / pasting by 3rd essay</span></li>
+</ul>
+<p><span class="teal-text"><i class="fa-brands fa-google" title="Google G" aria-label="google"></i> <strong>Group 2:</strong></span> could use Google</p>
+<ul>
+<li><span class="body-text-s">also high levels of brain activity and satisfaction!</span></li>
+</ul>
+<p><span class="teal-text"><i class="fa-solid fa-brain" title="brain" aria-label="brain"></i> <strong>Group 3:</strong></span> only their brains!</p>
+<ul>
+<li><span class="body-text-s">high neural connectivity</span></li>
+<li><span class="body-text-s">engaged / curious</span></li>
+<li><span class="body-text-s">claimed ownership &amp; expressed higher satisfaction</span></li>
+</ul>
+</div></div>
+<div class="footer">
+<p><a href="https://arxiv.org/pdf/2506.08872v1" target="_blank">Kosmyna et al.&nbsp;2025 (Preprint)</a> &amp; <a href="https://time.com/7295195/ai-chatgpt-google-learning-school/" target="_blank">summary article by Time</a></p>
+</div>
+<aside class="notes"><p>“The brain-only group, conversely, showed the highest neural connectivity, especially in alpha, theta and delta bands, which are associated with creativity ideation, memory load, and semantic processing.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="group-change" class="slide level2" data-menu-title="Group change"><h2></h2>
+<p><span class="slide-title2">Evidence suggests that overreliance on ChatGPT can erode critical thinking skills</span></p>
+<hr>
+<p><br></p>
+<p><span class="body-text-m">After 3 essays, everyone was asked to re-write one of their previous essays, <span class="fragment fade-in">but <span class="teal-text"><i class="fa-solid fa-robot" title="robot head" aria-label="robot"></i> <strong>Group 1</strong></span> <em>could no longer use</em> ChatGPT,</span> <span class="fragment fade-in">while <span class="teal-text"><i class="fa-brands fa-google" title="Google G" aria-label="google"></i> <strong>Group 2</strong></span> <strong>&amp;</strong> <span class="teal-text"><i class="fa-solid fa-brain" title="brain" aria-label="brain"></i> <strong>Group 3</strong></span> <em>could now use</em> ChatGPT</span></span></p>
+<p><br></p>
+<div>
+<ul>
+<li class="fragment">
+<span class="teal-text"><i class="fa-solid fa-robot" title="robot head" aria-label="robot"></i> <strong>Group 1:</strong></span> difficulty remembering, weaker alpha &amp; theta brain waves (creative ideation &amp; memory load); suggests that they <strong>didn’t integrate work into their memory networks</strong>
 </li>
-<li><p>Group 1: lowest brain engagement, delivered similar “souless” esssays that lacked original thought; by 3rd essay, largely copy/pasting</p></li>
-<li><p>Group 3: highest neural connectivity especially in bands associated with “creativity ideation, memory load, and semantic processing”; more engaged/curious, claimed ownership, expressed higher satisfaction with their essasys</p></li>
-<li><p>Group 2: also high levels of satisfaction and brain activity</p></li>
+</ul>
+<p><br></p>
+<ul>
+<li class="fragment">
+<span class="teal-text"><i class="fa-brands fa-google" title="Google G" aria-label="google"></i> <strong>Group 2:</strong></span> performed well, significant increase in brain connectivity across all bands; suggests that <strong>if used properly, AI can enhance learning as opposed to diminishing it</strong>
+</li>
+</ul>
+</div>
+<div class="footer">
+<p><a href="https://arxiv.org/pdf/2506.08872v1" target="_blank">Kosmyna et al.&nbsp;2025 (Preprint)</a> &amp; <a href="https://time.com/7295195/ai-chatgpt-google-learning-school/" target="_blank">summary article by Time</a></p>
+</div>
+</section><section id="paper-concolusion" class="slide level2" data-menu-title="Paper conclusion"><h2></h2>
+<p><br><br><br></p>
+<blockquote>
+<p><span class="body-text-m"><em>“The <strong>LLM</strong> undeniably <strong>reduced the friction</strong> involved in answering participants’ questions compared to the Search Engine. However, this convenience <strong>came at a cognitive cost</strong>, diminishing users’ inclination to critically evaluate the LLM’s output or”opinions” (probabilistic answers based on the training datasets). This highlights a concerning evolution of the <strong>‘echo chamber’ effect</strong>: rather than disappearing, it has adapted to <strong>shape user exposure through algorithmically curated content</strong>. What is ranked as “top” is ultimately influenced by the priorities of the LLM’s shareholders.”</em></span></p>
+</blockquote>
+<div class="footer">
+<p><a href="https://arxiv.org/pdf/2506.08872v1" target="_blank">Kosmyna et al.&nbsp;2025 (Preprint)</a></p>
+</div>
+</section><section id="lee-etal-2025" class="slide level2" data-menu-title="Lee et al. 2025"><h2></h2>
+<p><span class="slide-title">Other related findings</span></p>
+<hr>
+<blockquote>
+<p><span class="body-text-m"><em>“Moreover, while GenAI can improve worker efficiency, it <strong>can inhibit critical engagement with work and can potentially lead to long-term overreliance on the tool and diminished skill for independent problem-solving</strong>. <strong>Higher confidence in GenAI’s ability to perform a task is related to less critical thinking effort.</strong> When using GenAI tools, the <strong>effort invested in critical thinking shifts from information gathering to information verification; from problem-solving to AI response integration; and from task execution to task stewardship.</strong> Knowledge workers face new challenges in critical thinking as they incorporate GenAI into their knowledge workflows.”</em></span></p>
+</blockquote>
+<div class="footer">
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/3706598.3713778" target="_blank">Lee et al.&nbsp;2025 (Proceedings of the 2025 CHI conference on human factors in computing systems)</a></p>
+</div>
+</section><section id="meds-calendar" class="slide level2" data-menu-title="MEDS calendar"><h2></h2>
+<p><span class="slide-title">GenAI in the MEDS calendar</span></p>
+<hr>
+<table class="caption-top">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
+<thead><tr class="header">
+<th>Term</th>
+<th>Incorporation of GenAI</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>SUMMER</td>
+<td>
+<strong>Establish context</strong><br>Student use is discourage</td>
+</tr>
+<tr class="even">
+<td>FALL</td>
+<td>
+<strong>Critical interrogation</strong><br>Instructors demonstrate examples of use and discuss pros / cons</td>
+</tr>
+<tr class="odd">
+<td>WINTER</td>
+<td>
+<strong>Guided Use</strong><br>Workshops early in quarter<br>Instructors model use</td>
+</tr>
+<tr class="even">
+<td>SPRING</td>
+<td>
+<strong>Supported Use</strong><br>Instructors model use</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="fragment">
+<p><strong>You’re here because you want to learn!</strong> ChatGPT (and related tools) will certainly become a part of your workflow<span class="fragment fade-in">, but in this early stage of MEDS, we want you to focus on core competencies and critical thinking skills, including an understanding of how to properly use tools, design workflows, write and organize code, and troubleshoot problems.</span></p>
+</div>
+<div class="fragment">
+<p><strong><em>To do that most effectively, you need to commit to active learning processes and approaches.</em></strong></p>
+</div>
+</section><section id="welcome" class="slide level2" data-menu-title="Welcome"><h2></h2>
+<p><span class="slide-title2">Welcome to data science, where questions are aplenty!</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<ul>
+<li>You will become increasingly more comfortable with <strong>not immediately knowing</strong> the answers to all your coding problems (<em>even</em> when using GenAI tools). It’s all part of the job.</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Googling can be difficult, and it is a <strong>skill</strong> that <strong>requries practice</strong>. But you can and will get better at it over time.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/questions.gif" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>-Me, everytime I sit down to program</p>
+</div>
+</div></div>
+</section><section id="frustration" class="slide level2" data-menu-title="Frustration"><h2></h2>
+<p><span class="slide-title2">It doesn’t mean you won’t still feel like this at times:</span></p>
+<hr>
+
+<img data-src="images/ron_swanson.gif" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s gray-text">
+<p>-Me still, about half the times I sit down to program</p>
+</div>
+</section><section id="goal" class="slide level2" data-menu-title="Goal"><h2></h2>
+<p><span class="slide-title3">But the goal is to be a bit more at peace with that feeling…and have the confidence that you can find your way</span></p>
+<hr>
+
+<img data-src="images/how_much_i_know.jpeg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s gray-text">
+<p>Artwork by <a href="https://allisonhorst.com/" target="_blank">Allison Horst</a></p>
+</div>
+</section><section id="when-to-google" class="slide level2" data-menu-title="When to Google"><h2></h2>
+<p><span class="slide-title2">I typically find myself turning to Google because:</span></p>
+<hr>
+<p><br></p>
+<p><span class="body-text-m"><span class="teal-text"><i class="fa-solid fa-exclamation-triangle" title="an exclamation point in a triangle" aria-label="exclamation-triangle"></i></span> I got an error and need help fixing it</span></p>
+<p><br></p>
+<p><span class="body-text-m"><span class="teal-text"><i class="fa-solid fa-question-circle" title="a question mark in a circle" aria-label="question-circle"></i></span> I know what I want my code to do, but I have no idea how to actually pull it off</span></p>
+<p><br></p>
+<div class="fragment">
+<p><span class="body-text-m"><span class="teal-text"><i class="fa-solid fa-flushed" title="a flushed face with wide eyes" aria-label="flushed"></i></span> Sometimes, it’s both of these things happening at the same time</span></p>
+<!-- ---
+
+##  {#use-sass data-menu-title="## Use Sass ##" background="#053660"}
+
+<div class="vertical-center">
+<div class="custom-subtitle center-text"> I got an error and need help fixing it</div>
+</div> -->
+</div>
+</section><section id="lentgh" class="slide level2" data-menu-title="Lentgh"><h2></h2>
+<p><span class="slide-title">We’ve all been here before:</span></p>
+<hr>
+
+<img data-src="images/alligator.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div class="center-text body-text-s gray-text">
+<p>Artwork by <a href="https://allisonhorst.com/" target="_blank">Allison Horst</a></p>
+</div>
+</section><section id="narrow-down" class="slide level2" data-menu-title="Narrow down"><h2></h2>
+<p><span class="slide-title2">Pause, exhale, narrow down your potential Google search</span></p>
+<hr>
+<div class="fragment">
+<p><span class="body-text-m"><span class="teal-text"><i class="fa-solid fa-power-off" title="power button" aria-label="power-off"></i></span> Restart R</span></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><span class="body-text-m"><span class="teal-text"><i class="fa-solid fa-lightbulb" title="lightbulb" aria-label="lightbulb"></i></span> Check the easy stuff</span></p>
+</div>
+<div class="fragment">
+<p><br><span class="body-text-m"><span class="teal-text"><i class="fa-solid fa-exclamation-triangle" title="exclamation point in a triangle" aria-label="exclamation-triangle"></i></span> Read that error message</span></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><span class="body-text-m"><span class="teal-text"><i class="fa-solid fa-magnifying-glass" title="magnifying glass" aria-label="magnifying-glass"></i></span> Try to islate the problem</span></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><span class="body-text-m"><span class="teal-text"><i class="fa-solid fa-file-alt" title="a file" aria-label="file-alt"></i></span> Double-check the documentation</span></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><span class="body-text-m"><span class="teal-text"><i class="fa-solid fa-people-arrows" title="two people with an arrow pointing to each of them" aria-label="people-arrows"></i></span> Talk about it out loud</span></p>
+</div>
+</section><section id="restart-r" class="slide level2" data-menu-title="Restart R"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-power-off" title="power button" aria-label="power-off"></i> Restart R</span></p>
+<hr>
+<blockquote>
+<p><em>“Restart R often, especially when things get weird…We install and update packages from R, which is a little bit like working on your airplane engine while you’re flying.”</em></p>
+</blockquote>
+<div class="right-align-text gray-text body-text-s">
+<p>-Jenny Bryan, in her 2020 rstudio::conf keynote, <a href="https://posit.co/resources/videos/object-of-type-closure-is-not-subsettable/" target="_blank">Object of type ‘closure’ is not subsettable</a></p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p>Similarly, going to sleep and trying again tomorrow is a legitimate (and often impactful) strategy – think of it as restarting your own internal computer (i.e.&nbsp;your brain).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/tweet-kvaughn.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section><section id="check-easy-stuff" class="slide level2" data-menu-title="Check the easy stuff"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-lightbulb" title="lightbulb" aria-label="lightbulb"></i> Check the easy stuff</span></p>
+<hr>
+
+<img data-src="images/debug_bingo.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"><div class="footer">
+<p>Source: This <a href="https://x.com/cogscimom/status/1354508785365078016?ref_src=twsrc%5Etfw" target="_blank">tweet</a> by <span class="citation" data-cites="cogscimom">@cogscimom</span></p>
+</div>
+</section><section id="error-message-helpful1" class="slide level2" data-menu-title="Error message (helpful 1)"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-exclamation-triangle" title="exclamation point in a triangle" aria-label="exclamation-triangle"></i> Read that error message</span></p>
+<hr>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># load packages ----</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">library</span>(tidyverse) <span class="co"># a collection of data wrangling &amp; visualization packages</span></span>
+<span id="cb1-3"><a href=""></a><span class="fu">library</span>(palmerpenguins) <span class="co"># contains the 'penguins' data set</span></span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a><span class="co"># print out the first three rows of the penguins data frame ----</span></span>
+<span id="cb1-6"><a href=""></a><span class="fu">head</span>(penguins, <span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># what unique values are in the species column of the penguins data frame? ----</span></span>
+<span id="cb3-2"><a href=""></a><span class="fu">unique</span>(penguins<span class="sc">$</span>species) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Adelie    Gentoo    Chinstrap
+Levels: Adelie Chinstrap Gentoo</code></pre>
+</div>
+</div>
+</div>
+</section><section id="error-message-helpful2" class="slide level2" data-menu-title="Error message (helpful 2)"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-exclamation-triangle" title="exclamation point in a triangle" aria-label="exclamation-triangle"></i> Read that error message</span></p>
+<hr>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># create a new data frame with just rows (observations) containing "Gentoo" penguins ----</span></span>
+<span id="cb5-2"><a href=""></a>gentoo <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href=""></a>  <span class="fu">filter</span>(<span class="at">species =</span> <span class="st">"Gentoo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `filter()`:
+! We detected a named input.
+ℹ This usually means that you've used `=` instead of `==`.
+ℹ Did you mean `species == "Gentoo"`?</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="center-text body-text-m">
+<p><strong>Returns a helpful error message with a potential fix!</strong></p>
+</div>
+</section><section id="error-message-unhelpful" class="slide level2" data-menu-title="Error message (unhelpful)"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-exclamation-triangle" title="exclamation point in a triangle" aria-label="exclamation-triangle"></i> Read that error message</span></p>
+<hr>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># create data object, named 'dat' ----</span></span>
+<span id="cb7-2"><a href=""></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">2</span>)</span>
+<span id="cb7-3"><a href=""></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  x y
+1 1 2</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># extract column 'x' from your data object (oops, we forgot we named it 'dat' and not 'df') ----</span></span>
+<span id="cb9-2"><a href=""></a>df<span class="sc">$</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in df$x: object of type 'closure' is not subsettable</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<blockquote>
+<p><em>“Your first “object of type ‘closure’ is not subsettable” error message is a big milestone for an R user. Congratulations, if there was any lingering doubt, you now know that you are officially programming!“</em></p>
+</blockquote>
+<div class="right-align-text gray-text body-text-s">
+<p>-Jenny Bryan, in her 2020 rstudio::conf keynote, <a href="https://posit.co/resources/videos/object-of-type-closure-is-not-subsettable/" target="_blank">Object of type ‘closure’ is not subsettable</a></p>
+</div>
+<div class="body-text-xs center-text">
+<p>This error often arises when you attempt to subset a function (i.e.&nbsp;treat a function in a way that it is shouldn’t be; a “closure” is a type of function in R). Here, we forgot that we called called our object <code>dat</code>, and not <code>df</code>. <code><a href="https://rdrr.io/r/stats/Fdist.html">df()</a></code> also happens to be a function that gives you the density of the ‘F’ distribution and we are attempting to subset (i.e.&nbsp;extract) a column (<code>x</code>) from it.</p>
+</div>
+</div>
+</section><section id="error-message-resources" class="slide level2" data-menu-title="Error message (resources)"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-exclamation-triangle" title="exclamation point in a triangle" aria-label="exclamation-triangle"></i> Read that error message</span></p>
+<hr>
+<div class="center-text body-text-m">
+<p><strong>Error messages provide helpful context and information, even if they seem unhelpful on the surface!</strong></p>
+</div>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>You’ll become more familiar with common error messages the more time you spend coding, but it can be helpful to explore some resources for deciphering the big ones:</p>
+<ul>
+<li><a href="https://www.programmingr.com/r-error-messages/" target="_blank">Common R Error Messages</a></li>
+<li><a href="https://www.r-bloggers.com/2016/06/common-r-programming-errors-faced-by-beginners/" target="_blank">Common R Programming Errors Faced by Beginners</a></li>
+<li><a href="https://warin.ca/posts/rcourse-howto-interpretcommonerrors/" target="_blank">How to: Interpret Common Errors in R</a></li>
+<li><a href="http://varianceexplained.org/courses/errors/" target="_blank">R Error Message Cheat Sheet</a></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/horst-error-teaching.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Artwork by <a href="https://allisonhorst.com/" target="_blank">Allison Horst</a></p>
+</div>
+</div></div>
+</section><section id="isolate-problem1" class="slide level2" data-menu-title="Isolate the problem 1"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-magnifying-glass" title="magnifying glass" aria-label="magnifying-glass"></i> Try to isolate the problem</span></p>
+<hr>
+<p>It can be overwhelming to figure out where an error or issue is occurring in a large chunk of code. A (very small) example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># load libraries ----</span></span>
+<span id="cb11-2"><a href=""></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-3"><a href=""></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb11-4"><a href=""></a></span>
+<span id="cb11-5"><a href=""></a><span class="co"># wrangle data ----</span></span>
+<span id="cb11-6"><a href=""></a>penguins_new <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb11-7"><a href=""></a>  <span class="fu">select</span>(species, sex, bill_length_mm) <span class="sc">|&gt;</span> </span>
+<span id="cb11-8"><a href=""></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-9"><a href=""></a>  <span class="fu">reorder</span>(bill_length_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'bill_length_mm' not found</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><strong>Running all lines together can make it difficult which line(s) is responsible for this error</strong> (and imagine dealing with much longer, more complex code chunks!).</p>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><strong>Instead, run line-by-line to isolate where the problem is occurring</strong> so that you can begin investigating from there.</p>
+</div>
+</section><section id="isolate-problem2" class="slide level2" data-menu-title="Isolate the problem 2"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-magnifying-glass" title="magnifying glass" aria-label="magnifying-glass"></i> Try to isolate the problem</span></p>
+<hr>
+<p>Run line-by-line until you hit the error:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>penguins_new <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href=""></a>  <span class="fu">select</span>(species, sex, bill_length_mm) <span class="co"># |&gt; </span></span>
+<span id="cb13-3"><a href=""></a>  <span class="co"># filter(species == "Adelie") |&gt; </span></span>
+<span id="cb13-4"><a href=""></a>  <span class="co"># reorder(bill_length_mm)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Works!</strong></p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>penguins_new <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href=""></a>  <span class="fu">select</span>(species, sex, bill_length_mm) <span class="sc">|&gt;</span> </span>
+<span id="cb14-3"><a href=""></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="co"># |&gt; </span></span>
+<span id="cb14-4"><a href=""></a>  <span class="co"># reorder(bill_length_mm)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Works!</strong></p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>penguins_new <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href=""></a>  <span class="fu">select</span>(species, sex, bill_length_mm) <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href=""></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb15-4"><a href=""></a>  <span class="fu">reorder</span>(bill_length_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'bill_length_mm' not found</code></pre>
+</div>
+</div>
+<p><strong>Doesn’t work… let’s look into what <code><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder()</a></code> is / does…</strong></p>
+<div class="footer">
+<p><strong>Tip:</strong> comment / uncomment lines of code using the keyboard shortcut <code>Cmd</code> / <code>Ctrl</code> + <code>shift</code> + <code>C</code></p>
+</div>
+</div>
+</section><section id="isolate-problem3" class="slide level2" data-menu-title="Isolate the problem 3"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-magnifying-glass" title="magnifying glass" aria-label="magnifying-glass"></i> Try to isolate the problem</span></p>
+<hr>
+<p>Searching for <code><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder()</a></code> (either by looking up documentation – more on that in a moment – or Googling it) reveals that <strong>it’s not actually a function</strong> <i class="fa-solid fa-face-grin-beam-sweat" title="a grinning face with a sweat droplet" aria-label="face-grin-beam-sweat"></i></p>
+<div class="fragment">
+<p>Googling, “<a href="https://www.google.com/search?q=R+tidyverse+reorder+values+high+to+low&amp;sca_esv=558984878&amp;ei=KlPkZOzoK8TFkPIPqf2ikAI&amp;ved=0ahUKEwjspZqwz--AAxXEIkQIHam-CCIQ4dUDCBA&amp;uact=5&amp;oq=R+tidyverse+reorder+values+high+to+low&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiJlIgdGlkeXZlcnNlIHJlb3JkZXIgdmFsdWVzIGhpZ2ggdG8gbG93MgUQIRigATIFECEYoAEyBRAhGKsCSJ4fUPECWJ4dcAF4AJABAJgBqwGgAdAOqgEENC4xMrgBA8gBAPgBAcICChAAGEcY1gQYsAPCAgUQABiiBOIDBBgAIEGIBgGQBgg&amp;sclient=gws-wiz-serp" target="_blank">R tidyverse reorder values high to low</a>,” leads us to the <a href="https://dplyr.tidyverse.org/reference/arrange.html" target="_blank"><code>{dplyr}</code> documentation</a> for the <code>arrange()</code> function, which allows us to sort values in descending order when coupled with <code>desc()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>penguins_new <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href=""></a>  <span class="fu">select</span>(species, sex, bill_length_mm) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href=""></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a href=""></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(bill_length_mm))</span>
+<span id="cb17-5"><a href=""></a></span>
+<span id="cb17-6"><a href=""></a><span class="fu">head</span>(penguins_new, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  species sex   bill_length_mm
+  &lt;fct&gt;   &lt;fct&gt;          &lt;dbl&gt;
+1 Adelie  male            46  
+2 Adelie  male            45.8
+3 Adelie  male            45.6
+4 Adelie  male            44.1</code></pre>
+</div>
+</div>
+<div class="footer">
+<p><strong>It can be easy to confuse or mistake function names, particularly as you’re just starting to learn a langauge or new packages</strong> (e.g.&nbsp;<code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">forcats::fct_reorder()</a></code> is used to reorder <em>factor</em> levels, but here, we’re looking to reorder <em>numeric values</em> in the <code>bill_length_mm</code> column).</p>
+</div>
+</div>
+</section><section id="read-documentation1" class="slide level2" data-menu-title="Double-check documentation 1"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-file-alt" title="a file" aria-label="file-alt"></i> Double-check the documentation</span></p>
+<hr>
+<p><strong>Documentation provides <em>critical</em> info for understanding how to correctly use a package or function</strong></p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>written by the people who actually developed the tools you’re using</li>
+<li>describes inputs, outputs, how a function can be modified to acheive a particular outcome</li>
+<li>demonstrates standards</li>
+<li>often includes reproducible examples</li>
+</ul>
+<p><strong>Pull up documentation for a loaded function by typing <code>?function_name</code> in your console. E.g.</strong></p>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="op">?</span><span class="fu">tidyr</span><span class="fu">::</span><span class="va"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/pivot_wider_doc.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<!-- ::: {.footer}
+The documentation that appears in the Help pane is the same that you'll find in the official documentation online.
+::: -->
+</section><section id="read-documentation2" class="slide level2" data-menu-title="Double-check documentation 2"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-file-alt" title="a file" aria-label="file-alt"></i> Double-check the documentation</span></p>
+<hr></section><section class="slide level2"><p>You are rarely using a single function in isolation – more often, you’re stringing together numerous functions to achieve a larger task. But you need to know how each individual piece works before you can effectively get all pieces talking to / working with one another.</p>
+<p>(Unofficial) tutorials and GenAI tend to provide easy / fast approaches or fixes to a problem, but often may lead to difficulties in scaling or lack of nuanced understanding. Read documentation first &gt; seek clarification using videos / tutorials / GenAI (later in the academic year <i class="fa-solid fa-face-smile-wink" title="a winking smiling face" aria-label="face-smile-wink"></i> second.</p>
+<div class="fragment">
+<p>Vignettes are official tutorials that often accompnay documentation – these are wonderful!</p>
+<p>These are sometimes linked in the documentation, or you can Google “package_name vignette” to find it onlilne. Alternatively, package documentation on CRAN1 will typically include any vignettes that are associated with that package (e.g.&nbsp;find all dplyr vignettes here).</p>
+<div class="footer">
+<p><a href="https://cran.r-project.org/" target="_blank">CRAN</a> stands for the <strong>C</strong>omprehensive <strong>R</strong> <strong>A</strong>rchive <strong>N</strong>etwork and is R’s central software repository – in other words, it’s where published R packages (including previous versions of published R packages) live. When you run <code>install.packages("package_name)</code>, R (on your computer) reaches out to CRAN to find / install the latest version of that package on your computer.</p>
+</div>
+</div>
+</section><section id="talk-out-loud" class="slide level2" data-menu-title="Talk out loud"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-people-arrows" title="two people with an arrow pointing to each of them" aria-label="people-arrows"></i> Talk about it out loud</span></p>
+<hr>
+<p>This is often referred to as <strong>rubber duck debugging</strong>, and it goes something like this:</p>
+<div class="columns">
+<div class="column body-text-s" style="width:50%;">
+<blockquote>
+<p><em>1. Beg, borrow, steal, buy, fabricate or otherwise obtain a rubber duck (bathtub variety).</em></p>
+<p><em>2. Place rubber duck on desk and inform it you are just going to go over some code with it, if that’s all right.</em></p>
+<p><em>3. Explain to the duck what your code is supposed to do, and then go into detail and explain your code line by line.</em></p>
+<p><em>4. At some point you will tell the duck what you are doing next and then realise that that is not in fact what you are actually doing. The duck will sit there serenely, happy in the knowledge that it has helped you on your way.</em></p>
+</blockquote>
+<div class="right-align-text">
+<p>-<a href="https://rubberduckdebugging.com/" target="_blank">rubberduckdebugging.com</a> with original credit to Andy from lists.ethernal.org</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/duck.jpeg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text body-text-s gray-text">
+<p>Image source: <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging" target="_blank">Wikipedia</a></p>
+</div>
+</div></div>
+</section><section id="talk-out-loud2" class="slide level2" data-menu-title="Talk out loud 2"><h2></h2>
+<p><span class="slide-title"><i class="fa-solid fa-people-arrows" title="two people with an arrow pointing to each of them" aria-label="people-arrows"></i> Talk about it out loud</span></p>
+<hr>
+<p>why is this different than using ChatGPT?</p>
+<p>ChatGPT gives you whole answers (which are not always correct) whereas rubber duck debugging is like conversing an instructor or tutor who steers you in the right direction:</p>
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/3641555.3705235?casa_token=g_V2W5f2vtgAAAAA:reTmZlZx14O-vZJEnACFGId9Cr_Gt1lOtQr2X4YKQdhiG3Jb6qzcV5Qr-Sqfs66h6spIXtEsabIF" target="_blank">Quack! Configuring Large Language Models to Serve as Rubber Duck Coding Assistants</a></p>
+</section><section id="enter-google" class="slide level2" data-menu-title="Enter Google"><h2></h2>
+<p><span class="slide-title">Still haven’t figured it out? Enter Google.</span></p>
+<hr>
+<p><strong><span class="teal-text"><i class="fa-brands fa-google" title="Google G" aria-label="google"></i></span> General Googling tips:</strong></p>
+<ul>
+<li><span class="body-text-s">[r] + error message</span></li>
+<li><span class="body-text-s">error message + function or package name</span></li>
+<li><span class="body-text-s">sometimes even just the error message alone (especially if hyperspecific) will suffice</span></li>
 </ul>
 <div class="fragment">
-<p>After 3 essays, they were asked to re-write one of their previous efforts. BUT group 1 couldn’t use tool, while group 3 could. Group 1 “remembered little of their own essays, and showed weaker alpha and theta brain waves, which likely reflected a bypassing of deep memory processes” (don’t integrate into your memory networks).</p>
-<p>“The second group, in contrast, performed well, exhibiting a significant increase in brain connectivity across all EEG frequency bands. This gives rise to the hope that AI, if used properly, could enhance learning as opposed to diminishing it.”</p>
+<p><strong><span class="teal-text"><i class="fa-solid fa-calendar" title="calendar" aria-label="calendar"></i></span> Check the date of online solutions:</strong></p>
+<ul>
+<li><span class="body-text-s">past solutions can become outdated quickly – target recent posts and responses (also an issue when using GenAI!)</span></li>
+</ul>
 </div>
-</section><section class="slide level2"><p>Our approach:</p>
-<p>Summer / Fall: developing core programming competencies (workflows, patterns, syntax, vocabulary, documentation)</p>
-<p>Winter / Spring: leveraging GenAI tools to increase problem-solving efficiency (includes workshops, intentionally integrating GenAI into course curricula)</p>
-<p>You’re here because you want to learn! ChatGPT (and related tools) will certainly become a part of your workflow, but in this early stage of MEDS, we want you to focus on core competencies, understanding how to properly use tools, write code, and troubleshoot problems. To do that most effectively, you need to commit to active learning processes and approaches.</p>
-</section><section class="slide level2"><p>Googling…</p>
-<ol type="1">
-<li>Teaches you how to read documentation and official sources</li>
-</ol>
+<div class="fragment">
+<p><strong><span class="teal-text"><i class="fa-solid fa-plus" title="plus" aria-label="plus"></i></span> Read multiple search results:</strong></p>
 <ul>
-<li>documentation is like a cookbook for code – Imagine trying to cook a new dish without ever looking at the recipe. You might get something edible by copying what someone else does, but you won’t know why you’re doing each step, what ingredients you can substitute, or how to adjust it to your taste.</li>
+<li><span class="body-text-s">sometimes one explanation will make sense in a way that another explanation will not</span></li>
 </ul>
-<ol start="2" type="1">
-<li>Exposes you to different solutions and perspectives</li>
-</ol>
+</div>
+<div class="fragment">
+<p><strong><span class="teal-text"><i class="fa-solid fa-user-secret" title="detective" aria-label="user-secret"></i></span> Isolate the relevant part(s) of an answer:</strong></p>
 <ul>
-<li>seeing many approaches helps us understand not only <em>what</em> works, but <em>why</em> it works</li>
+<li><span class="body-text-s">not every part of an online response will be relevant to <em>your</em> problem – take care when copy / pasting entire “solutions”</span></li>
 </ul>
-<ol start="3" type="1">
-<li>Build your debugging and search skills, including expanding your vocabulary!</li>
-</ol>
+</div>
+</section><section id="google-search-ops" class="slide level2" data-menu-title="Google search operators"><h2></h2>
+<p><span class="slide-title2">Use search operators to get more specific results</span></p>
+<hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/how_to_nytimes.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/how_to_velocity.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<p><strong>For example, compare the following two Google queries:</strong></p>
+<p>TBD</p>
+</section><section class="slide level2"><p>Places to look:</p>
 <ul>
-<li>it’s difficult to craft effective queries without exposure to vocab, primary sources, documentation,</li>
-</ul>
-<ol start="4" type="1">
-<li>Promotes critical thinking</li>
-</ol>
+<li>stackoverflow</li>
+<li>GitHub</li>
+<li>vignettes</li>
+<li>blogs!</li>
+</ul></section><section class="slide level2"><p><strong><i class="fa-brands fa-github-square" title="GitHub Octocat" aria-label="github-square"></i> Explore package source code on GitHub:</strong></p>
 <ul>
-<li>evaluate source credibility, compare solutions, decide what fits <em>your</em> use case; GenAI often gives one</li>
-</ul>
-<ol start="5" type="1">
-<li>Tempers overreliance on black-box answers</li>
-</ol>
+<li><span class="body-text-s">this may include looking at any issues or pull requests associated with that package to check if there are known problems (e.g.&nbsp;check out ___ on <a href="" target="_blank">GitHub</a>)</span></li>
+<li><span class="body-text-s">check ot see if there are wikis available for a particular repository (e.g.&nbsp;….)</span></li>
+</ul></section><section class="slide level2"><p>still stumped?</p>
+<p>reprex</p>
+</section><section class="slide level2"><p>Other suggestions:</p>
 <ul>
-<li>e.g.&nbsp;ChatGPT can hallucinate or offer solutions that simply don’t work (or worse, cause serious downstream problems); online searches often return code vetted by other uses</li>
-</ul>
-<ol start="6" type="1">
-<li>Show real-world probelm solving patterns</li>
-<li>Encourages community learning</li>
-</ol>
+<li>read!</li>
+<li>create a curated vocab list</li>
+<li>it’s okay to copy code</li>
+<li>psuedocode</li>
+<li>clear var names</li>
+<li>build in checks</li>
+</ul></section><section class="slide level2"><p>What’s to come</p>
 <ul>
-<li>Googling can take you to community forums, blog posts, etc. Seeing how people ask and respond to questions is important</li>
-</ul>
-<ol start="8" type="1">
-<li>Seek help with version-specific issues</li>
-</ol>
-<ul>
-<li>GenAI sometimes suggest outdated solutions</li>
-</ul>
-<ol start="9" type="1">
-<li>Develop resilience!</li>
-</ol>
-<ul>
-<li>rarely will you get to a perfect answer on your first try when troublshooting complex problems (even when using GenAI)</li>
-</ul></section><section class="slide level2"><!-- ChatGPT will post knowledge from Stack Overflow directly into responses. The OpenAI chatbot will provide attribution to the Stack Overflow source, guiding users to the relevant source. [ChatGPT Partners With Stack Overflow, Enhancing Access to Coding Data](https://aibusiness.com/nlp/chatgpt-partners-with-stack-overflow-enhancing-access-to-coding-data#close-modal) (May 9, 2024)
+<li>AI workshops in the winter</li>
+</ul></section><section class="slide level2"><!-- Googling...
+
+1. Teaches you how to read documentation and official sources
+  - documentation is like a cookbook for code -- Imagine trying to cook a new dish without ever looking at the recipe. You might get something edible by copying what someone else does, but you won’t know why you’re doing each step, what ingredients you can substitute, or how to adjust it to your taste.
+2. Exposes you to different solutions and perspectives
+  - seeing many approaches helps us understand not only *what* works, but *why* it works
+3. Build your debugging and search skills, including expanding your vocabulary!
+  - it's difficult to craft effective queries without exposure to vocab, primary sources, documentation, 
+4. Promotes critical thinking
+  - evaluate source credibility, compare solutions, decide what fits *your* use case; GenAI often gives one 
+5. Tempers overreliance on black-box answers
+  - e.g. ChatGPT can hallucinate or offer solutions that simply don't work (or worse, cause serious downstream problems); online searches often return code vetted by other uses
+6. Show real-world probelm solving patterns
+7. Encourages community learning 
+  - Googling can take you to community forums, blog posts, etc. Seeing how people ask and respond to questions is important
+8. Seek help with version-specific issues
+  - GenAI sometimes suggest outdated solutions
+9. Develop resilience!
+  - rarely will you get to a perfect answer on your first try when troublshooting complex problems (even when using GenAI) --><!-- --- --><!-- ChatGPT will post knowledge from Stack Overflow directly into responses. The OpenAI chatbot will provide attribution to the Stack Overflow source, guiding users to the relevant source. [ChatGPT Partners With Stack Overflow, Enhancing Access to Coding Data](https://aibusiness.com/nlp/chatgpt-partners-with-stack-overflow-enhancing-access-to-coding-data#close-modal) (May 9, 2024)
  --><!-- ---
 
 Some things you may have already heard: 
@@ -458,7 +1165,15 @@ Environmental impacts
 
 But also, GenAI is poised to help us solve environmental problems at a much faster pace than ever before. 
 
-Remains to be seen if benefits outweigh risks. --><div class="quarto-auto-generated-content">
+Remains to be seen if benefits outweigh risks. --></section><section class="slide level2"><p>Troubleshooting your own code (rather than sending it right to ChatGPT when you run into an error) fosters a deeper understanding and problem-solving skills. You don’t want to be caught in an interview or end up working for an organization that prohibts you from using a tool you’ve built an overreliance on!</p>
+<p>My husband is a software engineer for an AI company and they don’t allow interviewees to use GenAI in interviews because they want to understand how a candidate can break down a complex problem, piece together an approach to solving it, then execute on it.</p>
+<p>By troubleshooting your own code (with help from Google!), you are forced to:</p>
+<ul>
+<li>use critical thinking and logical reasoning skills to break down complex technical problems into smaller, manageable parts</li>
+<li>think carefully about what you want your code to be doing vs.&nbsp;what your code actually is doing</li>
+<li>understand your code’s functionality and identify root causes of issues</li>
+</ul>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
