@@ -3,7 +3,7 @@ format:
   revealjs:
     slide-number: true
     # preview-links: true
-    code-link: true
+    # code-link: true
     highlight-style: a11y
     chalkboard: true
     # self-contained: true
@@ -23,9 +23,9 @@ execute:
 today <- format(Sys.time(), "%b %d, %Y")
 ```
 
-[Teach Me How to Google *(2.0)*]{.custom-title}
+[Teach Me How to Google]{.custom-title}
 
-[*The case for search & debugging skills in the age of AI + tips on how to do so effectively*]{.custom-subtitle2}
+[*The case for debugging & search skills in the age of AI + tips on how to do so effectively*]{.custom-subtitle2}
 
 :::: {.columns}
 
@@ -58,7 +58,7 @@ today <- format(Sys.time(), "%b %d, %Y")
 <br>
 
 ::: {.title-footer}
-Slides & source code available on [GitHub {{< fa brands github title="GitHub Octocat logo" >}}](https://github.com/UCSB-MEDS/teach-me-how-to-google)
+Slides & source code available on [GitHub {{< fa brands github title="GitHub Octocat logo" >}}](https://github.com/UCSB-MEDS/teach-me-how-to-google){target="_blank"}
 :::
 
 ---
@@ -78,6 +78,10 @@ Slides & source code available on [GitHub {{< fa brands github title="GitHub Oct
 #| fig-align: "center"
 knitr::include_graphics(here::here("images", "elephant.png"))
 ```
+
+::: {.center-text .body-text-s .gray-text}
+Image source: [Wikipedia](https://en.wikipedia.org/wiki/Elephant_in_the_room){target="_blank"}
+:::
 :::
 ::: {.column width="50%"}
 <br>
@@ -88,10 +92,6 @@ knitr::include_graphics(here::here("images", "elephant.png"))
 - Does it even pay to "Google," in the traditional sense, anymore? 
 :::
 ::::
-
-::: {.footer}
-Image source: [Wikipedia](https://en.wikipedia.org/wiki/Elephant_in_the_room){target="_blank"}
-:::
 
 . . . 
 
@@ -315,7 +315,7 @@ knitr::include_graphics(here::here("images", "kosmyna-etal-2025.png"))
 
 ## {#lee-etal-2025 data-menu-title="Lee et al. 2025"}
 
-[Other related findings]{.slide-title}
+[Other motivating findings]{.slide-title}
 
 <hr>
 
@@ -323,6 +323,38 @@ knitr::include_graphics(here::here("images", "kosmyna-etal-2025.png"))
 
 ::: {.footer}
 [Lee et al. 2025 (Proceedings of the 2025 CHI conference on human factors in computing systems)](https://dl.acm.org/doi/pdf/10.1145/3706598.3713778){target="_blank"}
+:::
+
+---
+
+## {#lehmann-etal-2025 data-menu-title="Lehmann et al. 2025"}
+
+[Other motivating findings]{.slide-title}
+
+<hr>
+
+<br>
+
+>[*"Students who substitute some of their learning activities with LLMs (e.g., by generating solutions to exercises) increase the volume of topics they can learn about but decrease their understanding of each topic. Students who complement their learning activities with LLMs (e.g., by asking for explanations) do not increase topic volume but do increase their understanding. We also observe that **LLMs widen the gap between students with low and high prior knowledge**."*]{.body-text-m}
+
+::: {.footer}
+[Lehmann et al. 2025](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4941259){target="_blank"}
+:::
+
+---
+
+## {#heiss-analogy data-menu-title="Lehmann et al. 2025"}
+
+[And one final good analogy]{.slide-title}
+
+<hr>
+
+<br>
+
+>[*"**Using LLMs requires a good baseline knowledge** of R [or other languages] to actually be useful. A good analogy for this is with recipes. ChatGPT is really confident at spitting out plausible-looking recipes. A few months ago, for fun, I asked it to give me a cookie recipe. I got back something with flour, eggs, sugar, and all other standard-looking ingredients, but it also said to include 3/4 cup of baking powder. **That’s wild and obviously wrong, but I only knew that because I’ve made cookies before.**"*]{.body-text-m}
+
+::: {.footer}
+From [Andrew Heiss](https://www.andrewheiss.com/){target="_blank"}'s course [guidelines on AI use](https://datavizs25.classes.andrewheiss.com/resource/ai-bs.html#ref-LehmannCorneliusSting:2025){target="_blank"}.
 :::
 
 ---
@@ -344,7 +376,7 @@ knitr::include_graphics(here::here("images", "kosmyna-etal-2025.png"))
 
 . . . 
 
-**You're here because you want to learn!** ChatGPT (and related tools) will certainly become a part of your workflow[, but in this early stage of MEDS, we want you to focus on core competencies and critical thinking skills, including an understanding of how to properly use tools, design workflows, write and organize code, and troubleshoot problems.]{.fragment .fade-in} 
+**You're here because you want to learn!** ChatGPT (and related tools) will certainly become a part of your workflow[, but in this early stage of MEDS, we want you to **focus on core competencies and critical thinking skills**, including an understanding of how to properly use tools, design workflows, write and organize code, and troubleshoot problems.]{.fragment .fade-in} 
 
 . . .
 
@@ -829,8 +861,6 @@ head(penguins_new, 4)
 
 **Documentation provides *critical* info for understanding how to correctly use a package or function**
 
-<br>
-
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -845,7 +875,7 @@ head(penguins_new, 4)
 #| eval: false
 #| echo: true
 #| code-line-numbers: false
-?tidyr::pivot_longer
+?dplyr::filter
 ```
 :::
 
@@ -855,13 +885,16 @@ head(penguins_new, 4)
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics(here::here("images", "pivot_wider_doc.png"))
+knitr::include_graphics(here::here("images", "filter-doc.png"))
 ```
 :::
 ::::
-<!-- ::: {.footer}
-The documentation that appears in the Help pane is the same that you'll find in the official documentation online.
-::: -->
+
+. . . 
+
+::: {.center-text}
+*Open up RStudio and practice pulling up the documentation for `filter()`*
+:::
 
 ---
 
@@ -871,26 +904,98 @@ The documentation that appears in the Help pane is the same that you'll find in 
 
 <hr>
 
+<br>
+
+[**With the person(s) next to you, explore the documentation and consider the following (and be prepared to share out):**]{.body-text-m}
+
+- What is the `filter()` function used for? Where did you locate this information?
+- What do the `.data` and `...` arguments do? How easy or difficult of a time did you have understanding the descriptions?
+- Try running a few of the Examples in your console. How do these help (or not help) you better understand how the `filter()` function works? 
+
+
+```{r}
+countdown::countdown(
+  minutes = 4,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 ---
 
-You are rarely using a single function in isolation -- more often, you're stringing together numerous functions to achieve a larger task.  But you need to know how each individual piece works before you can effectively get all pieces talking to / working with one another.
+## {#read-documentation3 data-menu-title="Double-check documentation 3"}
 
-(Unofficial) tutorials and GenAI tend to provide easy / fast approaches or fixes to a problem, but often may lead to difficulties in scaling or lack of nuanced understanding.
-Read documentation first > seek clarification using videos / tutorials / GenAI (later in the academic year {{< fa face-smile-wink title="a winking smiling face">}} second.
+[{{< fa file-alt title="a file" >}} Double-check the documentation]{.slide-title}
+
+<hr>
+
+**Vignettes are long-form guides / tutorials for R packages.** These can offer helpful (and often less jargony) examples and explanations for how to use various functions. Check for a vignette by typing `vignette("package_name")` in your console. E.g. if we want to learn more about how to use `filter()`, which comes from the `{dplyr}` package:
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+vignette("dplyr")
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "dplyr-vignette.png"))
+```
+:::
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "filter-vignette.png"))
+```
+:::
+::::
+
+::: {.footer}
+Not all packages will have a vignette. Vignettes do exist for some Python libraries as well.
+:::
+
+<!-- ---
+
+## {#read-documentation4 data-menu-title="Double-check documentation 4"}
+
+[{{< fa file-alt title="a file" >}} Double-check the documentation]{.slide-title}
+
+<hr>
+
+<br> -->
+
+<!-- **Why is reading documentation so important (rather than just asking AI to fix your problem)?**
+
+- It's the single most accurate source of truth
+- You will rarely use a single function in isolation -- more often stringing together numerous functions to achieve a larger tast -- but you need to know how individual pieces work before you can effectively get all pieces working with one another
+- GenAI tends to provide easy / fast approaches or fixes, but these can lead to difficulties in scaling or a lack of nuanced understanding (in addition to potentially being wrong!)
+
+<br>
 
 . . . 
 
-Vignettes are official tutorials that often accompnay documentation -- these are wonderful! 
-
-These are sometimes linked in the documentation, or you can Google "package_name vignette" to find it onlilne. Alternatively, package documentation on CRAN1 will typically include any vignettes that are associated with that package (e.g. find all dplyr vignettes here).
-
-::: {.footer}
-[CRAN](https://cran.r-project.org/){target="_blank"} stands for the **C**omprehensive **R** **A**rchive **N**etwork and is R's central software repository -- in other words, it's where published R packages (including previous versions of published R packages) live. When you run `install.packages("package_name)`, R (on your computer) reaches out to CRAN to find / install the latest version of that package on your computer.
-:::
+**Read documentation first > seek clarification using videos / tutorials / GenAI (later in the academic year {{< fa face-smile-wink title="a winking smiling face">}}) second.** -->
 
 ---
 
-## {#talk-out-loud data-menu-title="Talk out loud"}
+## {#talk-out-loud1 data-menu-title="Talk out loud 1"}
 
 [{{< fa people-arrows title="two people with an arrow pointing to each of them" >}} Talk about it out loud]{.slide-title}
 
@@ -937,17 +1042,84 @@ Image source: [Wikipedia](https://en.wikipedia.org/wiki/Rubber_duck_debugging){t
 
 <hr> 
 
-why is this different than using ChatGPT?
+<br>
 
-ChatGPT gives you whole answers (which are not always correct) whereas rubber duck debugging is like conversing an instructor or tutor who steers you in the right direction:
+::: {.center-text .body-text-m}
+***But how is rubber duck debugging different than using ChatGPT?***
+:::
 
-[Quack! Configuring Large Language Models to Serve as Rubber Duck Coding Assistants](https://dl.acm.org/doi/pdf/10.1145/3641555.3705235?casa_token=g_V2W5f2vtgAAAAA:reTmZlZx14O-vZJEnACFGId9Cr_Gt1lOtQr2X4YKQdhiG3Jb6qzcV5Qr-Sqfs66h6spIXtEsabIF){target="_blank"}
+<br>
+
+**Talking through your problem out loud forces you to systematically think through your logic step-by-step.** This process often helps to identify previously overlooked details, errors, or logical inconsistencies.
+
+. . . 
+
+<br>
+
+**In contrast, tools like ChatGPT tend to deliver complete (and sometimes incorrect) answers** or solutions, without requiring you to engage in the same level of critical thinking.
+
+---
+
+## {#talk-out-loud3 data-menu-title="Talk out loud 3"}
+
+[{{< fa people-arrows title="two people with an arrow pointing to each of them" >}} Talk about it out loud]{.slide-title}
+
+<hr> 
+
+**With careful prompting, ChatGPT can act as a rubber ducky (though we encourage talking to one another for now!):**
+
+> *"through carefully crafted prompts and easily accessible platforms, rubber duck LLMs can assist learners with specific questions while also situating those questions alongside larger computer science concepts and computational thinking practices. "*
+
+::: {.right-align-text .body-text-s .gray-text}
+-[Gonzales et al. 2025](https://doi.org/10.1145/3641555.3705235){target="_blank"}
+:::
+
+. . .
+
+**An example ChatGPT prompt:**
+
+>*"I am getting an error in my R code. Instead of giving me the answer, can you help me logically think through my code line-by-lne so that I might identify the problem on my own? Here is my code:*
+>
+>*[code here]*
+>
+>*My error message is: [error message here]"*"
+
+. . .
+
+::: {.center-text}
+**Check out [this example conversation](https://chatgpt.com/share/687fde56-5138-8013-9079-8bf8fe54c64e){target="_blank"} using a code example from earlier in the slides!**
+:::
+
+---
+
+## {#reprex data-menu-title="Reprex"}
+
+[Still stumped? Create a `reprex`!]{.slide-title}
+
+<hr>
+
+Create a `reprex` i.e. a **minimal reproducible example**. Strip away the cruft and keep only what is required to reproduce your issue. More often than not, this will help you solve your own probelm. And if you still haven't figured it out, you can bring your `reprex` to a friend, colleague, or online community -- **making it easier for others to help you should always be the goal!**
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "reprex.jpeg"))
+```
+::: {.center-text .body-text-s .gray-text}
+Artwork by [Allison Horst](https://allisonhorst.com/){target="_blank"}
+:::
+
+::: {.footer}
+Check out [FAQ: How to do a minimal reproducible example (reprex) for beginners](https://forum.posit.co/t/faq-how-to-do-a-minimal-reproducible-example-reprex-for-beginners/23061){targete="_blank"} and [Reprex do's and dont's](https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html){target="_blank"} to get started on creating your first reprex.
+:::
 
 ---
 
 ## {#enter-google data-menu-title="Enter Google"}
 
-[Still haven't figured it out? Enter Google.]{.slide-title}
+[Still haven't figured it out after lots of debugging? Enter Google.]{.slide-title2}
 
 <hr> 
 
@@ -961,7 +1133,7 @@ ChatGPT gives you whole answers (which are not always correct) whereas rubber du
 
 **[{{< fa calendar title="calendar" >}}]{.teal-text} Check the date of online solutions:**
 
-- [past solutions can become outdated quickly -- target recent posts and responses (also an issue when using GenAI!)]{.body-text-s}
+- [past solutions can become outdated quickly -- target recent posts and responses (may also be an issue when using GenAI!)]{.body-text-s}
 
 . .  .
 
@@ -1007,31 +1179,120 @@ knitr::include_graphics(here::here("images", "how_to_velocity.png"))
 
 ::::
 
-**For example, compare the following two Google queries:**
-
-TBD
+**For example, compare these two Google queries:** [r dplyr join](https://www.google.com/search?q=r+dplyr+join&oq=R+dplyr+join&aqs=chrome.0.0i512l6j69i60.2431j0j7&sourceid=chrome&ie=UTF-8){target="_blank"} vs. [site:stackoverflow.com R "dplyr join"](https://www.google.com/search?q=site%3Astackoverflow.com+R+%22dplyr+join%22&oq=site%3Astackoverflow.com+R+%22dplyr+join%22&aqs=chrome..69i57j69i58.71866j0j7&sourceid=chrome&ie=UTF-8){target="_blank"}
 
 --- 
 
-Places to look:
+## {#where-to-search data-menu-title="Where to search"}
 
-- stackoverflow
-- GitHub
-- vignettes
-- blogs!
+[So where on Google should I actually look?]{.slide-title}
+
+<hr>
+
+<br>
+
+[There are many excellent resources online, but the following are great places to start:]{.body-text-m}
+
+<br>
+
+[**[{{< fa comments title="Two comment bubbles" >}}]{.teal-text} Q&A forums**]{.body-text-m}
+
+<br>
+
+[**[{{< fa brands github tile="github logo" >}}]{.teal-text} GitHub**]{.body-text-m}
+
+<br>
+
+[**[{{< fa file-lines title="a file with lines" >}}]{.teal-text} Documentation** (particularly, pkgdown sites for R)]{.body-text-m}
+
+<br>
+
+[**[{{< fa blog title="blog symbol" >}}]{.teal-text} Personal Blogs**]{.body-text-m}
 
 ---
 
-**{{< fa brands github-square title="GitHub Octocat" >}} Explore package source code on GitHub:**
+## {#qa-forums data-menu-title="Q&A forums"}
+
+[{{< fa comments title="Two comment bubbles" >}} Q&A forums]{.slide-title}
+
+<hr>
+
+<br>
+
+[Stack Overflow](https://stackoverflow.com/questions){target="_blank"} has historically<sup>1</sup> been *the* question-and-answer website for programmers. Refine your query using **search operators**, and look for **accepted anwers** with many **upvotes:** 
+
+<br>
+
+:::: {.columns}
+::: {.column width="70%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "stackoverflow.png"))
+```
+:::
+
+::: {.column width="30%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "20%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "stackoverflow-upvote.png"))
+```
+:::
+::::
+
+<br>
+
+I return to this particular [Stack Overflow post on undoing a git commit](https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git){target="_blank"} *all* the time (probably at least 1x/month!)
+
+---
+
+. . . 
+
+Stack Overflow **initially [banned ChatGPT-written responses](https://meta.stackoverflow.com/questions/421831/policy-generative-ai-e-g-chatgpt-is-banned){target="_blank"}**, but **now partners with a number of AI chatbot developers**, [including OpenAI](https://stackoverflow.co/company/press/archive/openai-partnership/){target="_blank"} -- this means that tools like ChatGPT are trained on Stack Overflow content (among other sources). The site has seen a sharp decline in user activity since ChatGPT was released, as users increasingly turn to GenAI tools first. The implications of this decline still remain to be fully seen, though research suggests that replacing human content creation with AI-generated responses **may make it more difficult to train future AI models**. This change also represents a **shift of knowlege sharing from the public to private domains** [del Rio-Chanona et al. 2024](https://academic.oup.com/pnasnexus/article/3/9/pgae400/7754871?login=false){target="_blank"}.
+
+---
+
+**Other helpful forums:**
+
+- [forum.posit.co](https://forum.posit.co/){target="_blank"}: for questions related to Posit's tools (e.g. `{tidyverse}`, RStudio and more)
+- [discuss.python.org](https://discuss.python.org/){target="_blank"}: the official Python Community forum
+- [r/rstats](){target="_blank"}
+- [r/python](){target="_blank"}
+
+---
+
+## {#github data-menu-title="GitHub"}
+
+[{{< fa brands github >}} GitHub]{.slide-title}
+
+<hr>
+
+The source code for most (if not all) of your favorite data science software (e.g. packages / libraries) lives on GitHub.
 
 - [this may include looking at any issues or pull requests associated with that package to check if there are known problems (e.g. check out ___ on [GitHub](){target="_blank"})]{.body-text-s}
 - [check ot see if there are wikis available for a particular repository (e.g. ....)]{.body-text-s}
 
 ---
 
-still stumped?
+## {#documentation data-menu-title="Documentation"}
 
-reprex
+[{{< fa file-lines >}} Documentation (particularly, pkgdown sites for R)]{.slide-title}
+
+<hr>
+
+---
+
+## {#blogs data-menu-title="Blogs"}
+
+[{{< fa blog >}} Personal blogs]{.slide-title}
+
+<hr>
+
 
 ---
 
