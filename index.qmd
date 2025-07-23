@@ -1078,7 +1078,7 @@ Image source: [Wikipedia](https://en.wikipedia.org/wiki/Rubber_duck_debugging){t
 
 **An example ChatGPT prompt:**
 
->*"I am getting an error in my R code. Instead of giving me the answer, can you help me logically think through my code line-by-lne so that I might identify the problem on my own? Here is my code:*
+>*"I am getting an error in my R code. Instead of giving me the answer, can you help me logically think through my code line-by-line so that I might identify the problem on my own? Here is my code:*
 >
 >*[code here]*
 >
@@ -1211,7 +1211,7 @@ knitr::include_graphics(here::here("images", "how_to_velocity.png"))
 
 ---
 
-## {#qa-forums data-menu-title="Q&A forums"}
+## {#qa-forums1 data-menu-title="Q&A forums 1"}
 
 [{{< fa comments title="Two comment bubbles" >}} Q&A forums]{.slide-title}
 
@@ -1219,7 +1219,7 @@ knitr::include_graphics(here::here("images", "how_to_velocity.png"))
 
 <br>
 
-[Stack Overflow](https://stackoverflow.com/questions){target="_blank"} has historically<sup>1</sup> been *the* question-and-answer website for programmers. Refine your query using **search operators**, and look for **accepted anwers** with many **upvotes:** 
+**[Stack Overflow](https://stackoverflow.com/questions){target="_blank"}** has historically<sup>1</sup> been *the* question-and-answer website for programmers. Refine your query using **search operators**, and look for **accepted anwers** with many **upvotes:** 
 
 <br>
 
@@ -1251,18 +1251,68 @@ I return to this particular [Stack Overflow post on undoing a git commit](https:
 
 ---
 
+## {#qa-forums2 data-menu-title="Q&A forums 2"}
+
+[{{< fa comments title="Two comment bubbles" >}} Q&A forums]{.slide-title}
+
+<hr>
+
+Stack Overflow **initially [banned ChatGPT-written responses](https://meta.stackoverflow.com/questions/421831/policy-generative-ai-e-g-chatgpt-is-banned){target="_blank"}**, but **now partners with a number of AI chatbot developers**, [including OpenAI](https://stackoverflow.co/company/press/archive/openai-partnership/){target="_blank"} -- this means that tools like ChatGPT are trained on Stack Overflow content (among other sources). 
+
 . . . 
 
-Stack Overflow **initially [banned ChatGPT-written responses](https://meta.stackoverflow.com/questions/421831/policy-generative-ai-e-g-chatgpt-is-banned){target="_blank"}**, but **now partners with a number of AI chatbot developers**, [including OpenAI](https://stackoverflow.co/company/press/archive/openai-partnership/){target="_blank"} -- this means that tools like ChatGPT are trained on Stack Overflow content (among other sources). The site has seen a sharp decline in user activity since ChatGPT was released, as users increasingly turn to GenAI tools first. The implications of this decline still remain to be fully seen, though research suggests that replacing human content creation with AI-generated responses **may make it more difficult to train future AI models**. This change also represents a **shift of knowlege sharing from the public to private domains** [del Rio-Chanona et al. 2024](https://academic.oup.com/pnasnexus/article/3/9/pgae400/7754871?login=false){target="_blank"}.
+:::: {.columns}
+::: {.column width="30%"}
+
+<br>
+
+<sup>1</sup>Stack Overflow has seen a [sharp decline in user activity since ChatGPT was released](https://blog.pragmaticengineer.com/are-llms-making-stackoverflow-irrelevant/){target="_blank"} as users increasingly turn to GenAI tools.
+:::
+::: {.column width="70%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "so-decline.png"))
+```
+:::
+:::: 
+
+The implications of this decline still remain to be fully seen, though research suggests that replacing human content creation with AI-generated responses **may make it more difficult to train future AI models**. This change also represents a **shift of knowlege sharing from the public to private domains** [(del Rio-Chanona et al. 2024)](https://academic.oup.com/pnasnexus/article/3/9/pgae400/7754871?login=false){target="_blank"}.
 
 ---
 
-**Other helpful forums:**
+## {#qa-forums3 data-menu-title="Q&A forums 3"}
 
-- [forum.posit.co](https://forum.posit.co/){target="_blank"}: for questions related to Posit's tools (e.g. `{tidyverse}`, RStudio and more)
-- [discuss.python.org](https://discuss.python.org/){target="_blank"}: the official Python Community forum
-- [r/rstats](){target="_blank"}
-- [r/python](){target="_blank"}
+[{{< fa comments title="Two comment bubbles" >}} Q&A forums]{.slide-title}
+
+<hr>
+
+*Does this mean I should stop using community-based Q&A forums?* [**No!** They offer a unique and complementary value to AI chatbots, particularly when developing your core competencies and critical thinking skills, including:]{.fragment .fade-in}
+
+::: {.incremental}
+- [**diverse viewpoints** and **nuanced perspectivese** (especially regarding edge cases)]{.body-text-s}
+- [**debate** over and **refinement** of solutions]{.body-text-s}
+- [an understanding of how others **diagnose and approach problems**]{.body-text-s}
+- [introdution to important **terminology**]{.body-text-s}
+- [learning the **etiquette** and **norms** of your programming community(ies)]{.body-text-s}
+- [contributing to a **collective knowledge** base]{.body-text-s}
+:::
+
+. . . 
+
+::: {.center-text .body-text-m}
+**AI is trained on *past* knowledge, forums offer *living knowledge***
+:::
+
+. . . 
+
+**Also check out:**
+
+- **[forum.posit.co](https://forum.posit.co/){target="_blank"}**: for questions related to Posit's tools (e.g. `{tidyverse}`, RStudio and more)
+- **[discuss.python.org](https://discuss.python.org/){target="_blank"}**: the official Python Community forum
+<!-- - Reddit: [r/rstats](https://www.reddit.com/r/rstats/){target="_blank"} & [r/python](https://www.reddit.com/r/Python/){target="_blank"} -->
 
 ---
 
@@ -1301,9 +1351,6 @@ Other suggestions:
 - read!
 - create a curated vocab list
 - it's okay to copy code
-- psuedocode
-- clear var names
-- build in checks
 
 ---
 
