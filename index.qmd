@@ -817,9 +817,9 @@ penguins_new <- penguins |>
 
 **Doesn't work... let's look into what `reorder()` is / does...**
 
-::: {.footer}
+<!-- ::: {.footer}
 **Tip:** comment / uncomment lines of code using the keyboard shortcut `Cmd` / `Ctrl` + `shift` + `C`
-:::
+::: -->
 
 ---
 
@@ -1247,7 +1247,7 @@ knitr::include_graphics(here::here("images", "stackoverflow-upvote.png"))
 
 <br>
 
-I return to this particular [Stack Overflow post on undoing a git commit](https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git){target="_blank"} *all* the time (probably at least 1x/month!)
+I return to this particular [Stack Overflow post on undoing a git commit](https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git){target="_blank"} and this [post on checking out a remote git branch](https://stackoverflow.com/questions/1783405/how-to-check-out-a-remote-git-branch){target="_blank"} *all* the time (probably at least 1x/month!)
 
 ---
 
@@ -1292,7 +1292,7 @@ The implications of this decline still remain to be fully seen, though research 
 *Does this mean I should stop using community-based Q&A forums?* [**No!** They offer a unique and complementary value to AI chatbots, particularly when developing your core competencies and critical thinking skills, including:]{.fragment .fade-in}
 
 ::: {.incremental}
-- [**diverse viewpoints** and **nuanced perspectivese** (especially regarding edge cases)]{.body-text-s}
+- [**diverse viewpoints** and **nuanced perspectives** (especially regarding edge cases)]{.body-text-s}
 - [**debate** over and **refinement** of solutions]{.body-text-s}
 - [an understanding of how others **diagnose and approach problems**]{.body-text-s}
 - [introdution to important **terminology**]{.body-text-s}
@@ -1322,9 +1322,35 @@ The implications of this decline still remain to be fully seen, though research 
 
 <hr>
 
-The source code for most (if not all) of your favorite data science software (e.g. packages / libraries) lives on GitHub.
+The source code for most (if not all) of your favorite data science software (e.g. packages / libraries) lives on GitHub. Check for **known issues** or **fixes underway** by exploring open **issues** and **pull requests**. Some repositories may also include additional documentation or examples using [**wikis**](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis){target="_blank"} (e.g. see the [`{xaringan}` wiki](https://github.com/yihui/xaringan/wiki){target="_blank"}).
 
-- [this may include looking at any issues or pull requests associated with that package to check if there are known problems (e.g. check out ___ on [GitHub](){target="_blank"})]{.body-text-s}
+:::: {.columns}
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Open [issues](https://github.com/tidyverse/ggplot2/issues){target="_blank"} for `{ggplot2}`
+:::
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "ggplot2-issues.png"))
+```
+:::
+::: {.column width="50%"}
+::: {.center-text .body-text-s .gray-text}
+Open [pull requests](https://github.com/tidyverse/ggplot2/pulls){target="_blank"} for `{ggplot2}`
+:::
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "ggplot2-prs.png"))
+```
+:::
+::::
+
 - [check ot see if there are wikis available for a particular repository (e.g. ....)]{.body-text-s}
 
 ---
@@ -1334,6 +1360,20 @@ The source code for most (if not all) of your favorite data science software (e.
 [{{< fa file-lines >}} Documentation (particularly, pkgdown sites for R)]{.slide-title}
 
 <hr>
+
+We already saw how to access documentation directly from RStudio, but looking at the official documentation online may reveal additional helpful articles, FAQs, and resources. Documentation sites built with **pkgdown** are particularly easy to navigate (they all are structured the same) and approachable. For example, the [`{ggplot2}` pkgdown documentation](https://ggplot2.tidyverse.org/index.html){target="_blank"}:
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "ggplot2-documentation.png"))
+```
+
+::: {.footer}
+Google **package-name documentation** to find the online version of a package's documentation.
+:::
 
 ---
 
@@ -1352,11 +1392,6 @@ Other suggestions:
 - create a curated vocab list
 - it's okay to copy code
 
----
-
-What's to come
-
-- AI workshops in the winter
 
 ---
 
