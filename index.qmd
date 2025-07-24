@@ -1203,7 +1203,7 @@ knitr::include_graphics(here::here("images", "how_to_velocity.png"))
 
 <br>
 
-[**[{{< fa file-lines title="a file with lines" >}}]{.teal-text} Documentation** (particularly, pkgdown sites for R)]{.body-text-m}
+[**[{{< fa file-lines title="a file with lines" >}}]{.teal-text} Documentation**]{.body-text-m}
 
 <br>
 
@@ -1357,7 +1357,7 @@ knitr::include_graphics(here::here("images", "ggplot2-prs.png"))
 
 ## {#documentation data-menu-title="Documentation"}
 
-[{{< fa file-lines >}} Documentation (particularly, pkgdown sites for R)]{.slide-title}
+[{{< fa file-lines >}} Documentation]{.slide-title}
 
 <hr>
 
