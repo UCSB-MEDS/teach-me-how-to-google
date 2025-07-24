@@ -1,6 +1,6 @@
 # Teach Me How To Google 
 
-A [talk()] on debugging strategies and how to search for help online.
+A [talk](https://ucsb-meds.github.io/teach-me-how-to-google/) on debugging strategies and how to search for help online.
 
 ## Description
 
