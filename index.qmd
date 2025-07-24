@@ -740,7 +740,7 @@ Artwork by [Allison Horst](https://allisonhorst.com/){target="_blank"}
 
 <hr>
 
-It can be overwhelming to figure out where an error or issue is occurring in a large chunk of code. A (very small) example:
+It can be overwhelming to figure out where an error or issue is occurring in a large chunk of code. A small example:
 
 ```{r}
 #| eval: true
@@ -1295,7 +1295,7 @@ The implications of this decline still remain to be fully seen, though research 
 - [**diverse viewpoints** and **nuanced perspectives** (especially regarding edge cases)]{.body-text-s}
 - [**debate** over and **refinement** of solutions]{.body-text-s}
 - [an understanding of how others **diagnose and approach problems**]{.body-text-s}
-- [introdution to important **terminology**]{.body-text-s}
+- [an introdution to important **terminology**]{.body-text-s}
 - [learning the **etiquette** and **norms** of your programming community(ies)]{.body-text-s}
 - [contributing to a **collective knowledge** base]{.body-text-s}
 :::
@@ -1377,23 +1377,157 @@ Google **package-name documentation** to find the online version of a package's 
 
 ---
 
-## {#blogs data-menu-title="Blogs"}
+## {#blogs1 data-menu-title="Blogs 1"}
 
 [{{< fa blog >}} Personal blogs]{.slide-title}
 
 <hr>
 
+I *love* a good blog post -- and the data science field is full of incredible bloggers who make complex computational tasks more approachable.
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "40%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "drob-tweet.png"))
+```
+::: {.center-text .body-text-s .gray-text}
+A still-very-relevant tweet by [David Robinson](http://varianceexplained.org/r/start-blog/){target="_blank"} 
+:::
+
+<br>
+
+Blogs are an excellent place to find tutorials interwoven with engaging narratives (at least more engaging than documentation), less jargon (or jargon that's explained), and often include example code, outputs, and other visuals.
+
+::: {.footer}
+You'll be writing your own blog posts as part of course assignments throughout the year!
+:::
 
 ---
 
-Other suggestions:
+## {#blogs2 data-menu-title="Blogs 2"}
 
-- read!
-- create a curated vocab list
-- it's okay to copy code
+[{{< fa blog >}} Personal blogs]{.slide-title}
 
+<hr>
+
+*How do I find folks to follow?* Here are some bloggers that I've personally enjoyed, but you might also **consider joining [Bluesky](https://bsky.app/){target="_blank"}** (a Twitter replacement that's gaining popularity with the data science community) and join some relevant "starter packs" (you can find **recommendations on the [EDS 240 course website](https://eds-240-data-viz.github.io/resources.html#learning-communities){target="_blank"}**): 
+
+:::: {.columns}
+::: {.column width="50%"}
+- [[Meghan Hall](https://meghan.rbind.io/blog/){target="_blank"}]{.body-text-s}
+- [[Meghan Harris](https://thetidytrekker.com/blog){target="_blank"}]{.body-text-s}
+- [[Crystal Lewis](https://cghlewis.com/blog/){target="_blank"}]{.body-text-s}
+- [[Cosima Meyer](https://cosimameyer.com/#post){target="_blank"}]{.body-text-s}
+- [[Beatriz Milz](https://beamilz.com/posts/en){target="_blank"}]{.body-text-s}
+- [[Shannon Pileggi](https://www.pipinghotdata.com/blog){target="_blank"}]{.body-text-s}
+- [[Albert Rapp](https://albert-rapp.de/blog){target="_blank"}]{.body-text-s}
+- [[Nicola Rennie](https://nrennie.rbind.io/blog/){target="_blank"}]{.body-text-s}
+- [[Cédric Scherer](https://www.cedricscherer.com/){target="_blank"}]{.body-text-s}
+- [[Cara Thompson](https://www.cararthompson.com/posts){target="_blank"}]{.body-text-s}
+:::
+::: {.column width="50%"}
+- [[Nick Tierney](https://www.njtierney.com/){target="_blank"}]{.body-text-s}
+- [[Isabella Velásquez](https://ivelasq.rbind.io/){target="_blank"}]{.body-text-s}
+- [[Danielle Navarro](https://blog.djnavarro.net/){target="_blank"}]{.body-text-s}
+- [[Andrew Heiss](https://www.andrewheiss.com/blog/){target="_blank"}]{.body-text-s}
+- [[Maya Gans](https://maya.rbind.io/blog){target="_blank"}]{.body-text-s}
+- [[Jadey Ryan](https://jadeyryan.com/){target="_blank"}]{.body-text-s}
+- [[rostrum.blog](https://www.rostrum.blog/){target="_blank"} (by [Matt Dray](https://www.matt-dray.com/){target="_blank"} and [Adriana De Palma](https://adrianadepalma.com/){target="_blank"})]{.body-text-s}
+:::
+::::
 
 ---
+
+## {#what-else data-menu-title="What else"}
+
+[What else can should I be doing?]{.slide-title}
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "r4ds.png"))
+```
+:::
+
+::: {.column width="50%"}
+<br>
+
+- **Read books!** [R for Data Science (2e)](https://r4ds.hadley.nz/){target="_blank"} is *the* primer for all things R for data science (also see [Python for Data Analysis (3e)](https://wesmckinney.com/book/){target="_blank"}). Reading introduces you to important terminology and concepts that make Googleing help a whole lot easier 
+- **Create a curated vocab or function list.** There's always a handful of MEDS students each year who keep a running list of important functions / methods to refer back to while they're learning. Abandoning this once you feel you've committed things to memory (or have easier ways to find what you're looking for) is totally great.
+:::
+
+::::
+
+---
+
+## {#closing-thoughts data-menu-title="Closing thoughts"}
+
+[Closing thoughts]{.slide-title}
+
+<hr>
+
+When you take the time to troubleshoot your own code, either independently or with help from Google, you’re doing more than just fixing errors. **You are actively developing the core skills that make great data scientists:**
+
+::: {.incremental}
+- Applying **critical thinking** and **logical reasoning** to break complex problems into manageable pieces
+- Reflecting on what your code *should* do versus what it's *actually* doing
+<!-- - **Deepening your understanding** of how your code works and identifying the root cause of issues -->
+- **Developing your intuition** around recognizing bugs, patterns, and solutions 
+- **Practicing persistence, resilience & resourcefulness,** all qualities that stand out to employers!
+:::
+
+<br>
+
+. . . 
+
+::: {.center-text .body-text-m}
+By building these foundational technical and problem-solving skills now, you're setting yourself up for long-term success. 
+:::
+
+<!-- Prepare yourself now with foundational computational and technical skills and core competencies to problem-solve when you get stuck -- these are the types of individuals that companies and organizations are eager to bring onto their teams! -->
+
+<!-- It's likely that find yourself in a technical interview where you can't use GenAI to answer questions (some organizations even prohibit the use of GenAI entirely on the job, at least for now). -->
+
+<!-- . . .
+
+<br>
+
+We encourage you to commit to active learning processes and embrace wading around in the unknown for a bit while you work through bugs and sticking points -- it will make you a stronger and more well-equipt data scientist in the future! -->
+
+---
+
+::: {.center-text .body-text-xl .teal-text}
+**{{< fa brands google >}}et {{< fa brands google >}}oogling!**
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics(here::here("images", "google.gif"))
+```
+<br>
+
+::: {.footer}
+If you see mistakes or want to suggest changes, please create an [issue](https://github.com/UCSB-MEDS/teach-me-how-to-google/issues){target="_blank"} on the source repository.
+:::
+
+
+<!-- Troubleshooting your own code (rather than sending it right to ChatGPT when you run into an error) fosters a deeper understanding and problem-solving skills. You don't want to be caught in an interview or end up working for an organization that prohibts you from using a tool you've built an overreliance on! 
+
+My husband is a software engineer for an AI company and they don't allow interviewees to use GenAI in interviews because they want to understand how a candidate can break down a complex problem, piece together an approach to solving it, then execute on it. -->
 
 
 
@@ -1449,15 +1583,3 @@ Environmental impacts
 But also, GenAI is poised to help us solve environmental problems at a much faster pace than ever before. 
 
 Remains to be seen if benefits outweigh risks. -->
-
----
-
-Troubleshooting your own code (rather than sending it right to ChatGPT when you run into an error) fosters a deeper understanding and problem-solving skills. You don't want to be caught in an interview or end up working for an organization that prohibts you from using a tool you've built an overreliance on! 
-
-My husband is a software engineer for an AI company and they don't allow interviewees to use GenAI in interviews because they want to understand how a candidate can break down a complex problem, piece together an approach to solving it, then execute on it.
-
-By troubleshooting your own code (with help from Google!), you are forced to:
-
-- use critical thinking and logical reasoning skills to break down complex technical problems into smaller, manageable parts
-- think carefully about what you want your code to be doing vs. what your code actually is doing 
-- understand your code's functionality and identify root causes of issues
