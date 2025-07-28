@@ -1351,8 +1351,6 @@ knitr::include_graphics(here::here("images", "ggplot2-prs.png"))
 :::
 ::::
 
-- [check ot see if there are wikis available for a particular repository (e.g. ....)]{.body-text-s}
-
 ---
 
 ## {#documentation data-menu-title="Documentation"}
