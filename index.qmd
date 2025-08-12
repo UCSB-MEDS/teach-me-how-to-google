@@ -1459,7 +1459,7 @@ knitr::include_graphics(here::here("images", "r4ds.png"))
 ::: {.column width="50%"}
 <br>
 
-- **Read books!** [R for Data Science (2e)](https://r4ds.hadley.nz/){target="_blank"} is *the* primer for all things R for data science (also see [Python for Data Analysis (3e)](https://wesmckinney.com/book/){target="_blank"}). Reading introduces you to important terminology and concepts that make Googleing help a whole lot easier 
+- **Read books!** [R for Data Science (2e)](https://r4ds.hadley.nz/){target="_blank"} is *the* primer for all things R for data science (also see [Python for Data Analysis (3e)](https://wesmckinney.com/book/){target="_blank"}). Reading introduces you to important terminology and concepts that make Googling help a whole lot easier 
 - **Create a curated vocab or function list.** There's always a handful of MEDS students each year who keep a running list of important functions / methods to refer back to while they're learning. Abandoning this once you feel you've committed things to memory (or have easier ways to find what you're looking for) is totally great.
 :::
 
